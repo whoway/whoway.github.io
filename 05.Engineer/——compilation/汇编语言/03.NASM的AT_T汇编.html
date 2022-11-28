@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NASM编译器常用指令 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.fd1fb539.js" as="script"><link rel="preload" href="/assets/js/2.5ad7620d.js" as="script"><link rel="preload" href="/assets/js/174.54229273.js" as="script"><link rel="prefetch" href="/assets/js/10.b55d32f8.js"><link rel="prefetch" href="/assets/js/100.5e1c16e9.js"><link rel="prefetch" href="/assets/js/101.94fbd4b4.js"><link rel="prefetch" href="/assets/js/102.5b7c2a8d.js"><link rel="prefetch" href="/assets/js/103.b756016c.js"><link rel="prefetch" href="/assets/js/104.7ecad0f5.js"><link rel="prefetch" href="/assets/js/105.0429efb1.js"><link rel="prefetch" href="/assets/js/106.d930b8e7.js"><link rel="prefetch" href="/assets/js/107.d0112438.js"><link rel="prefetch" href="/assets/js/108.21911afb.js"><link rel="prefetch" href="/assets/js/109.1254f1a5.js"><link rel="prefetch" href="/assets/js/11.e298a6d3.js"><link rel="prefetch" href="/assets/js/110.7538b4d5.js"><link rel="prefetch" href="/assets/js/111.9536d07e.js"><link rel="prefetch" href="/assets/js/112.f8dcca49.js"><link rel="prefetch" href="/assets/js/113.38182060.js"><link rel="prefetch" href="/assets/js/114.b7b9b61e.js"><link rel="prefetch" href="/assets/js/115.dd087991.js"><link rel="prefetch" href="/assets/js/116.534f58f7.js"><link rel="prefetch" href="/assets/js/117.b313bd23.js"><link rel="prefetch" href="/assets/js/118.91f4c6ce.js"><link rel="prefetch" href="/assets/js/119.d629473b.js"><link rel="prefetch" href="/assets/js/12.5d8962c1.js"><link rel="prefetch" href="/assets/js/120.47a10887.js"><link rel="prefetch" href="/assets/js/121.9776dbf4.js"><link rel="prefetch" href="/assets/js/122.9c1b0cd2.js"><link rel="prefetch" href="/assets/js/123.80fe8a5a.js"><link rel="prefetch" href="/assets/js/124.baa3035c.js"><link rel="prefetch" href="/assets/js/125.439498f6.js"><link rel="prefetch" href="/assets/js/126.6e289c97.js"><link rel="prefetch" href="/assets/js/127.85239bd5.js"><link rel="prefetch" href="/assets/js/128.255fdf73.js"><link rel="prefetch" href="/assets/js/129.ff4c4eaf.js"><link rel="prefetch" href="/assets/js/13.23ca29ec.js"><link rel="prefetch" href="/assets/js/130.ef70dbf3.js"><link rel="prefetch" href="/assets/js/131.2007981d.js"><link rel="prefetch" href="/assets/js/132.4e78bb00.js"><link rel="prefetch" href="/assets/js/133.5a0308a4.js"><link rel="prefetch" href="/assets/js/134.f1d906d1.js"><link rel="prefetch" href="/assets/js/135.5d8ca04a.js"><link rel="prefetch" href="/assets/js/136.2b20503a.js"><link rel="prefetch" href="/assets/js/137.56b9e7c1.js"><link rel="prefetch" href="/assets/js/138.cabc9eec.js"><link rel="prefetch" href="/assets/js/139.ee7593a7.js"><link rel="prefetch" href="/assets/js/14.48ff3cea.js"><link rel="prefetch" href="/assets/js/140.5e825d91.js"><link rel="prefetch" href="/assets/js/141.2e2eeb82.js"><link rel="prefetch" href="/assets/js/142.2d5f1939.js"><link rel="prefetch" href="/assets/js/143.a8de3cf0.js"><link rel="prefetch" href="/assets/js/144.437eccc7.js"><link rel="prefetch" href="/assets/js/145.17f5bb4d.js"><link rel="prefetch" href="/assets/js/146.70f4a659.js"><link rel="prefetch" href="/assets/js/147.f2b33bab.js"><link rel="prefetch" href="/assets/js/148.3ebfa61f.js"><link rel="prefetch" href="/assets/js/149.9cbdcb4e.js"><link rel="prefetch" href="/assets/js/15.6b3d3da1.js"><link rel="prefetch" href="/assets/js/150.2c2ce642.js"><link rel="prefetch" href="/assets/js/151.4f5b8e52.js"><link rel="prefetch" href="/assets/js/152.ca02f3f5.js"><link rel="prefetch" href="/assets/js/153.2688704f.js"><link rel="prefetch" href="/assets/js/154.151a2671.js"><link rel="prefetch" href="/assets/js/155.2c0fcdb8.js"><link rel="prefetch" href="/assets/js/156.f0d11f73.js"><link rel="prefetch" href="/assets/js/157.81001222.js"><link rel="prefetch" href="/assets/js/158.b6e285a8.js"><link rel="prefetch" href="/assets/js/159.b43ced42.js"><link rel="prefetch" href="/assets/js/16.b0a981b0.js"><link rel="prefetch" href="/assets/js/160.1a92b8b0.js"><link rel="prefetch" href="/assets/js/161.4aa01d42.js"><link rel="prefetch" href="/assets/js/162.7f15478d.js"><link rel="prefetch" href="/assets/js/163.011b6115.js"><link rel="prefetch" href="/assets/js/164.e9742e05.js"><link rel="prefetch" href="/assets/js/165.f4d58c06.js"><link rel="prefetch" href="/assets/js/166.ffdac434.js"><link rel="prefetch" href="/assets/js/167.f10c41be.js"><link rel="prefetch" href="/assets/js/168.618d1d4f.js"><link rel="prefetch" href="/assets/js/169.83163821.js"><link rel="prefetch" href="/assets/js/17.7c2e0f08.js"><link rel="prefetch" href="/assets/js/170.9b42a562.js"><link rel="prefetch" href="/assets/js/171.b2fb9489.js"><link rel="prefetch" href="/assets/js/172.b11de1ad.js"><link rel="prefetch" href="/assets/js/173.7e23a516.js"><link rel="prefetch" href="/assets/js/175.6aab23f4.js"><link rel="prefetch" href="/assets/js/176.c2d0d64e.js"><link rel="prefetch" href="/assets/js/177.d24bee39.js"><link rel="prefetch" href="/assets/js/178.0faca192.js"><link rel="prefetch" href="/assets/js/179.46e5bcae.js"><link rel="prefetch" href="/assets/js/18.3c13845c.js"><link rel="prefetch" href="/assets/js/180.68f7dbd9.js"><link rel="prefetch" href="/assets/js/181.4af7253e.js"><link rel="prefetch" href="/assets/js/182.35074f00.js"><link rel="prefetch" href="/assets/js/183.b4059915.js"><link rel="prefetch" href="/assets/js/184.b7817454.js"><link rel="prefetch" href="/assets/js/185.9f26d257.js"><link rel="prefetch" href="/assets/js/186.ccb95b45.js"><link rel="prefetch" href="/assets/js/187.a6acf86b.js"><link rel="prefetch" href="/assets/js/188.0ff47d88.js"><link rel="prefetch" href="/assets/js/189.c0d86292.js"><link rel="prefetch" href="/assets/js/19.73f328e4.js"><link rel="prefetch" href="/assets/js/190.07dd278c.js"><link rel="prefetch" href="/assets/js/191.eb715d05.js"><link rel="prefetch" href="/assets/js/192.03442d13.js"><link rel="prefetch" href="/assets/js/193.b0c6e8f3.js"><link rel="prefetch" href="/assets/js/194.3feab071.js"><link rel="prefetch" href="/assets/js/195.c31dbcd5.js"><link rel="prefetch" href="/assets/js/196.8d2ace3b.js"><link rel="prefetch" href="/assets/js/197.7b2c21b8.js"><link rel="prefetch" href="/assets/js/198.82708033.js"><link rel="prefetch" href="/assets/js/199.00df7162.js"><link rel="prefetch" href="/assets/js/20.592ca66d.js"><link rel="prefetch" href="/assets/js/200.55549bc1.js"><link rel="prefetch" href="/assets/js/201.caafeb67.js"><link rel="prefetch" href="/assets/js/202.edad47eb.js"><link rel="prefetch" href="/assets/js/21.5766fde7.js"><link rel="prefetch" href="/assets/js/22.eb80981c.js"><link rel="prefetch" href="/assets/js/23.98ec6f03.js"><link rel="prefetch" href="/assets/js/24.b45a16b4.js"><link rel="prefetch" href="/assets/js/25.6c4539e7.js"><link rel="prefetch" href="/assets/js/26.a5260c99.js"><link rel="prefetch" href="/assets/js/27.ff362ad5.js"><link rel="prefetch" href="/assets/js/28.909fc6bc.js"><link rel="prefetch" href="/assets/js/29.e28949e2.js"><link rel="prefetch" href="/assets/js/3.40f43a0e.js"><link rel="prefetch" href="/assets/js/30.b272860a.js"><link rel="prefetch" href="/assets/js/31.4fe50db5.js"><link rel="prefetch" href="/assets/js/32.d6d7f2b0.js"><link rel="prefetch" href="/assets/js/33.7b7c9fa9.js"><link rel="prefetch" href="/assets/js/34.b2673d22.js"><link rel="prefetch" href="/assets/js/35.b542785a.js"><link rel="prefetch" href="/assets/js/36.3470ed7b.js"><link rel="prefetch" href="/assets/js/37.5d9735a8.js"><link rel="prefetch" href="/assets/js/38.36af579c.js"><link rel="prefetch" href="/assets/js/39.d7d91cd4.js"><link rel="prefetch" href="/assets/js/4.2352fd97.js"><link rel="prefetch" href="/assets/js/40.5c34f488.js"><link rel="prefetch" href="/assets/js/41.cf12e03b.js"><link rel="prefetch" href="/assets/js/42.089dc828.js"><link rel="prefetch" href="/assets/js/43.61c551db.js"><link rel="prefetch" href="/assets/js/44.dcbcd095.js"><link rel="prefetch" href="/assets/js/45.4e020a1f.js"><link rel="prefetch" href="/assets/js/46.2b94f921.js"><link rel="prefetch" href="/assets/js/47.05a88c9f.js"><link rel="prefetch" href="/assets/js/48.59cc6f32.js"><link rel="prefetch" href="/assets/js/49.2d096088.js"><link rel="prefetch" href="/assets/js/5.89f38884.js"><link rel="prefetch" href="/assets/js/50.7e159a32.js"><link rel="prefetch" href="/assets/js/51.2d179745.js"><link rel="prefetch" href="/assets/js/52.60c453f1.js"><link rel="prefetch" href="/assets/js/53.6102e9a8.js"><link rel="prefetch" href="/assets/js/54.d15a440b.js"><link rel="prefetch" href="/assets/js/55.f1d1aef1.js"><link rel="prefetch" href="/assets/js/56.da17951a.js"><link rel="prefetch" href="/assets/js/57.0d548402.js"><link rel="prefetch" href="/assets/js/58.eafae80e.js"><link rel="prefetch" href="/assets/js/59.da92e392.js"><link rel="prefetch" href="/assets/js/6.556ca4b1.js"><link rel="prefetch" href="/assets/js/60.b6924737.js"><link rel="prefetch" href="/assets/js/61.721fcf0c.js"><link rel="prefetch" href="/assets/js/62.c9bd7b61.js"><link rel="prefetch" href="/assets/js/63.1ffe1584.js"><link rel="prefetch" href="/assets/js/64.f263a77f.js"><link rel="prefetch" href="/assets/js/65.83c36a2a.js"><link rel="prefetch" href="/assets/js/66.528d1512.js"><link rel="prefetch" href="/assets/js/67.6f82d8b5.js"><link rel="prefetch" href="/assets/js/68.bacd8722.js"><link rel="prefetch" href="/assets/js/69.911548ac.js"><link rel="prefetch" href="/assets/js/7.8b41355d.js"><link rel="prefetch" href="/assets/js/70.3a429772.js"><link rel="prefetch" href="/assets/js/71.e4554dc6.js"><link rel="prefetch" href="/assets/js/72.214adbe7.js"><link rel="prefetch" href="/assets/js/73.3f8056af.js"><link rel="prefetch" href="/assets/js/74.76890b0d.js"><link rel="prefetch" href="/assets/js/75.8af39a02.js"><link rel="prefetch" href="/assets/js/76.156a7561.js"><link rel="prefetch" href="/assets/js/77.359f0a41.js"><link rel="prefetch" href="/assets/js/78.dd365089.js"><link rel="prefetch" href="/assets/js/79.e7496c22.js"><link rel="prefetch" href="/assets/js/8.87e943be.js"><link rel="prefetch" href="/assets/js/80.86dcd177.js"><link rel="prefetch" href="/assets/js/81.1bdc3060.js"><link rel="prefetch" href="/assets/js/82.0c2b329d.js"><link rel="prefetch" href="/assets/js/83.b33b4815.js"><link rel="prefetch" href="/assets/js/84.bc7e22e6.js"><link rel="prefetch" href="/assets/js/85.82aeb653.js"><link rel="prefetch" href="/assets/js/86.b2d34cde.js"><link rel="prefetch" href="/assets/js/87.491c160e.js"><link rel="prefetch" href="/assets/js/88.f61c1354.js"><link rel="prefetch" href="/assets/js/89.398f1f38.js"><link rel="prefetch" href="/assets/js/9.35b8536e.js"><link rel="prefetch" href="/assets/js/90.06df0a1e.js"><link rel="prefetch" href="/assets/js/91.7d7bc5bc.js"><link rel="prefetch" href="/assets/js/92.c6bbf647.js"><link rel="prefetch" href="/assets/js/93.db29cbe5.js"><link rel="prefetch" href="/assets/js/94.14c74134.js"><link rel="prefetch" href="/assets/js/95.d5cf63f4.js"><link rel="prefetch" href="/assets/js/96.8afccf09.js"><link rel="prefetch" href="/assets/js/97.3fc872af.js"><link rel="prefetch" href="/assets/js/98.37695507.js"><link rel="prefetch" href="/assets/js/99.b72a0294.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.SE/" class="nav-link">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.Database/" class="nav-link">
+  🎨数据库
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link router-link-active">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.SE/" class="nav-link">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.Database/" class="nav-link">
+  🎨数据库
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link router-link-active">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>NASM编译器常用指令</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#目录" class="sidebar-link">目录</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_1-通用汇编指令" class="sidebar-link">1.通用汇编指令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#★分类" class="sidebar-link">★分类</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_1-1-数据传送指令" class="sidebar-link">1.1.数据传送指令</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_1-2-算术运算指令" class="sidebar-link">1.2.算术运算指令</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_1-3-逻辑运算指令" class="sidebar-link">1.3.逻辑运算指令</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_1-4-控制流指令" class="sidebar-link">1.4.控制流指令</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#★1-5-其他指令" class="sidebar-link">★1.5.其他指令</a></li></ul></li><li><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_2-nasm编译指令-伪指令" class="sidebar-link">2.NASM编译指令（）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_3-cpu寄存器分类" class="sidebar-link">3.CPU寄存器分类</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_3-1-用户可见" class="sidebar-link">3.1.用户可见</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/%E2%80%94%E2%80%94compilation/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/03.NASM%E7%9A%84AT_T%E6%B1%87%E7%BC%96.html#_3-2-用户不可见" class="sidebar-link">3.2.用户不可见</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nasm编译器常用指令"><a href="#nasm编译器常用指令" class="header-anchor">#</a> NASM编译器常用指令</h1> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>&lt;font style=&quot;background: yellow&quot; &gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <p>[TOC]</p> <ul><li><font style="background:yellow;">32位汇编为例，结合X86寄存器理解</font></li> <li><code>NASM用的是intel汇编语法，和Linux反汇编的有区别</code></li></ul> <h2 id="_1-通用汇编指令"><a href="#_1-通用汇编指令" class="header-anchor">#</a> 1.通用汇编指令</h2> <h3 id="★分类"><a href="#★分类" class="header-anchor">#</a> ★分类</h3> <p>汇编指令通常可以分为数据传送指令，算术和逻辑预算指令，控制流指令</p> <p>PS：我们的操作数是:★</p> <ul><li>寄存器</li> <li>立即数</li> <li>内存</li></ul> <h3 id="_1-1-数据传送指令"><a href="#_1-1-数据传送指令" class="header-anchor">#</a> 1.1.数据传送指令</h3> <p>1.<strong>mov 目标操作数,源操作数</strong></p> <blockquote><p>排列数，A（底3,2）=3*2=6</p></blockquote> <ul><li><code>mov 寄存器,寄存器</code></li> <li><code>mov 寄存器,立即数</code></li> <li><code>mov 寄存器,内存</code></li> <li><code>mov 内存,寄存器</code></li> <li><code>mov 内存,立即数</code></li> <li><font style="background:yellow;">mov 内存直接到内存是不准的！</font></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>mov byte ptr[var],5
+mov eax,ebx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>2.<strong>push 操作数</strong></p> <blockquote><p>表示：将操作数，压入stack</p></blockquote> <ul><li><code>push 寄存器</code>（注意要</li> <li><code>push 内存</code></li> <li><code>push 立即数</code></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>push eax
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>3.<strong>pop 操作数</strong></p> <h3 id="_1-2-算术运算指令"><a href="#_1-2-算术运算指令" class="header-anchor">#</a> 1.2.算术运算指令</h3> <p>1.加、减（add / <strong>sub</strong>tract，v.减去）</p> <blockquote><p>排列数，A（底3,2）=3*2=6</p></blockquote> <ul><li><code>add/sub 目标操作数,被加/减的数字</code></li> <li><code>add/sub 寄存器,寄存器</code></li> <li><code>add/sub 寄存器,立即数</code></li> <li><code>add/sub 寄存器,内存</code></li> <li><code>add/sub 内存,寄存器</code></li> <li><code>add/sub 内存,立即数</code></li> <li><font style="background:yellow;">add/sub 内存,内存是不准的！</font></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>sub eax,10		
+;假设eax是变量，用C语言解释就是eax=eax-10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>2.<code>带符号</code>乘法（<strong>mul</strong>tiplication,n.乘法）</p> <ul><li><strong>格式1</strong>：imul 目标操作数,操作数
+<ul><li>imul 寄存器,寄存器</li> <li>imul 寄存器,内存</li> <li><font style="background:yellow;">Tips：只能是上面的，目标操作只能是寄存器</font></li></ul></li> <li><strong>格式2</strong>：imul 目标操作数,操作数1,操作数2
+<ul><li>imul 寄存器,寄存器,立即数</li> <li>imul 寄存器,内存,立即数</li></ul></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>;假设eax，edi是变量，用C语言解释就是eax=eax*edi
+imul eax,edi
+;假设eax，edi是变量，用C语言解释就是eax=edi*5
+imul eax,edi,5
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>3.<code>带符号</code>除法（division,n.除法）</p> <p>idiv 除数操作数</p> <blockquote><ul><li>idiv 寄存器</li> <li>idiv 内存</li></ul> <blockquote><ul><li><font style="background:yellow;">被除数在<code>edx:eax</code>中，此外，操作结果，<code>商送到eax</code>,<code>余数送到edx</code></font></li></ul></blockquote></blockquote> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>idiv ebx
+idiv dword ptr [var]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>4.自加和自减（<strong>inc</strong>rease,v.增加 / <strong>dec</strong>rease,v.减少）</p> <p>inc/dec 操作数，本来操作数分3种，但是立即数显然不能加or减</p> <ul><li>inc/dec 寄存器</li> <li>inc/dec 内存</li> <li><font style="background:yellow;">inc/dec 立即数显然是不准！</font></li></ul> <blockquote><ul><li>这就是C语言中<code>i++,--i</code>的汇编实现</li></ul></blockquote> <p>5.取负（<strong>neg</strong>ative，v.否定，adj.负面的）</p> <p>neg 操作数，本来操作数分3种，但是立即数显然不能加or减</p> <ul><li>neg 寄存器</li> <li>neg 内存</li> <li><font style="background:yellow;">neg  立即数	显然是不准！！！</font></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>neg eax
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_1-3-逻辑运算指令"><a href="#_1-3-逻辑运算指令" class="header-anchor">#</a> 1.3.逻辑运算指令</h3> <p><font style="background:red;">位运算大类指令</font></p> <p>1.按位取反（位翻转）指令（not）</p> <p>not 操作数，本来操作数分3种，但是立即数显然不能加or减（因为保存不了）</p> <blockquote><ul><li><code>not 寄存器</code></li> <li><code>not 内存</code></li> <li><font style="background:yellow;">not  立即数	显然是不准！</font></li></ul></blockquote> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>not byte ptr [var]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>2.<font style="background:yellow;">逻辑</font>移位指令（<strong>sh</strong>ift v.移动，转移）</p> <ul><li>shl/shr（left，逻辑左移/right，逻辑右移）</li> <li><code>shl/shr 被操作数 , 移位的位数的操作数</code></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>shl eax,1
+shr ebx,2  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>3.<font style="background:yellow;">算术</font>移位指令（<strong>sh</strong>ift v.移动，转移）（arithmetic，n.算术，算术运算）</p> <p>4.逻辑与，或，异或（and/or/xor）</p> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>and eax,0fH
+or eax,0fH
+xor edx,edx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="_1-4-控制流指令"><a href="#_1-4-控制流指令" class="header-anchor">#</a> 1.4.控制流指令</h3> <p>1.循环(loop)（可以说是C语言中循环的汇编语言实现）</p> <blockquote><ul><li>loop 地址</li></ul> <blockquote><ul><li>loop指令，在执行的时候，会顺序做两件事：（1）寄存器cx减一  （2）如果cx的内容不为0，则转移到指定的位置去执行，否则顺序执行后面的指令。</li></ul></blockquote></blockquote> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>mov cx,5 ;循环次数
+mov si,10 ;除数
+digit:
+     xor dx,dx
+	 div si
+	 mov [bx],dl ;保存数位
+	 inc bx
+	 loop digit
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>2.跳转（jump)（可以说是C语言中goto的汇编语言实现）</p> <blockquote><ul><li>jmp 标签所在地址</li></ul></blockquote> <div class="language-.asm line-numbers-mode"><pre class="language-text"><code>begin: 
+add eax,1
+jmp begin
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>3.比较和转移（可以说是C语言条件语句的汇编语言实现）</p> <blockquote><ul><li>指令（1）cmp 操作数,操作数</li></ul> <blockquote><ul><li>cmp 寄存器,寄存器</li> <li>cmp 寄存器,立即数</li> <li>cmp 寄存器,内存</li> <li>cmp 内存,寄存器</li></ul> <blockquote><ul><li>比较两个操作数的值，并且根据结果，设置eflags寄存器中的条件码</li></ul></blockquote></blockquote> <ul><li>指令（2）j开头的转移指令</li></ul> <table><thead><tr><th>语法</th> <th>说明</th></tr></thead> <tbody><tr><td>je 标签</td> <td>jump when  <strong>equal</strong></td></tr> <tr><td>jne 标签</td> <td>jump when <strong>not equal</strong></td></tr> <tr><td>jz 标签</td> <td>jump when <strong>last reult was zero</strong></td></tr> <tr><td>jg 标签</td> <td>jump when <strong>greater than</strong></td></tr> <tr><td>jge 标签</td> <td>jump when <strong>greater than or equal to</strong></td></tr> <tr><td>jl 标签</td> <td>jump when <strong>less than</strong></td></tr> <tr><td>jle 标签</td> <td>jump when <strong>less than or equal to</strong></td></tr></tbody></table> <ul><li>代码样例</li></ul></blockquote> <div class="language-.asm line-numbers-mode"><pre class="language-text"><code>begin:
+	inc ebx
+	cmp eax,ebx		;比较
+	jge begin		;当eax&gt;=ebx的时候，就跳转到begin
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>4.子程序调用（C语言中函数调用的汇编实现，也解释了为什么我们自己模拟的栈比C语言自身的栈消耗资源更少）</p> <ul><li>指令1）函数调用（call）</li> <li>指令2）函数返回（ret）</li></ul> <blockquote><ul><li>call指令：(语法: call 标签)
+首先：将<code>当前执行指令</code>的<code>地址</code>入栈
+然后：无条件转移到由标签指示的地址的指令
+Tips：和简单的跳转指令（jmp）不同，call指令保存调用之前的地址信息</li> <li>ret指令:(语法:  ret)
+实现子程序的返回机制
+ret指令首先：弹出栈中保存的指令地址
+然后：无条件转移到保存的指令地址处执行</li></ul></blockquote> <blockquote><ul><li>用一个C语言反汇编说明（测试环境VS2012反汇编）</li></ul></blockquote> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>省略——————
+int test(int a,int b)
+{
+00D41460  push        ebp  
+00D41461  mov         ebp,esp  
+00D41463  sub         esp,0C0h  
+00D41469  push        ebx  
+00D4146A  push        esi  
+00D4146B  push        edi  
+00D4146C  lea         edi,[ebp-0C0h]  
+00D41472  mov         ecx,30h  
+00D41477  mov         eax,0CCCCCCCCh  
+00D4147C  rep stos    dword ptr es:[edi]  
+	return a+b;
+00D4147E  mov         eax,dword ptr [a]  
+00D41481  add         eax,dword ptr [b]  
+}
+00D41484  pop         edi  
+00D41485  pop         esi  
+00D41486  pop         ebx  
+00D41487  mov         esp,ebp  
+00D41489  pop         ebp  
+00D4148A  ret 			 ;调用返回
+省略------------
+	int a=3;
+00D413EE  mov         dword ptr [a],3  
+	int b=7;
+00D413F5  mov         dword ptr [b],7  
+	int c=test(a,b);
+00D413FC  mov         eax,dword ptr [b]  
+00D413FF  push        eax  
+00D41400  mov         ecx,dword ptr [a]  
+00D41403  push        ecx  
+00D41404  call        _test (0D4114Ah)  ;_test是函数的符号表，编译原理中讲过。此次调用test函数
+00D41409  add         esp,8  
+00D4140C  mov         dword ptr [c],eax  
+省略------------
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h3 id="★1-5-其他指令"><a href="#★1-5-其他指令" class="header-anchor">#</a> ★1.5.其他指令</h3> <ul><li><p>cld指令（clear Direction Flag）
+无操作数指令。
+将标志寄存器（flags）的DF（Direction Flag，方向标志位）置0
+0表示，movsb或者movsw等指令的传送方向是正向的（从低地址到高地址）</p></li> <li><p>std指令（set Direction Flag）
+无操作数指令。
+将标志寄存器（flags）的DF（Direction Flag，方向标志位）置0
+1表示，movsb或者movsw等指令的传送方向是反向的（从高地址到低地址）</p></li> <li><p>movsb（move string byte)
+无操作数指令。
+把数据从一个地方批量传送（复制）到另一个地方，是以byte为单位</p></li> <li><p>movsw（move string word)
+无操作数指令。
+把数据从一个地方批量传送（复制）到另一个地方，是以word（字）为单位</p></li> <li><p>movsb和movsw要是只写他，而不加rep，则它们只能执行一次
+如果想要处理器自动的反复执行，那么要加上指令前缀rep(repeat)
+意思是cx（count Register）不为0则反复执行，</p></li></ul> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>rep mobsw
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_2-nasm编译指令-伪指令"><a href="#_2-nasm编译指令-伪指令" class="header-anchor">#</a> 2.NASM编译指令（<font style="background:yellow;">伪指令</font>）</h2> <p>也就是我们所说的<font style="background:yellow;">伪指令</font>，不是CPU的指令</p> <p>1）db/dw声明一些数据
+用伪指令db声明的数据都只有一个字节的长度
+用伪指令db声明的数据都只有一个字的长度</p> <div class="language-.asm line-numbers-mode"><pre class="language-text"><code>db -1	;初始化为0xFF
+dw -1	;初始化为0xFFFF
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>2）times 是一个比较实用伪指令，用来重复定义数据或指令。</p> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>times 510-($-$$) db 0
+dw 0xaa55	
+;这段代码经常出现在 boot 磁盘 MBR 引导代码中
+;目的是除了最后 2 个字节和 code 代码外的区域全部写 0 值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>times 还可以使用在重复写某一条指令</p> <div class="language-asm line-numbers-mode"><pre class="language-text"><code>times 10 nop
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-txt line-numbers-mode"><pre class="language-txt"><code>这段代码结果是重复填入了 10 条 nop 指令：
+
+00000000  90                nop
+00000001  90                nop
+00000002  90                nop
+00000003  90                nop
+00000004  90                nop
+00000005  90                nop
+00000006  90                nop
+00000007  90                nop
+00000008  90                nop
+00000009  90                nop
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_3-cpu寄存器分类"><a href="#_3-cpu寄存器分类" class="header-anchor">#</a> 3.CPU寄存器分类</h2> <ul><li>CPU中寄存器大致分为两类</li></ul> <h3 id="_3-1-用户可见"><a href="#_3-1-用户可见" class="header-anchor">#</a> 3.1.用户可见</h3> <p><strong>可以</strong>对这类寄存器编程<br>
+eg.</p> <ul><li><strong>通用</strong>寄存器组</li> <li>程序状态字寄存器</li></ul> <h3 id="_3-2-用户不可见"><a href="#_3-2-用户不可见" class="header-anchor">#</a> 3.2.用户不可见</h3> <p><strong>不可以</strong>对这类寄存器编程<br>
+eg.</p> <ul><li>存储器<strong>地址</strong>寄存器（MAR）</li> <li>存储器<strong>数据</strong>寄存器（MDR）</li> <li><strong>指令</strong>寄存器（IR）</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fd1fb539.js" defer></script><script src="/assets/js/2.5ad7620d.js" defer></script><script src="/assets/js/174.54229273.js" defer></script>
+  </body>
+</html>

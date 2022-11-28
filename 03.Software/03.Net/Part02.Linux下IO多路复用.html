@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux下多路IO复用 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.fd1fb539.js" as="script"><link rel="preload" href="/assets/js/2.5ad7620d.js" as="script"><link rel="preload" href="/assets/js/109.1254f1a5.js" as="script"><link rel="prefetch" href="/assets/js/10.b55d32f8.js"><link rel="prefetch" href="/assets/js/100.5e1c16e9.js"><link rel="prefetch" href="/assets/js/101.94fbd4b4.js"><link rel="prefetch" href="/assets/js/102.5b7c2a8d.js"><link rel="prefetch" href="/assets/js/103.b756016c.js"><link rel="prefetch" href="/assets/js/104.7ecad0f5.js"><link rel="prefetch" href="/assets/js/105.0429efb1.js"><link rel="prefetch" href="/assets/js/106.d930b8e7.js"><link rel="prefetch" href="/assets/js/107.d0112438.js"><link rel="prefetch" href="/assets/js/108.21911afb.js"><link rel="prefetch" href="/assets/js/11.e298a6d3.js"><link rel="prefetch" href="/assets/js/110.7538b4d5.js"><link rel="prefetch" href="/assets/js/111.9536d07e.js"><link rel="prefetch" href="/assets/js/112.f8dcca49.js"><link rel="prefetch" href="/assets/js/113.38182060.js"><link rel="prefetch" href="/assets/js/114.b7b9b61e.js"><link rel="prefetch" href="/assets/js/115.dd087991.js"><link rel="prefetch" href="/assets/js/116.534f58f7.js"><link rel="prefetch" href="/assets/js/117.b313bd23.js"><link rel="prefetch" href="/assets/js/118.91f4c6ce.js"><link rel="prefetch" href="/assets/js/119.d629473b.js"><link rel="prefetch" href="/assets/js/12.5d8962c1.js"><link rel="prefetch" href="/assets/js/120.47a10887.js"><link rel="prefetch" href="/assets/js/121.9776dbf4.js"><link rel="prefetch" href="/assets/js/122.9c1b0cd2.js"><link rel="prefetch" href="/assets/js/123.80fe8a5a.js"><link rel="prefetch" href="/assets/js/124.baa3035c.js"><link rel="prefetch" href="/assets/js/125.439498f6.js"><link rel="prefetch" href="/assets/js/126.6e289c97.js"><link rel="prefetch" href="/assets/js/127.85239bd5.js"><link rel="prefetch" href="/assets/js/128.255fdf73.js"><link rel="prefetch" href="/assets/js/129.ff4c4eaf.js"><link rel="prefetch" href="/assets/js/13.23ca29ec.js"><link rel="prefetch" href="/assets/js/130.ef70dbf3.js"><link rel="prefetch" href="/assets/js/131.2007981d.js"><link rel="prefetch" href="/assets/js/132.4e78bb00.js"><link rel="prefetch" href="/assets/js/133.5a0308a4.js"><link rel="prefetch" href="/assets/js/134.f1d906d1.js"><link rel="prefetch" href="/assets/js/135.5d8ca04a.js"><link rel="prefetch" href="/assets/js/136.2b20503a.js"><link rel="prefetch" href="/assets/js/137.56b9e7c1.js"><link rel="prefetch" href="/assets/js/138.cabc9eec.js"><link rel="prefetch" href="/assets/js/139.ee7593a7.js"><link rel="prefetch" href="/assets/js/14.48ff3cea.js"><link rel="prefetch" href="/assets/js/140.5e825d91.js"><link rel="prefetch" href="/assets/js/141.2e2eeb82.js"><link rel="prefetch" href="/assets/js/142.2d5f1939.js"><link rel="prefetch" href="/assets/js/143.a8de3cf0.js"><link rel="prefetch" href="/assets/js/144.437eccc7.js"><link rel="prefetch" href="/assets/js/145.17f5bb4d.js"><link rel="prefetch" href="/assets/js/146.70f4a659.js"><link rel="prefetch" href="/assets/js/147.f2b33bab.js"><link rel="prefetch" href="/assets/js/148.3ebfa61f.js"><link rel="prefetch" href="/assets/js/149.9cbdcb4e.js"><link rel="prefetch" href="/assets/js/15.6b3d3da1.js"><link rel="prefetch" href="/assets/js/150.2c2ce642.js"><link rel="prefetch" href="/assets/js/151.4f5b8e52.js"><link rel="prefetch" href="/assets/js/152.ca02f3f5.js"><link rel="prefetch" href="/assets/js/153.2688704f.js"><link rel="prefetch" href="/assets/js/154.151a2671.js"><link rel="prefetch" href="/assets/js/155.2c0fcdb8.js"><link rel="prefetch" href="/assets/js/156.f0d11f73.js"><link rel="prefetch" href="/assets/js/157.81001222.js"><link rel="prefetch" href="/assets/js/158.b6e285a8.js"><link rel="prefetch" href="/assets/js/159.b43ced42.js"><link rel="prefetch" href="/assets/js/16.b0a981b0.js"><link rel="prefetch" href="/assets/js/160.1a92b8b0.js"><link rel="prefetch" href="/assets/js/161.4aa01d42.js"><link rel="prefetch" href="/assets/js/162.7f15478d.js"><link rel="prefetch" href="/assets/js/163.011b6115.js"><link rel="prefetch" href="/assets/js/164.e9742e05.js"><link rel="prefetch" href="/assets/js/165.f4d58c06.js"><link rel="prefetch" href="/assets/js/166.ffdac434.js"><link rel="prefetch" href="/assets/js/167.f10c41be.js"><link rel="prefetch" href="/assets/js/168.618d1d4f.js"><link rel="prefetch" href="/assets/js/169.83163821.js"><link rel="prefetch" href="/assets/js/17.7c2e0f08.js"><link rel="prefetch" href="/assets/js/170.9b42a562.js"><link rel="prefetch" href="/assets/js/171.b2fb9489.js"><link rel="prefetch" href="/assets/js/172.b11de1ad.js"><link rel="prefetch" href="/assets/js/173.7e23a516.js"><link rel="prefetch" href="/assets/js/174.54229273.js"><link rel="prefetch" href="/assets/js/175.6aab23f4.js"><link rel="prefetch" href="/assets/js/176.c2d0d64e.js"><link rel="prefetch" href="/assets/js/177.d24bee39.js"><link rel="prefetch" href="/assets/js/178.0faca192.js"><link rel="prefetch" href="/assets/js/179.46e5bcae.js"><link rel="prefetch" href="/assets/js/18.3c13845c.js"><link rel="prefetch" href="/assets/js/180.68f7dbd9.js"><link rel="prefetch" href="/assets/js/181.4af7253e.js"><link rel="prefetch" href="/assets/js/182.35074f00.js"><link rel="prefetch" href="/assets/js/183.b4059915.js"><link rel="prefetch" href="/assets/js/184.b7817454.js"><link rel="prefetch" href="/assets/js/185.9f26d257.js"><link rel="prefetch" href="/assets/js/186.ccb95b45.js"><link rel="prefetch" href="/assets/js/187.a6acf86b.js"><link rel="prefetch" href="/assets/js/188.0ff47d88.js"><link rel="prefetch" href="/assets/js/189.c0d86292.js"><link rel="prefetch" href="/assets/js/19.73f328e4.js"><link rel="prefetch" href="/assets/js/190.07dd278c.js"><link rel="prefetch" href="/assets/js/191.eb715d05.js"><link rel="prefetch" href="/assets/js/192.03442d13.js"><link rel="prefetch" href="/assets/js/193.b0c6e8f3.js"><link rel="prefetch" href="/assets/js/194.3feab071.js"><link rel="prefetch" href="/assets/js/195.c31dbcd5.js"><link rel="prefetch" href="/assets/js/196.8d2ace3b.js"><link rel="prefetch" href="/assets/js/197.7b2c21b8.js"><link rel="prefetch" href="/assets/js/198.82708033.js"><link rel="prefetch" href="/assets/js/199.00df7162.js"><link rel="prefetch" href="/assets/js/20.592ca66d.js"><link rel="prefetch" href="/assets/js/200.55549bc1.js"><link rel="prefetch" href="/assets/js/201.caafeb67.js"><link rel="prefetch" href="/assets/js/202.edad47eb.js"><link rel="prefetch" href="/assets/js/21.5766fde7.js"><link rel="prefetch" href="/assets/js/22.eb80981c.js"><link rel="prefetch" href="/assets/js/23.98ec6f03.js"><link rel="prefetch" href="/assets/js/24.b45a16b4.js"><link rel="prefetch" href="/assets/js/25.6c4539e7.js"><link rel="prefetch" href="/assets/js/26.a5260c99.js"><link rel="prefetch" href="/assets/js/27.ff362ad5.js"><link rel="prefetch" href="/assets/js/28.909fc6bc.js"><link rel="prefetch" href="/assets/js/29.e28949e2.js"><link rel="prefetch" href="/assets/js/3.40f43a0e.js"><link rel="prefetch" href="/assets/js/30.b272860a.js"><link rel="prefetch" href="/assets/js/31.4fe50db5.js"><link rel="prefetch" href="/assets/js/32.d6d7f2b0.js"><link rel="prefetch" href="/assets/js/33.7b7c9fa9.js"><link rel="prefetch" href="/assets/js/34.b2673d22.js"><link rel="prefetch" href="/assets/js/35.b542785a.js"><link rel="prefetch" href="/assets/js/36.3470ed7b.js"><link rel="prefetch" href="/assets/js/37.5d9735a8.js"><link rel="prefetch" href="/assets/js/38.36af579c.js"><link rel="prefetch" href="/assets/js/39.d7d91cd4.js"><link rel="prefetch" href="/assets/js/4.2352fd97.js"><link rel="prefetch" href="/assets/js/40.5c34f488.js"><link rel="prefetch" href="/assets/js/41.cf12e03b.js"><link rel="prefetch" href="/assets/js/42.089dc828.js"><link rel="prefetch" href="/assets/js/43.61c551db.js"><link rel="prefetch" href="/assets/js/44.dcbcd095.js"><link rel="prefetch" href="/assets/js/45.4e020a1f.js"><link rel="prefetch" href="/assets/js/46.2b94f921.js"><link rel="prefetch" href="/assets/js/47.05a88c9f.js"><link rel="prefetch" href="/assets/js/48.59cc6f32.js"><link rel="prefetch" href="/assets/js/49.2d096088.js"><link rel="prefetch" href="/assets/js/5.89f38884.js"><link rel="prefetch" href="/assets/js/50.7e159a32.js"><link rel="prefetch" href="/assets/js/51.2d179745.js"><link rel="prefetch" href="/assets/js/52.60c453f1.js"><link rel="prefetch" href="/assets/js/53.6102e9a8.js"><link rel="prefetch" href="/assets/js/54.d15a440b.js"><link rel="prefetch" href="/assets/js/55.f1d1aef1.js"><link rel="prefetch" href="/assets/js/56.da17951a.js"><link rel="prefetch" href="/assets/js/57.0d548402.js"><link rel="prefetch" href="/assets/js/58.eafae80e.js"><link rel="prefetch" href="/assets/js/59.da92e392.js"><link rel="prefetch" href="/assets/js/6.556ca4b1.js"><link rel="prefetch" href="/assets/js/60.b6924737.js"><link rel="prefetch" href="/assets/js/61.721fcf0c.js"><link rel="prefetch" href="/assets/js/62.c9bd7b61.js"><link rel="prefetch" href="/assets/js/63.1ffe1584.js"><link rel="prefetch" href="/assets/js/64.f263a77f.js"><link rel="prefetch" href="/assets/js/65.83c36a2a.js"><link rel="prefetch" href="/assets/js/66.528d1512.js"><link rel="prefetch" href="/assets/js/67.6f82d8b5.js"><link rel="prefetch" href="/assets/js/68.bacd8722.js"><link rel="prefetch" href="/assets/js/69.911548ac.js"><link rel="prefetch" href="/assets/js/7.8b41355d.js"><link rel="prefetch" href="/assets/js/70.3a429772.js"><link rel="prefetch" href="/assets/js/71.e4554dc6.js"><link rel="prefetch" href="/assets/js/72.214adbe7.js"><link rel="prefetch" href="/assets/js/73.3f8056af.js"><link rel="prefetch" href="/assets/js/74.76890b0d.js"><link rel="prefetch" href="/assets/js/75.8af39a02.js"><link rel="prefetch" href="/assets/js/76.156a7561.js"><link rel="prefetch" href="/assets/js/77.359f0a41.js"><link rel="prefetch" href="/assets/js/78.dd365089.js"><link rel="prefetch" href="/assets/js/79.e7496c22.js"><link rel="prefetch" href="/assets/js/8.87e943be.js"><link rel="prefetch" href="/assets/js/80.86dcd177.js"><link rel="prefetch" href="/assets/js/81.1bdc3060.js"><link rel="prefetch" href="/assets/js/82.0c2b329d.js"><link rel="prefetch" href="/assets/js/83.b33b4815.js"><link rel="prefetch" href="/assets/js/84.bc7e22e6.js"><link rel="prefetch" href="/assets/js/85.82aeb653.js"><link rel="prefetch" href="/assets/js/86.b2d34cde.js"><link rel="prefetch" href="/assets/js/87.491c160e.js"><link rel="prefetch" href="/assets/js/88.f61c1354.js"><link rel="prefetch" href="/assets/js/89.398f1f38.js"><link rel="prefetch" href="/assets/js/9.35b8536e.js"><link rel="prefetch" href="/assets/js/90.06df0a1e.js"><link rel="prefetch" href="/assets/js/91.7d7bc5bc.js"><link rel="prefetch" href="/assets/js/92.c6bbf647.js"><link rel="prefetch" href="/assets/js/93.db29cbe5.js"><link rel="prefetch" href="/assets/js/94.14c74134.js"><link rel="prefetch" href="/assets/js/95.d5cf63f4.js"><link rel="prefetch" href="/assets/js/96.8afccf09.js"><link rel="prefetch" href="/assets/js/97.3fc872af.js"><link rel="prefetch" href="/assets/js/98.37695507.js"><link rel="prefetch" href="/assets/js/99.b72a0294.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link router-link-active">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.SE/" class="nav-link">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.Database/" class="nav-link">
+  🎨数据库
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link router-link-active">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.SE/" class="nav-link">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.Database/" class="nav-link">
+  🎨数据库
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Linux下多路IO复用</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_1-术语列表" class="sidebar-link">1.术语列表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_1-1-阻塞-block" class="sidebar-link">1.1.阻塞（Block）</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_1-2-轮询-poll" class="sidebar-link">1.2.轮询（poll）</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_1-3-数据到达和数据拷贝" class="sidebar-link">1.3.数据到达和数据拷贝</a></li></ul></li><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#⭐️笔记" class="sidebar-link">⭐️笔记</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_1-i-o多路复用-i-o多路转接" class="sidebar-link">1. I/O多路复用（I/O多路转接）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_2-select" class="sidebar-link">2. select</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_3-poll" class="sidebar-link">3. poll</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_4-epoll" class="sidebar-link">4. epoll</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_2-为什么需要多路转接" class="sidebar-link">2.为什么需要多路转接？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_2-1-多线程和多进程服务器特点" class="sidebar-link">2.1.多线程和多进程服务器特点</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_2-2-学习select-poll-epoll的原因" class="sidebar-link">2.2.学习select/poll/epoll的原因</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_3-select详解" class="sidebar-link">3.select详解</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_4-poll详解" class="sidebar-link">4.poll详解</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_5-epoll『linux专用』" class="sidebar-link">5.epoll『Linux专用』</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_1-et-edge-triggered-边沿触发" class="sidebar-link">（1）ET（Edge Triggered，边沿触发）</a></li><li class="sidebar-sub-header"><a href="/03.Software/03.Net/Part02.Linux%E4%B8%8BIO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.html#_2-lt-level-triggered-电平触发-水平触发" class="sidebar-link">（2）LT（Level Triggered，电平触发/水平触发）</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux下多路io复用"><a href="#linux下多路io复用" class="header-anchor">#</a> Linux下多路IO复用</h1> <div class="custom-block tip"><p class="custom-block-title">面试官建议关注</p> <p>高并发、TCP的多收和多发</p></div> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>&lt;font style=&quot;background:yellow&quot;&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_1-术语列表"><a href="#_1-术语列表" class="header-anchor">#</a> 1.术语列表</h2> <h3 id="_1-1-阻塞-block"><a href="#_1-1-阻塞-block" class="header-anchor">#</a> 1.1.阻塞（Block）</h3> <ul><li>阻塞后可以进行进程调度，CPU利用率高</li></ul> <blockquote><p>参考<a href="https://www.huaweicloud.com/articles/9b5ea27aea2e9d141cfa4dc18748a6ab.html" target="_blank" rel="noopener noreferrer">华为云<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <ul><li>阻塞和非阻塞关注的是<font style="background:yellow;">程序在等待调用结果（消息，返回值）时的状态</font> <ul><li>阻塞调用是指调用结果返回之前，<strong>当前线程</strong>会被<strong>挂起</strong>。调用线程只有在得到结果之后才会返回</li> <li>非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程</li> <li>还是上面的例子，你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果</li> <li>如果是非阻塞式调用，你不管老板有没有告诉你，你自己<strong>先一边去玩了</strong>， 当然<strong>你也要偶尔过几分钟check一下老板有没有返回结果</strong></li> <li>在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关</li></ul></li></ul> <h3 id="_1-2-轮询-poll"><a href="#_1-2-轮询-poll" class="header-anchor">#</a> 1.2.轮询（poll）</h3> <ul><li>马上返回，过一会后，再重新问，可以吗</li></ul> <h3 id="_1-3-数据到达和数据拷贝"><a href="#_1-3-数据到达和数据拷贝" class="header-anchor">#</a> 1.3.数据到达和数据拷贝</h3> <ul><li>数据到达，是借助网络，数据读入到本地的『内核』—因为4层模型中，除了『应用层』其他都是kernel态的</li> <li>内核到（用户）user区数据拷贝：注意这个</li></ul> <p>上面，2个阶段是理解5种IO模型的关键！『参考自Cyc2018』</p> <p><img src="https://cdn.jsdelivr.net/gh/HACV/picture/img/image-20210713165516640.png" alt="image-20210713165516640"></p> <blockquote><p>Linux多线程服务器编程，PDF，网上搜集『IO多路复用』</p></blockquote> <h2 id="⭐️笔记"><a href="#⭐️笔记" class="header-anchor">#</a> ⭐️笔记</h2> <h2 id="_1-i-o多路复用-i-o多路转接"><a href="#_1-i-o多路复用-i-o多路转接" class="header-anchor">#</a> 1. I/O多路复用（I/O多路转接）</h2> <ul><li>I/O 多路复用使得程序能『同时监听』多个<code>文件描述符</code>，能够提高程序的性能</li> <li>Linux 下实现 I/O 多路复用的『系统调用』主要有 select、poll 和 epoll</li></ul> <h2 id="_2-select"><a href="#_2-select" class="header-anchor">#</a> 2. select</h2> <blockquote><p>主旨思想：</p> <p>1.首先要构造一个关于文件描述符的列表，将要监听的文件描述符添加到该列表中。
+2.调用一个系统函数，监听该列表中的文件描述符，直到这些描述符中的一个或者多个进行I/O 操作时，该函数才返回。</p> <ul><li><p>a.这个函数是阻塞</p></li> <li><p>b.函数对文件描述符的检测的操作是由内核完成的</p></li></ul> <p>3.在返回时，它会告诉进程有多少（哪些）描述符要进行I/O操作</p></blockquote> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">// sizeof(fd_set) = 128 	1024</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/time.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/select.h&gt;</span></span>
+
+
+<span class="token keyword">int</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token keyword">int</span> nfds <span class="token punctuation">,</span> fd_set <span class="token operator">*</span>readfds<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>writefds<span class="token punctuation">,</span> 
+           fd_set <span class="token operator">*</span>exceptfds<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">timeval</span> <span class="token operator">*</span>timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token operator">-</span> 参数：
+		<span class="token operator">-</span> nfds <span class="token operator">:</span> 委托内核检测的最大文件描述符的值 <span class="token operator">+</span> <span class="token number">1</span>
+		<span class="token operator">-</span> readfds <span class="token operator">:</span> 要检测的文件描述符的读的集合，委托内核检测哪些文件描述符的读的属性
+		<span class="token operator">-</span> 一般检测读操作
+		<span class="token operator">-</span> 对应的是对方发送过来的数据，因为读是被动的接收数据，检测的就是读缓冲区
+		<span class="token operator">-</span> 是一个传入传出参数
+	<span class="token operator">-</span> writefds <span class="token operator">:</span> 要检测的文件描述符的写的集合，委托内核检测哪些文件描述符的写的属性
+		<span class="token operator">-</span> 委托内核检测写缓冲区是不是还可以写数据（不满的就可以写）
+	<span class="token operator">-</span> exceptfds <span class="token operator">:</span> 检测发生异常的文件描述符的集合
+	<span class="token operator">-</span> timeout <span class="token operator">:</span> 设置的超时时间
+        
+        <span class="token keyword">struct</span> <span class="token class-name">timeval</span> <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> tv_sec<span class="token punctuation">;</span> 		<span class="token comment">/* seconds */</span>
+        <span class="token keyword">long</span> tv_usec<span class="token punctuation">;</span> 		<span class="token comment">/* microseconds */</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token operator">-</span> <span class="token constant">NULL</span> <span class="token operator">:</span> 永久阻塞，直到检测到了文件描述符有变化
+        <span class="token operator">-</span> tv_sec <span class="token operator">=</span> <span class="token number">0</span> tv_usec <span class="token operator">=</span> <span class="token number">0</span>， 不阻塞
+        <span class="token operator">-</span> tv_sec <span class="token operator">&gt;</span> <span class="token number">0</span> tv_usec <span class="token operator">&gt;</span> <span class="token number">0</span>， 阻塞对应的时间
+            
+    <span class="token operator">-</span> 返回值 <span class="token operator">:</span>
+        <span class="token operator">-</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> 失败
+        <span class="token operator">-</span> <span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">:</span> 检测的集合中有n个文件描述符发生了变化
+    
+    
+<span class="token comment">// 将参数文件描述符fd对应的标志位设置为0</span>
+<span class="token keyword">void</span> <span class="token function">FD_CLR</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 判断fd对应的标志位是0还是1， 返回值 ： fd对应的标志位的值，0，返回0， 1，返回1</span>
+<span class="token keyword">int</span> <span class="token function">FD_ISSET</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 将参数文件描述符fd 对应的标志位，设置为1</span>
+<span class="token keyword">void</span> <span class="token function">FD_SET</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// fd_set一共有1024 bit, 全部初始化为0</span>
+<span class="token keyword">void</span> <span class="token function">FD_ZERO</span><span class="token punctuation">(</span>fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><h2 id="_3-poll"><a href="#_3-poll" class="header-anchor">#</a> 3. poll</h2> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;poll.h&gt;</span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">pollfd</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> fd<span class="token punctuation">;</span> 		<span class="token comment">/* 委托内核检测的文件描述符 */</span>
+    <span class="token keyword">short</span> events<span class="token punctuation">;</span> 	<span class="token comment">/* 委托内核检测文件描述符的什么事件 */</span>
+    <span class="token keyword">short</span> revents<span class="token punctuation">;</span> 	<span class="token comment">/* 文件描述符实际发生的事件 */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">pollfd</span> myfd<span class="token punctuation">;</span>
+myfd<span class="token punctuation">.</span>fd <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+myfd<span class="token punctuation">.</span>events <span class="token operator">=</span> POLLIN <span class="token operator">|</span> POLLOUT<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">poll</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">pollfd</span> <span class="token operator">*</span>fds<span class="token punctuation">,</span> nfds_t nfds<span class="token punctuation">,</span> <span class="token keyword">int</span> timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">-</span> 参数：
+    <span class="token operator">-</span> fds <span class="token operator">:</span> 是一个<span class="token keyword">struct</span> <span class="token class-name">pollfd</span> 结构体数组，这是一个需要检测的文件描述符的集合
+    <span class="token operator">-</span> nfds <span class="token operator">:</span> 这个是第一个参数数组中最后一个有效元素的下标 <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token operator">-</span> timeout <span class="token operator">:</span> 阻塞时长
+        <span class="token number">0</span> <span class="token operator">:</span> 不阻塞
+        <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> 阻塞，当检测到需要检测的文件描述符有变化，解除阻塞
+        <span class="token operator">&gt;</span><span class="token number">0</span> <span class="token operator">:</span> 阻塞的时长
+            
+<span class="token operator">-</span> 返回值：
+    <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> 失败
+    <span class="token operator">&gt;</span><span class="token number">0</span>（n） <span class="token operator">:</span> 成功<span class="token punctuation">,</span>n表示检测到集合中有n个文件描述符发生变化
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/HACV/picture/img/image-20210713164017770.png" alt="image-20210713164017770"></p> <h2 id="_4-epoll"><a href="#_4-epoll" class="header-anchor">#</a> 4. epoll</h2> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/epoll.h&gt;</span></span>
+
+<span class="token comment">// 创建一个新的epoll实例。在内核中创建了一个数据，这个数据中有两个比较重要的数据，一个是需要检</span>
+测的文件描述符的信息（红黑树），还有一个是就绪列表，存放检测到数据发送改变的文件描述符信息（双向
+链表）。
+    
+<span class="token keyword">int</span> <span class="token function">epoll_create</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">-</span> 参数：
+    	size <span class="token operator">:</span> 目前没有意义了。随便写一个数，必须大于<span class="token number">0</span>
+    <span class="token operator">-</span> 返回值：
+        <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> 失败
+        <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">:</span> 文件描述符，操作epoll实例的
+
+<span class="token keyword">typedef</span> <span class="token keyword">union</span> epoll_data <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token operator">*</span>ptr<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> fd<span class="token punctuation">;</span>
+    <span class="token keyword">uint32_t</span> u32<span class="token punctuation">;</span>
+    <span class="token keyword">uint64_t</span> u64<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> epoll_data_t<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token punctuation">{</span>
+    <span class="token keyword">uint32_t</span> events<span class="token punctuation">;</span> 	<span class="token comment">/* Epoll events */</span>
+    epoll_data_t data<span class="token punctuation">;</span> 	<span class="token comment">/* User data variable */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+常见的Epoll检测事件：
+    <span class="token operator">-</span> EPOLLIN
+    <span class="token operator">-</span> EPOLLOUT
+    <span class="token operator">-</span> EPOLLERR
+    
+    
+<span class="token comment">// 对epoll实例进行管理：添加文件描述符信息，删除信息，修改信息</span>
+<span class="token keyword">int</span> <span class="token function">epoll_ctl</span><span class="token punctuation">(</span><span class="token keyword">int</span> epfd<span class="token punctuation">,</span> <span class="token keyword">int</span> op<span class="token punctuation">,</span> <span class="token keyword">int</span> fd<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token operator">*</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">-</span> 参数：
+        <span class="token operator">-</span> epfd <span class="token operator">:</span> epoll实例对应的文件描述符
+        <span class="token operator">-</span> op <span class="token operator">:</span> 要进行什么操作
+            EPOLL_CTL_ADD<span class="token operator">:</span> 添加
+            EPOLL_CTL_MOD<span class="token operator">:</span> 修改
+            EPOLL_CTL_DEL<span class="token operator">:</span> 删除
+    <span class="token operator">-</span> fd <span class="token operator">:</span> 要检测的文件描述符
+    <span class="token operator">-</span> event <span class="token operator">:</span> 检测文件描述符什么事情
+        
+<span class="token comment">// 检测函数</span>
+<span class="token keyword">int</span> <span class="token function">epoll_wait</span><span class="token punctuation">(</span><span class="token keyword">int</span> epfd<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token operator">*</span>events<span class="token punctuation">,</span> <span class="token keyword">int</span> maxevents<span class="token punctuation">,</span> <span class="token keyword">int</span>
+timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">-</span> 参数：
+    <span class="token operator">-</span> epfd <span class="token operator">:</span> epoll实例对应的文件描述符
+    <span class="token operator">-</span> events <span class="token operator">:</span> 传出参数，保存了发送了变化的文件描述符的信息
+    <span class="token operator">-</span> maxevents <span class="token operator">:</span> 第二个参数结构体数组的大小
+    <span class="token operator">-</span> timeout <span class="token operator">:</span> 阻塞时间
+        <span class="token operator">-</span> <span class="token number">0</span> <span class="token operator">:</span> 不阻塞
+        <span class="token operator">-</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> 阻塞，直到检测到fd数据发生变化，解除阻塞
+        <span class="token operator">-</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">:</span> 阻塞的时长（毫秒）
+        
+    <span class="token operator">-</span> 返回值：
+        <span class="token operator">-</span> 成功，返回发送变化的文件描述符的个数 <span class="token operator">&gt;</span> <span class="token number">0</span>
+        <span class="token operator">-</span> 失败 <span class="token operator">-</span><span class="token number">1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><p>Epoll 的工作模式：</p> <ul><li><p>LT 模式 （水平触发）
+假设委托内核检测读事件→检测fd的读缓冲区
+读缓冲区有数据→epoll检测到了会给用户通知
+a.用户不读数据，数据一直在缓冲区，epoll 会一直通知
+b.用户只读了一部分数据，epoll会通知
+c.缓冲区的数据读完了，不通知</p> <blockquote><p>LT（level - triggered）是缺省的工作方式，并且同时支持 block 和 no-block socket。在这
+种做法中，内核告诉你一个文件描述符是否就绪了，然后你可以对这个就绪的 fd 进行 IO 操
+作。如果你不作任何操作，内核还是会继续通知你的。</p></blockquote></li> <li><p>ET 模式（边沿触发）</p> <p>假设委托内核检测读事件→检测fd的读缓冲区</p> <p>读缓冲区有数据→epoll检测到了会给用户通知</p> <p>​	a.用户不读数据，数据一致在缓冲区中，epoll下次检测的时候就不通知了</p> <p>​	b.用户只读了一部分数据，epoll不通知</p> <p>​	c.缓冲区的数据读完了，不通知</p> <blockquote><p>ET（edge - triggered）是高速工作方式，只支持 no-block socket。在这种模式下，当描述符从未就绪变为就绪时，内核通过epoll告诉你。然后它会假设你知道文件描述符已经就绪，并且不会再为那个文件描述符发送更多的就绪通知，直到你做了某些操作导致那个文件描述符不再为就绪状态了。但是请注意，如果一直不对这个 fd 作 IO 操作（从而导致它再次变成 未就绪），内核不会发送更多的通知（only once）。</p> <p>ET 模式在很大程度上减少了 epoll 事件被重复触发的次数，因此效率要比 LT 模式高。epoll 工作在 ET 模式的时候，必须使用非阻塞套接口，以避免由于一个文件句柄的阻塞读/阻塞写 操作把处理多个文件描述符的任务饿死。</p></blockquote></li></ul> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token punctuation">{</span>
+    <span class="token keyword">uint32_t</span> events<span class="token punctuation">;</span> 	 <span class="token comment">/* Epoll events */</span>
+    epoll_data_t data<span class="token punctuation">;</span>	 <span class="token comment">/* User data variable */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+常见的Epoll检测事件：
+    <span class="token operator">-</span> EPOLLIN
+    <span class="token operator">-</span> EPOLLOUT
+    <span class="token operator">-</span> EPOLLERR
+    <span class="token operator">-</span> EPOLLET
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_2-为什么需要多路转接"><a href="#_2-为什么需要多路转接" class="header-anchor">#</a> 2.为什么需要多路转接？</h2> <p>涉及高性能服务器开发方面<br>
+epoll是非常常用的系统调用，在很多的开源项目当中epoll都是核心技术，例如Nginx和Redis等等</p> <p>目前epoll是linux大规模并发网络程序中的<strong>热门首选模型</strong>。</p> <h3 id="_2-1-多线程和多进程服务器特点"><a href="#_2-1-多线程和多进程服务器特点" class="header-anchor">#</a> 2.1.多线程和多进程服务器特点</h3> <ul><li>多线程和多进程效率低的原因：所有监听都是<code>serve.c</code>这个程序自己来做。</li></ul> <p>有一种好的方法：多路IO转接服务器也叫做<strong>多任务（event）IO服务器</strong>。</p> <ul><li>该类服务器实现的主旨思想是，不再由『<strong>应用程序</strong>』自己监视客户端连接，取而代之由<strong>内核</strong>替应用程序监视文件。</li> <li>重点在“转接”
+<ul><li>多路指的，多个访问请求的客户端。</li> <li>转接：言外之意，中间有个人帮我进行转换，转换客户端的请求，转接给我，然后我再进行操作。</li></ul></li></ul> <h3 id="_2-2-学习select-poll-epoll的原因"><a href="#_2-2-学习select-poll-epoll的原因" class="header-anchor">#</a> 2.2.学习select/poll/epoll的原因</h3> <p>原因：CPU消耗大，主要用在CPU切换上</p> <p>『<strong>CPU上下文切换</strong>』，是需要操作一些句柄的，代价高。</p> <p>多线程和多进程并发
+不适合，客户端非常庞大的情况。
+原因：开销大，占用资源
+详细点：他主要占用的资源，<strong>CPU消耗得大</strong>。</p> <p>起几百个进程，几百个线程，实际上对于Linux操作系统来说，在内核消耗上或者系统内部的消耗上。
+差别不是特别大。
+当然，我们知道，多线程比多进程好一些</p> <p>上面，如果我们发现，那就是，如果每个客户端都和我进行数据交换。
+那我的<strong>CPU</strong>岂不是就要<strong>频繁的进行切换</strong>。</p> <ul><li>如何把这个降低呢？</li> <li>才有多路IO转接模型，有三种（难度大一些了，使用起来，也比较不好理解，然后<strong>代码量相对来说，大一些</strong>）</li></ul> <h4 id="_1、建立连接的『时候』的好处"><a href="#_1、建立连接的『时候』的好处" class="header-anchor">#</a> 1、建立连接的『时候』的好处</h4> <ul><li><p>把内核请过来给我当帮手，我只需要根据我的设置请求，通知他，你去帮我监听这几个客户端，是否有请求。当这些客户端有请求的时候，帮助我监听的内核，会给我一个反馈，意思告诉我说，他们要对你发起请求了。）</p></li> <li><p>当我的监听的人，给我反馈的时候，我再去处理，我需不要等待？？
+不需要。比如，我们原先去处理的时候，我要调用accept函数，这个函数会阻塞（或者说等待，等待，客户端给我发链接）</p></li> <li><p>但是，现在阻塞等待这个事情，我让内核去干了。内核什么时候会给我反馈呢？那就是有人给我有连接请求了。</p></li> <li><p>所以说，当他给了我反馈的时候，我还需要等待吗？不需要！可以立即完成连接的建立。</p></li></ul> <h4 id="_2、建立连接之『后』的好处"><a href="#_2、建立连接之『后』的好处" class="header-anchor">#</a> 2、建立连接之『后』的好处</h4> <ul><li>我们连接之后的那条线，我们也可以把它丢给内核，要不然的话，我还得阻塞在这继续监听，是否给我发数据。</li> <li>内核你帮我，反正你监听一个也是听，听一堆也是听。监听到有请求的时候，再给我发一个反馈。当我收到反馈的时候，我应该干啥？</li> <li>表示对方已经写过了数据啥的了，都已经写到这边了，我所要做的事情就是，在这个基础上，直接和对方去通信（read）</li> <li>如上，内核的这种行为有点像：我们先前讲信号的时候。注册那个信号捕捉函数。
+内核给你反馈了，就说明有事件发生了，但是具体是什么事件，还是不知道。
+比如，我向内核注册一下，帮我看着几个人，
+当内核你看到他有行动的时候，你再告诉我。</li> <li>有了内核帮我监听，那么我这个serve.c就解放出来了。
+<ul><li>我就不需要再阻塞了，我设置完监听之后，就可以去做其他的时候了。</li> <li>上面就是多路IO转接的基本思想。</li> <li>我们要讲的3种，思路几乎和这个一致。</li></ul></li></ul> <h3 id="_3-select详解"><a href="#_3-select详解" class="header-anchor">#</a> 3.select详解</h3> <p>特点：</p> <p>1、用『数组』实现，文件描述符受到控制</p> <p>3、超时的时间控制在纳秒级别『ns』</p> <p>具体实施的话，驱使我们先前的那个内核工作的，是谁来**驱使（需要用到函数，比如select）**呢？</p> <p>如何使用起来select</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code>select
+<span class="token number">1.</span>	select能监听的文件描述符个数受限于FD_SETSIZE<span class="token punctuation">,</span>一般为<span class="token number">1024</span>，单纯改变进程打开的文件描述符个数并不能改变select监听文件个数
+<span class="token number">2.</span>	解决<span class="token number">1024</span>以下客户端时使用select是很合适的，但如果链接客户端过多，select采用的是轮询模型，会大大降低服务器响应效率，不应在select上投入更多精力
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/select.h&gt;</span></span>
+<span class="token comment">/* According to earlier standards */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/time.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token keyword">int</span> nfds<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>readfds<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>writefds<span class="token punctuation">,</span>
+			fd_set <span class="token operator">*</span>exceptfds<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">timeval</span> <span class="token operator">*</span>timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	nfds<span class="token operator">:</span> 		监控的文件描述符集里最大文件描述符加<span class="token number">1</span>，因为此参数会告诉内核检测前多少个文件描述符的状态
+	readfds：	监控有读数据到达文件描述符集合，传入传出参数
+	writefds：	监控写数据到达文件描述符集合，传入传出参数
+	exceptfds：	监控异常发生达文件描述符集合<span class="token punctuation">,</span>如带外数据到达异常，传入传出参数
+	timeout：	定时阻塞监控时间，<span class="token number">3</span>种情况
+				<span class="token number">1.</span><span class="token constant">NULL</span>，永远等下去
+				<span class="token number">2.</span>设置timeval，等待固定时间
+				<span class="token number">3.</span>设置timeval里时间均为<span class="token number">0</span>，检查描述字后立即返回，轮询
+	<span class="token keyword">struct</span> <span class="token class-name">timeval</span> <span class="token punctuation">{</span>
+		<span class="token keyword">long</span> tv_sec<span class="token punctuation">;</span> <span class="token comment">/* seconds */</span>
+		<span class="token keyword">long</span> tv_usec<span class="token punctuation">;</span> <span class="token comment">/* microseconds */</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">void</span> <span class="token function">FD_CLR</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//把文件描述符集合里fd清0</span>
+	<span class="token keyword">int</span> <span class="token function">FD_ISSET</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//测试文件描述符集合里fd是否置1</span>
+	<span class="token keyword">void</span> <span class="token function">FD_SET</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//把文件描述符集合里fd位置1</span>
+	<span class="token keyword">void</span> <span class="token function">FD_ZERO</span><span class="token punctuation">(</span>fd_set <span class="token operator">*</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span> 			<span class="token comment">//把文件描述符集合里所有位清0</span>
+<span class="token comment">//上面4个函数重要。有的函数，有点类似信号那部分的啥的？</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>select函数一调，相当于，select函数会驱使内核帮助你完成监听。
+笼统的说，那就是借助select帮我监听、</p> <h3 id="_4-poll详解"><a href="#_4-poll详解" class="header-anchor">#</a> 4.poll详解</h3> <p>特点：</p> <p>1、实际上是在select这种模型上进行的一种升级，或者说，是改版。</p> <p>2、函数原型比select简单</p> <p>3、超时的时间控制在毫秒级别『ms』</p> <h3 id="_5-epoll『linux专用』"><a href="#_5-epoll『linux专用』" class="header-anchor">#</a> 5.epoll『Linux专用』</h3> <blockquote><p>彻底学会<a href="http://blog.chinaunix.net/uid-28541347-id-4273856.html" target="_blank" rel="noopener noreferrer">epoll模式<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <ul><li><p>epoll是Linux下多路复用IO接口select/poll的增强版本，它能显著提高程序在大量并发连接中只有少量活跃的情况下的系统CPU利用率，因为它会复用文件描述符集合来传递结果而不用迫使开发者每次等待事件之前都必须重新准备要被侦听的文件描述符集合，另一点原因就是获取事件的时候，它无须遍历整个被侦听的描述符集，只要遍历那些被内核IO事件异步唤醒而加入Ready队列的描述符集合就行了。<br>
+目前epell是linux大规模并发网络程序中的热门首选模型。</p></li> <li><p>epoll除了提供select/poll那种IO事件的**电平触发（Level Triggered）**外，还提供了边沿触发（Edge Triggered），这就使得用户空间程序有可能缓存IO状态，减少epoll_wait/epoll_pwait的调用，提高应用程序效率。</p></li> <li><p>多路IO转接服务器</p></li></ul> <p>要掌握epoll与前面的select和poll的区别和联系，以及，epoll的缺点。<br>
+epoll的两种模式：epoll ET 和epoll LT</p> <h3 id="_1-et-edge-triggered-边沿触发"><a href="#_1-et-edge-triggered-边沿触发" class="header-anchor">#</a> （1）ET（Edge Triggered，边沿触发）</h3> <p>​		边沿触发。    event = EPOLLIN | EPOLLET</p> <h3 id="_2-lt-level-triggered-电平触发-水平触发"><a href="#_2-lt-level-triggered-电平触发-水平触发" class="header-anchor">#</a> （2）LT（Level Triggered，电平触发/水平触发）</h3> <p>​		水平触发。</p> <div class="language- extra-class"><pre><code>epoll 非阻塞IO
+
+	边沿触发    while(read())   fcntl(O_NONBLOCK);
+
+
+epoll 反应堆模型 (libevent 核心思想实现)
+
+	libevent  -- 跨平台   精炼--epoll  回调   
+
+	1. epoll --- 服务器 --- 监听 --- fd ----可读 ---- epoll返回 ---- read --- 小写转大写 --- write ---- epoll继续监听。
+
+	2. epoll 反应堆模型： (&quot;滑动窗口&quot;)
+
+	1) epoll --- 服务器 --- 监听 --- cfd ---- 可读 ---- epoll返回 ---- read -- cfd从树上摘下 --- 设置监听cfd写事件， 操作 
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fd1fb539.js" defer></script><script src="/assets/js/2.5ad7620d.js" defer></script><script src="/assets/js/109.1254f1a5.js" defer></script>
+  </body>
+</html>

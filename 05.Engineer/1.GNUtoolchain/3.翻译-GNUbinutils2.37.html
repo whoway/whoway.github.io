@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>翻译GNU Binutils Version 2.37 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.fd1fb539.js" as="script"><link rel="preload" href="/assets/js/2.5ad7620d.js" as="script"><link rel="preload" href="/assets/js/130.ef70dbf3.js" as="script"><link rel="prefetch" href="/assets/js/10.b55d32f8.js"><link rel="prefetch" href="/assets/js/100.5e1c16e9.js"><link rel="prefetch" href="/assets/js/101.94fbd4b4.js"><link rel="prefetch" href="/assets/js/102.5b7c2a8d.js"><link rel="prefetch" href="/assets/js/103.b756016c.js"><link rel="prefetch" href="/assets/js/104.7ecad0f5.js"><link rel="prefetch" href="/assets/js/105.0429efb1.js"><link rel="prefetch" href="/assets/js/106.d930b8e7.js"><link rel="prefetch" href="/assets/js/107.d0112438.js"><link rel="prefetch" href="/assets/js/108.21911afb.js"><link rel="prefetch" href="/assets/js/109.1254f1a5.js"><link rel="prefetch" href="/assets/js/11.e298a6d3.js"><link rel="prefetch" href="/assets/js/110.7538b4d5.js"><link rel="prefetch" href="/assets/js/111.9536d07e.js"><link rel="prefetch" href="/assets/js/112.f8dcca49.js"><link rel="prefetch" href="/assets/js/113.38182060.js"><link rel="prefetch" href="/assets/js/114.b7b9b61e.js"><link rel="prefetch" href="/assets/js/115.dd087991.js"><link rel="prefetch" href="/assets/js/116.534f58f7.js"><link rel="prefetch" href="/assets/js/117.b313bd23.js"><link rel="prefetch" href="/assets/js/118.91f4c6ce.js"><link rel="prefetch" href="/assets/js/119.d629473b.js"><link rel="prefetch" href="/assets/js/12.5d8962c1.js"><link rel="prefetch" href="/assets/js/120.47a10887.js"><link rel="prefetch" href="/assets/js/121.9776dbf4.js"><link rel="prefetch" href="/assets/js/122.9c1b0cd2.js"><link rel="prefetch" href="/assets/js/123.80fe8a5a.js"><link rel="prefetch" href="/assets/js/124.baa3035c.js"><link rel="prefetch" href="/assets/js/125.439498f6.js"><link rel="prefetch" href="/assets/js/126.6e289c97.js"><link rel="prefetch" href="/assets/js/127.85239bd5.js"><link rel="prefetch" href="/assets/js/128.255fdf73.js"><link rel="prefetch" href="/assets/js/129.ff4c4eaf.js"><link rel="prefetch" href="/assets/js/13.23ca29ec.js"><link rel="prefetch" href="/assets/js/131.2007981d.js"><link rel="prefetch" href="/assets/js/132.4e78bb00.js"><link rel="prefetch" href="/assets/js/133.5a0308a4.js"><link rel="prefetch" href="/assets/js/134.f1d906d1.js"><link rel="prefetch" href="/assets/js/135.5d8ca04a.js"><link rel="prefetch" href="/assets/js/136.2b20503a.js"><link rel="prefetch" href="/assets/js/137.56b9e7c1.js"><link rel="prefetch" href="/assets/js/138.cabc9eec.js"><link rel="prefetch" href="/assets/js/139.ee7593a7.js"><link rel="prefetch" href="/assets/js/14.48ff3cea.js"><link rel="prefetch" href="/assets/js/140.5e825d91.js"><link rel="prefetch" href="/assets/js/141.2e2eeb82.js"><link rel="prefetch" href="/assets/js/142.2d5f1939.js"><link rel="prefetch" href="/assets/js/143.a8de3cf0.js"><link rel="prefetch" href="/assets/js/144.437eccc7.js"><link rel="prefetch" href="/assets/js/145.17f5bb4d.js"><link rel="prefetch" href="/assets/js/146.70f4a659.js"><link rel="prefetch" href="/assets/js/147.f2b33bab.js"><link rel="prefetch" href="/assets/js/148.3ebfa61f.js"><link rel="prefetch" href="/assets/js/149.9cbdcb4e.js"><link rel="prefetch" href="/assets/js/15.6b3d3da1.js"><link rel="prefetch" href="/assets/js/150.2c2ce642.js"><link rel="prefetch" href="/assets/js/151.4f5b8e52.js"><link rel="prefetch" href="/assets/js/152.ca02f3f5.js"><link rel="prefetch" href="/assets/js/153.2688704f.js"><link rel="prefetch" href="/assets/js/154.151a2671.js"><link rel="prefetch" href="/assets/js/155.2c0fcdb8.js"><link rel="prefetch" href="/assets/js/156.f0d11f73.js"><link rel="prefetch" href="/assets/js/157.81001222.js"><link rel="prefetch" href="/assets/js/158.b6e285a8.js"><link rel="prefetch" href="/assets/js/159.b43ced42.js"><link rel="prefetch" href="/assets/js/16.b0a981b0.js"><link rel="prefetch" href="/assets/js/160.1a92b8b0.js"><link rel="prefetch" href="/assets/js/161.4aa01d42.js"><link rel="prefetch" href="/assets/js/162.7f15478d.js"><link rel="prefetch" href="/assets/js/163.011b6115.js"><link rel="prefetch" href="/assets/js/164.e9742e05.js"><link rel="prefetch" href="/assets/js/165.f4d58c06.js"><link rel="prefetch" href="/assets/js/166.ffdac434.js"><link rel="prefetch" href="/assets/js/167.f10c41be.js"><link rel="prefetch" href="/assets/js/168.618d1d4f.js"><link rel="prefetch" href="/assets/js/169.83163821.js"><link rel="prefetch" href="/assets/js/17.7c2e0f08.js"><link rel="prefetch" href="/assets/js/170.9b42a562.js"><link rel="prefetch" href="/assets/js/171.b2fb9489.js"><link rel="prefetch" href="/assets/js/172.b11de1ad.js"><link rel="prefetch" href="/assets/js/173.7e23a516.js"><link rel="prefetch" href="/assets/js/174.54229273.js"><link rel="prefetch" href="/assets/js/175.6aab23f4.js"><link rel="prefetch" href="/assets/js/176.c2d0d64e.js"><link rel="prefetch" href="/assets/js/177.d24bee39.js"><link rel="prefetch" href="/assets/js/178.0faca192.js"><link rel="prefetch" href="/assets/js/179.46e5bcae.js"><link rel="prefetch" href="/assets/js/18.3c13845c.js"><link rel="prefetch" href="/assets/js/180.68f7dbd9.js"><link rel="prefetch" href="/assets/js/181.4af7253e.js"><link rel="prefetch" href="/assets/js/182.35074f00.js"><link rel="prefetch" href="/assets/js/183.b4059915.js"><link rel="prefetch" href="/assets/js/184.b7817454.js"><link rel="prefetch" href="/assets/js/185.9f26d257.js"><link rel="prefetch" href="/assets/js/186.ccb95b45.js"><link rel="prefetch" href="/assets/js/187.a6acf86b.js"><link rel="prefetch" href="/assets/js/188.0ff47d88.js"><link rel="prefetch" href="/assets/js/189.c0d86292.js"><link rel="prefetch" href="/assets/js/19.73f328e4.js"><link rel="prefetch" href="/assets/js/190.07dd278c.js"><link rel="prefetch" href="/assets/js/191.eb715d05.js"><link rel="prefetch" href="/assets/js/192.03442d13.js"><link rel="prefetch" href="/assets/js/193.b0c6e8f3.js"><link rel="prefetch" href="/assets/js/194.3feab071.js"><link rel="prefetch" href="/assets/js/195.c31dbcd5.js"><link rel="prefetch" href="/assets/js/196.8d2ace3b.js"><link rel="prefetch" href="/assets/js/197.7b2c21b8.js"><link rel="prefetch" href="/assets/js/198.82708033.js"><link rel="prefetch" href="/assets/js/199.00df7162.js"><link rel="prefetch" href="/assets/js/20.592ca66d.js"><link rel="prefetch" href="/assets/js/200.55549bc1.js"><link rel="prefetch" href="/assets/js/201.caafeb67.js"><link rel="prefetch" href="/assets/js/202.edad47eb.js"><link rel="prefetch" href="/assets/js/21.5766fde7.js"><link rel="prefetch" href="/assets/js/22.eb80981c.js"><link rel="prefetch" href="/assets/js/23.98ec6f03.js"><link rel="prefetch" href="/assets/js/24.b45a16b4.js"><link rel="prefetch" href="/assets/js/25.6c4539e7.js"><link rel="prefetch" href="/assets/js/26.a5260c99.js"><link rel="prefetch" href="/assets/js/27.ff362ad5.js"><link rel="prefetch" href="/assets/js/28.909fc6bc.js"><link rel="prefetch" href="/assets/js/29.e28949e2.js"><link rel="prefetch" href="/assets/js/3.40f43a0e.js"><link rel="prefetch" href="/assets/js/30.b272860a.js"><link rel="prefetch" href="/assets/js/31.4fe50db5.js"><link rel="prefetch" href="/assets/js/32.d6d7f2b0.js"><link rel="prefetch" href="/assets/js/33.7b7c9fa9.js"><link rel="prefetch" href="/assets/js/34.b2673d22.js"><link rel="prefetch" href="/assets/js/35.b542785a.js"><link rel="prefetch" href="/assets/js/36.3470ed7b.js"><link rel="prefetch" href="/assets/js/37.5d9735a8.js"><link rel="prefetch" href="/assets/js/38.36af579c.js"><link rel="prefetch" href="/assets/js/39.d7d91cd4.js"><link rel="prefetch" href="/assets/js/4.2352fd97.js"><link rel="prefetch" href="/assets/js/40.5c34f488.js"><link rel="prefetch" href="/assets/js/41.cf12e03b.js"><link rel="prefetch" href="/assets/js/42.089dc828.js"><link rel="prefetch" href="/assets/js/43.61c551db.js"><link rel="prefetch" href="/assets/js/44.dcbcd095.js"><link rel="prefetch" href="/assets/js/45.4e020a1f.js"><link rel="prefetch" href="/assets/js/46.2b94f921.js"><link rel="prefetch" href="/assets/js/47.05a88c9f.js"><link rel="prefetch" href="/assets/js/48.59cc6f32.js"><link rel="prefetch" href="/assets/js/49.2d096088.js"><link rel="prefetch" href="/assets/js/5.89f38884.js"><link rel="prefetch" href="/assets/js/50.7e159a32.js"><link rel="prefetch" href="/assets/js/51.2d179745.js"><link rel="prefetch" href="/assets/js/52.60c453f1.js"><link rel="prefetch" href="/assets/js/53.6102e9a8.js"><link rel="prefetch" href="/assets/js/54.d15a440b.js"><link rel="prefetch" href="/assets/js/55.f1d1aef1.js"><link rel="prefetch" href="/assets/js/56.da17951a.js"><link rel="prefetch" href="/assets/js/57.0d548402.js"><link rel="prefetch" href="/assets/js/58.eafae80e.js"><link rel="prefetch" href="/assets/js/59.da92e392.js"><link rel="prefetch" href="/assets/js/6.556ca4b1.js"><link rel="prefetch" href="/assets/js/60.b6924737.js"><link rel="prefetch" href="/assets/js/61.721fcf0c.js"><link rel="prefetch" href="/assets/js/62.c9bd7b61.js"><link rel="prefetch" href="/assets/js/63.1ffe1584.js"><link rel="prefetch" href="/assets/js/64.f263a77f.js"><link rel="prefetch" href="/assets/js/65.83c36a2a.js"><link rel="prefetch" href="/assets/js/66.528d1512.js"><link rel="prefetch" href="/assets/js/67.6f82d8b5.js"><link rel="prefetch" href="/assets/js/68.bacd8722.js"><link rel="prefetch" href="/assets/js/69.911548ac.js"><link rel="prefetch" href="/assets/js/7.8b41355d.js"><link rel="prefetch" href="/assets/js/70.3a429772.js"><link rel="prefetch" href="/assets/js/71.e4554dc6.js"><link rel="prefetch" href="/assets/js/72.214adbe7.js"><link rel="prefetch" href="/assets/js/73.3f8056af.js"><link rel="prefetch" href="/assets/js/74.76890b0d.js"><link rel="prefetch" href="/assets/js/75.8af39a02.js"><link rel="prefetch" href="/assets/js/76.156a7561.js"><link rel="prefetch" href="/assets/js/77.359f0a41.js"><link rel="prefetch" href="/assets/js/78.dd365089.js"><link rel="prefetch" href="/assets/js/79.e7496c22.js"><link rel="prefetch" href="/assets/js/8.87e943be.js"><link rel="prefetch" href="/assets/js/80.86dcd177.js"><link rel="prefetch" href="/assets/js/81.1bdc3060.js"><link rel="prefetch" href="/assets/js/82.0c2b329d.js"><link rel="prefetch" href="/assets/js/83.b33b4815.js"><link rel="prefetch" href="/assets/js/84.bc7e22e6.js"><link rel="prefetch" href="/assets/js/85.82aeb653.js"><link rel="prefetch" href="/assets/js/86.b2d34cde.js"><link rel="prefetch" href="/assets/js/87.491c160e.js"><link rel="prefetch" href="/assets/js/88.f61c1354.js"><link rel="prefetch" href="/assets/js/89.398f1f38.js"><link rel="prefetch" href="/assets/js/9.35b8536e.js"><link rel="prefetch" href="/assets/js/90.06df0a1e.js"><link rel="prefetch" href="/assets/js/91.7d7bc5bc.js"><link rel="prefetch" href="/assets/js/92.c6bbf647.js"><link rel="prefetch" href="/assets/js/93.db29cbe5.js"><link rel="prefetch" href="/assets/js/94.14c74134.js"><link rel="prefetch" href="/assets/js/95.d5cf63f4.js"><link rel="prefetch" href="/assets/js/96.8afccf09.js"><link rel="prefetch" href="/assets/js/97.3fc872af.js"><link rel="prefetch" href="/assets/js/98.37695507.js"><link rel="prefetch" href="/assets/js/99.b72a0294.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.SE/" class="nav-link">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.Database/" class="nav-link">
+  🎨数据库
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link router-link-active">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.SE/" class="nav-link">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.Database/" class="nav-link">
+  🎨数据库
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link router-link-active">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>翻译GNU Binutils Version 2.37</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#目录" class="sidebar-link">目录</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_01-ar-⭐️" class="sidebar-link">01.ar ⭐️</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_1-1-controlling-ar-on-the-command-line" class="sidebar-link">1.1.Controlling ar on the Command Line</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_1-2-controlling-ar-with-a-script" class="sidebar-link">1.2.Controlling ar with a Script</a></li></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_02-ld-✔️" class="sidebar-link">02.ld ✔️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_03-nm" class="sidebar-link">03.nm</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_04-objcopy" class="sidebar-link">04.objcopy</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_05-objdump-⭐️" class="sidebar-link">05.objdump ⭐️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_06-ranlib-✔️" class="sidebar-link">06.ranlib ✔️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_07-size⭐️✔️" class="sidebar-link">07.size⭐️✔️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_08-strings" class="sidebar-link">08.strings</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_09-strip" class="sidebar-link">09.strip</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_10-c-filt" class="sidebar-link">10.c++filt</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_11-addr2line" class="sidebar-link">11.addr2line</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_12-windmc「windows」" class="sidebar-link">12.windmc「Windows」</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_13-windres「windows」" class="sidebar-link">13.windres「Windows」</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_14-dlltool" class="sidebar-link">14.dlltool</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_14-1-the-format-of-the-dlltool-def-file" class="sidebar-link">14.1.The format of the dlltool .def file</a></li></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_15-readelf-⭐️" class="sidebar-link">15.readelf ⭐️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_16-elfedit-✔️" class="sidebar-link">16.elfedit ✔️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_17-公共选项common-options✔️" class="sidebar-link">17.公共选项Common Options✔️</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_18-选择目标系统selecting-the-target-system✔️" class="sidebar-link">18.选择目标系统Selecting the Target System✔️</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_18-1-目标选择target-selection" class="sidebar-link">18.1.目标选择Target Selection</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_18-2-架构-体系结构-选择architecture-selection" class="sidebar-link">18.2.架构（体系结构）选择Architecture Selection</a></li></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_19-debuginfod「不是命令」" class="sidebar-link">19.debuginfod「不是命令」</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_20-报告错误" class="sidebar-link">20.报告错误</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_20-1-have-you-found-a-bug" class="sidebar-link">20.1.Have You Found a Bug?</a></li><li class="sidebar-sub-header"><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#_20-2-how-to-report-bugs" class="sidebar-link">20.2.How to Report Bugs</a></li></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#appendix「附录」-a-gnu-free-documentation-license" class="sidebar-link">Appendix「附录」 A GNU Free Documentation License</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#binutils-index" class="sidebar-link">Binutils Index</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/05.Engineer/1.GNUtoolchain/3.%E7%BF%BB%E8%AF%91-GNUbinutils2.37.html#参考资料" class="sidebar-link">参考资料</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="翻译gnu-binutils-version-2-37"><a href="#翻译gnu-binutils-version-2-37" class="header-anchor">#</a> 翻译GNU Binutils Version 2.37</h1> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>&lt;font style=&quot;background:yellow&quot;&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <p></p><div class="table-of-contents"><ul><li><a href="#目录">目录</a></li><li><a href="#_01-ar-⭐️">01.ar ⭐️</a><ul><li><a href="#_1-1-controlling-ar-on-the-command-line">1.1.Controlling ar on the Command Line</a></li><li><a href="#_1-2-controlling-ar-with-a-script">1.2.Controlling ar with a Script</a></li></ul></li><li><a href="#_02-ld-✔️">02.ld ✔️</a></li><li><a href="#_03-nm">03.nm</a></li><li><a href="#_04-objcopy">04.objcopy</a></li><li><a href="#_05-objdump-⭐️">05.objdump ⭐️</a></li><li><a href="#_06-ranlib-✔️">06.ranlib ✔️</a></li><li><a href="#_07-size-⭐️✔️">07.size⭐️✔️</a></li><li><a href="#_08-strings">08.strings</a></li><li><a href="#_09-strip">09.strip</a></li><li><a href="#_10-c-filt">10.c++filt</a></li><li><a href="#_11-addr2line">11.addr2line</a></li><li><a href="#_12-windmc-「windows」">12.windmc「Windows」</a></li><li><a href="#_13-windres-「windows」">13.windres「Windows」</a></li><li><a href="#_14-dlltool">14.dlltool</a><ul><li><a href="#_14-1-the-format-of-the-dlltool-def-file">14.1.The format of the dlltool .def file</a></li></ul></li><li><a href="#_15-readelf-⭐️">15.readelf ⭐️</a></li><li><a href="#_16-elfedit-✔️">16.elfedit ✔️</a></li><li><a href="#_17-公共选项common-options✔️">17.公共选项Common Options✔️</a></li><li><a href="#_18-选择目标系统selecting-the-target-system✔️">18.选择目标系统Selecting the Target System✔️</a><ul><li><a href="#_18-1-目标选择target-selection">18.1.目标选择Target Selection</a></li><li><a href="#_18-2-架构-体系结构-选择architecture-selection">18.2.架构（体系结构）选择Architecture Selection</a></li></ul></li><li><a href="#_19-debuginfod「不是命令」">19.debuginfod「不是命令」</a></li><li><a href="#_20-报告错误">20.报告错误</a><ul><li><a href="#_20-1-have-you-found-a-bug">20.1.Have You Found a Bug?</a></li><li><a href="#_20-2-how-to-report-bugs">20.2.How to Report Bugs</a></li></ul></li><li><a href="#appendix「附录」-a-gnu-free-documentation-license">Appendix「附录」 A GNU Free Documentation License</a></li><li><a href="#binutils-index">Binutils Index</a></li><li><a href="#参考资料">参考资料</a></li></ul></div><p></p> <p>[TOC]</p> <h2 id="_01-ar-⭐️"><a href="#_01-ar-⭐️" class="header-anchor">#</a> 01.<code>ar</code> ⭐️</h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>ar [-]p[mod] [--plugin name] [--target bfdname] [--output dirname] [--record-libdeps libdeps] [relpos] [count] archive [member...]
+
+ar -M [ &lt;mri-script ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>GNU <code>ar</code>程序从archives（档案）中创建、修改和提取。An archive（一个归档文件）是一个单独的文件，它以一种能够检索原始单个文件(称为归档文件的成员)的结构保存着其他文件的集合。</li></ul> <p>The original files’ contents, mode (permissions), timestamp, owner, and group are preserved in the archive, and can be restored on extraction.</p> <p>原始文件的内容、模式(权限)、时间戳、所有者和组都保留在归档中，并且可以在提取时恢复。</p> <p>gnu ar can maintain archives whose members have names of any length; however, depending on how ar is configured on your system, a limit on member-name length may be imposed for compatibility with archive formats maintained with other tools. If it exists, the limit is often 15 characters (typical of formats related to a.out) or 16 characters (typical of formats related to coff).</p> <p>gnu ar可以维护其成员具有任何长度名称的档案；但是，根据ar在系统上的配置方式，可能会对成员名称长度进行限制，以便与其他工具维护的归档格式兼容。如果存在，限制通常为15个字符(与a.out相关的典型格式)或16个字符(与coff相关的典型格式)。</p> <p>ar is considered a binary utility because archives of this sort are most often used as libraries holding commonly needed subroutines. Since libraries often will depend on other libraries, ar can also record the dependencies of a library when the --record-libdeps option is specified.</p> <p>ar被认为是一个二进制实用程序，因为这种类型的档案通常被用作保存常用子程序的库。由于库通常依赖于其他库，所以当指定- record-libdeps选项时，ar也可以记录库的依赖关系。</p> <p>ar creates an index to the symbols defined in relocatable object modules in the archive when you specify the modifier ‘s’. Once created, this index is updated in the archive whenever ar makes a change to its contents (save for the ‘q’ update operation). An archive with such an index speeds up linking to the library, and allows routines in the library to call each other without regard to their placement in the archive</p> <p>You may use ‘nm -s’ or ‘nm --print-armap’ to list this index table. If an archive lacks the table, another form of ar called ranlib can be used to add just the table.</p> <p>gnu ar can optionally create a thin archive, which contains a symbol index and references to the original copies of the member files of the archive. This is useful for building libraries for use within a local build tree, where the relocatable objects are expected to remain available, and copying the contents of each object would only waste time and space.</p> <p>An archive can either be thin or it can be normal. It cannot be both at the same time. Once an archive is created its format cannot be changed without first deleting it and then creating a new archive in its place.</p> <p>Thin archives are also flattened, so that adding one thin archive to another thin archive does not nest it, as would happen with a normal archive. Instead the elements of the first archive are added individually to the second archive.</p> <p>The paths to the elements of the archive are stored relative to the archive itself.</p> <p>gnu ar is designed to be compatible with two different facilities. You can control its activity using command-line options, like the different varieties of ar on Unix systems; or, if you specify the single command-line option -M, you can control it with a script supplied via standard input, like the MRI “librarian” program</p> <h3 id="_1-1-controlling-ar-on-the-command-line"><a href="#_1-1-controlling-ar-on-the-command-line" class="header-anchor">#</a> 1.1.Controlling <code>ar</code> on the Command Line</h3> <ul><li>在命令行上控制<code>ar</code></li></ul> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>ar [-X32_64] [-]p[mod] [--plugin name] [--target bfdname] [--output dirname] [--recordlibdeps libdeps] [relpos] [count] archive [member...]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_1-2-controlling-ar-with-a-script"><a href="#_1-2-controlling-ar-with-a-script" class="header-anchor">#</a> 1.2.Controlling ar with a Script</h3> <ul><li>用脚本控制ar</li></ul> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>ar -M [ &lt;script ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_02-ld-✔️"><a href="#_02-ld-✔️" class="header-anchor">#</a> 02.<code>ld</code> ✔️</h2> <p>The gnu linker ld is now described in a separate manual. See Section “Overview” in Using LD: the gnu linker.</p> <p>gnu链接器ld现在在单独的手册中描述。请参阅使用中的“概述”一节 LD:GNU链接器。</p> <h2 id="_03-nm"><a href="#_03-nm" class="header-anchor">#</a> 03.<code>nm</code></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>nm [-A|-o|--print-file-name]
+    [-a|--debug-syms]
+    [-B|--format=bsd]
+    [-C|--demangle[=style]]
+    [-D|--dynamic]
+    [-fformat|--format=format]
+    [-g|--extern-only]
+    [-h|--help]
+    [--ifunc-chars=CHARS]
+    [-j|--format=just-symbols]
+    [-l|--line-numbers] [--inlines]
+    [-n|-v|--numeric-sort]
+    [-P|--portability]
+    [-p|--no-sort]
+    [-r|--reverse-sort]
+    [-S|--print-size]
+    [-s|--print-armap]
+    [-t radix|--radix=radix]
+    [-u|--undefined-only]
+    [-V|--version]
+    [-X 32_64]
+    [--defined-only]
+    [--no-demangle]
+    [--no-recurse-limit|--recurse-limit]]
+    [--plugin name]
+    [--size-sort]
+    [--special-syms]
+    [--synthetic]
+    [--target=bfdname]
+    [--with-symbol-versions]
+    [--without-symbol-versions]
+    [objfile...]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>GNU nm列出了目标文件<code>objfile..</code>.中的符号，如果没有目标文件被列为参数，<code>nm</code>假定文件为<code>a.out</code>。</p> <p>对于每个符号，nm 显示：</p> <ul><li>符号值（The symbol value），以选项选择的基数（见下文），或十六进制默认。</li> <li>符号类型（The symbol type）。至少使用了以下类型； 其他的也取决于目标文件格式。 ==如果是小写，符号通常是本地的==； 如果大写，则符号是全局的（外部的）。 但是，对于特殊的全局符号（u、v 和 w），会显示一些小写符号。</li></ul> <p><code>A</code></p> <ul><li>符号的值是绝对值，不会因进一步链接而改变。</li></ul> <p><code>B</code></p> <p><code>b</code></p> <ul><li>该符号位于 BSS 数据段（<strong>BSS data section</strong>）。 此部分通常包含初始化为0或未初始化的数据，尽管确切的行为取决于系统。</li></ul> <p><code>C</code></p> <ul><li>符号很常见（The symbol is common）。 公共符号（Common symbols）是未初始化的数据。 链接时，可能会出现多个具有相同名称的常用符号。 如果在任何地方定义了符号，则公共符号将被视为未定义的引用。 有关常用符号的更多详细信息，请参阅 GNU linker的“链接器选项（Linker options）”部分中对 –warn-common 的讨论。 当符号位于小公域的特殊部分时，使用小写 c 字符。</li></ul> <p><code>D</code></p> <p><code>d</code></p> <ul><li>该符号位于已初始化的数据段（initialized data section）。</li></ul> <p><code>G</code></p> <p><code>g</code></p> <ul><li>该符号位于小对象（small objects）的初始化数据部分中。 某些目标文件格式允许更有效地访问小数据对象，例如全局 int 变量而不是大型全局数组。</li></ul> <p><code>i</code></p> <ul><li>对于 PE 格式文件，这表示该符号位于特定于 DLLs 实现的部分中</li> <li>对于 ELF 格式文件，这表明该符号是一个间接函数。 这是标准 ELF 符号类型集的 GNU 扩展。 它表示一个符号，如果被重定位引用，它不会计算其地址，而是必须在运行时调用。 然后运行时执行将返回要在重定位中使用的值。</li> <li><ul><li>注意：GNU 间接符号的实际符号显示由 --ifunc-chars 命令行选项控制。 如果已提供此选项，则字符串中的第一个字符将用于全局间接函数符号。 如果字符串包含第二个字符，则该字符将用于局部间接函数符号。</li></ul></li></ul> <h2 id="_04-objcopy"><a href="#_04-objcopy" class="header-anchor">#</a> 04.<code>objcopy</code></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>objcopy [-F bfdname|--target=bfdname]
+    [-I bfdname|--input-target=bfdname]
+    [-O bfdname|--output-target=bfdname]
+    [-B bfdarch|--binary-architecture=bfdarch]
+    [-S|--strip-all]
+    [-g|--strip-debug]
+    [--strip-unneeded]
+    [-K symbolname|--keep-symbol=symbolname]
+    [--keep-file-symbols]
+    [--keep-section-symbols]
+    [-N symbolname|--strip-symbol=symbolname]
+    [--strip-unneeded-symbol=symbolname]
+    [-G symbolname|--keep-global-symbol=symbolname]
+    [--localize-hidden]
+    [-L symbolname|--localize-symbol=symbolname]
+    [--globalize-symbol=symbolname]
+    [--globalize-symbols=filename]
+    [-W symbolname|--weaken-symbol=symbolname]
+    [-w|--wildcard]
+    [-x|--discard-all]
+    [-X|--discard-locals]
+    [-b byte|--byte=byte]
+    [-i [breadth]|--interleave[=breadth]]
+    [--interleave-width=width]
+    [-j sectionpattern|--only-section=sectionpattern]
+    [-R sectionpattern|--remove-section=sectionpattern]
+    [--keep-section=sectionpattern]
+    [--remove-relocations=sectionpattern]
+    [-p|--preserve-dates]
+    [-D|--enable-deterministic-archives]
+    [-U|--disable-deterministic-archives]
+    [--debugging]
+    [--gap-fill=val]
+    [--pad-to=address]
+    [--set-start=val]
+    [--adjust-start=incr]
+    [--change-addresses=incr]
+    [--change-section-address sectionpattern{=,+,-}val]
+    [--change-section-lma sectionpattern{=,+,-}val]
+    [--change-section-vma sectionpattern{=,+,-}val]
+    [--change-warnings] [--no-change-warnings]
+    [--set-section-flags sectionpattern=flags]
+    [--set-section-alignment sectionpattern=align]
+    [--add-section sectionname=filename]
+    [--dump-section sectionname=filename]
+    [--update-section sectionname=filename]
+    [--rename-section oldname=newname[,flags]]
+    [--long-section-names {enable,disable,keep}]
+    [--change-leading-char] [--remove-leading-char]
+    [--reverse-bytes=num]
+    [--srec-len=ival] [--srec-forceS3]
+    [--redefine-sym old=new]
+    [--redefine-syms=filename]
+    [--weaken]
+    [--keep-symbols=filename]
+    [--strip-symbols=filename]
+    [--strip-unneeded-symbols=filename]
+    [--keep-global-symbols=filename]
+    [--localize-symbols=filename]
+    [--weaken-symbols=filename]
+    [--add-symbol name=[section:]value[,flags]]
+    [--alt-machine-code=index]
+    [--prefix-symbols=string]
+    [--prefix-sections=string]
+    [--prefix-alloc-sections=string]
+    [--add-gnu-debuglink=path-to-file]
+    [--only-keep-debug]
+    [--strip-dwo]
+    [--extract-dwo]
+    [--extract-symbol]
+    [--writable-text]
+    [--readonly-text]
+    [--pure]
+    [--impure]
+    [--file-alignment=num]
+    [--heap=size]
+    [--image-base=address]
+    [--section-alignment=num]
+    [--stack=size]
+    [--subsystem=which:major.minor]
+    [--compress-debug-sections]
+    [--decompress-debug-sections]
+    [--elf-stt-common=val]
+    [--merge-notes]
+    [--no-merge-notes]
+    [--verilog-data-width=val]
+    [-v|--verbose]
+    [-V|--version]
+    [--help] [--info]
+    infile [outfile]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br></div></div><h2 id="_05-objdump-⭐️"><a href="#_05-objdump-⭐️" class="header-anchor">#</a> 05.<code>objdump</code> ⭐️</h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>objdump [-a|--archive-headers]
+    [-b bfdname|--target=bfdname]
+    [-C|--demangle[=style] ]
+    [-d|--disassemble[=symbol]]
+    [-D|--disassemble-all]
+    [-z|--disassemble-zeroes]
+    [-EB|-EL|--endian={big | little }]
+    [-f|--file-headers]
+    [-F|--file-offsets]
+    [--file-start-context]
+    [-g|--debugging]
+    [-e|--debugging-tags]
+    [-h|--section-headers|--headers]
+    [-i|--info]
+    [-j section|--section=section]
+    [-l|--line-numbers]
+    [-S|--source]
+    [--source-comment[=text]]
+    [-m machine|--architecture=machine]
+    [-M options|--disassembler-options=options]
+    [-p|--private-headers]
+    [-P options|--private=options]
+    [-r|--reloc]
+    [-R|--dynamic-reloc]
+    [-s|--full-contents]
+    [-W[lLiaprmfFsoORtUuTgAck]|
+    --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,=framesinterp,=str,=str-offsets,=loc,=Ranges,=pubtypes,=trace_info,=trace_abbrev,=trace_aranges,=gdb_index,=addr,=cu_index,=links]]
+    [-WK|--dwarf=follow-links]
+    [-WN|--dwarf=no-follow-links]
+    [-L|--process-links]
+    [--ctf=section]
+    [-G|--stabs]
+    [-t|--syms]
+    [-T|--dynamic-syms]
+    [-x|--all-headers]
+    [-w|--wide]
+    [--start-address=address]
+    [--stop-address=address]
+    [--no-addresses]
+    [--prefix-addresses]
+    [--[no-]show-raw-insn]
+    [--adjust-vma=offset]
+    [--dwarf-depth=n]
+    [--dwarf-start=n]
+    [--ctf-parent=section]
+    [--no-recurse-limit|--recurse-limit]
+    [--special-syms]
+    [--prefix=prefix]
+    [--prefix-strip=level]
+    [--insn-width=width]
+    [--visualize-jumps[=color|=extended-color|=off]
+    [-V|--version]
+    [-H|--help]
+    objfile...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><h2 id="_06-ranlib-✔️"><a href="#_06-ranlib-✔️" class="header-anchor">#</a> 06.<code>ranlib</code> ✔️</h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>ranlib [--plugin name] [-DhHvVt] archive
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li><p><code>ranlib</code>生成归档内容的索引，并将其存储在归档（archive）中。索引列出了由可重定位对象文件的归档成员定义的每个符号。</p></li> <li><p>您可以使用<code>nm -s</code>或<code>nm --print-armap</code>来列出该索引</p></li> <li><p>具有这种索引的档案加快了到库的链接，并允许库中的例程相互调用，而不考虑它们在档案中的位置。</p></li> <li><p>GNU <code>ranlib</code>程序是GNU <code>ar</code>的另一种形式；运行<code>ranlib</code>完全等同于执行“<code>ar -s</code>”。参见第1章第1页。</p></li></ul> <p><code>-h</code> 或<code>-H</code>或者<code>--help</code></p> <ul><li>Show usage information for ranlib.</li> <li>显示<code>ranlib</code>的使用信息。</li></ul> <p><code>-v</code>或者<code>-V</code> 或者<code>--version</code></p> <ul><li>显示<code>ranlib</code>的版本号</li></ul> <h2 id="_07-size⭐️✔️"><a href="#_07-size⭐️✔️" class="header-anchor">#</a> 07.<code>size</code>⭐️✔️</h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>size [-A|-B|-G|--format=compatibility]
+    [--help]
+    [-d|-o|-x|--radix=number]
+    [--common]
+    [-t|--totals]
+    [--target=bfdname] [-V|--version]
+    [objfile...]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>The gnu size utility lists the section sizes and the total size for each of the binary files objfile on its argument list. By default, one line of output is generated for each file or each module if the file is an archive</p> <p>GNU <code>size</code>实用程序在其参数列表中列出了每个二进制文件<code>objfile</code>的<code>section</code>(节)大小和总大小。默认情况下，如果文件是归档文件，则为每个文件或每个模块生成一行输出</p> <ul><li><p><code>objfile...</code>是要检查的文件。如果没有指定，将使用文件<code>a.out</code></p></li> <li><p>命令行选项有以下含义:</p></li></ul> <p><code>-A</code></p> <p><code>-B</code></p> <p><code>-G</code></p> <p><code>--format=compatibility</code></p> <ul><li>使用这些选项之一，您可以选择GNU <code>size</code>的输出是否
+<ul><li>类似于<strong>System V</strong> <code>size</code>(使用<code>-A</code>，或<code>--format=sysv</code>)</li> <li>或<strong>Berkeley</strong> <code>size</code>(使用<code>-B</code>，或<code>-format=berkeley</code>)的输出。</li> <li><font style="background:pink;">默认值是类似于<strong>Berkeley</strong>’s.的单行格式（one-line format）</font></li> <li>或者，您可以选择GNU格式输出(使用<code>-G</code>，或<code>--format=gnu</code>)，这类似于<strong>Berkeley</strong>的输出格式，但大小的计数不同。</li></ul></li></ul> <blockquote><p>compatibility，兼容性（网络释义），n.和睦相处</p></blockquote> <p>以下是**Berkeley (default)**输出格式的<code>size</code>示例:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ size <span class="token parameter variable">--format</span><span class="token operator">=</span>Berkeley ranlib size
+text data bss dec hex filename
+<span class="token number">294880</span> <span class="token number">81920</span> <span class="token number">11592</span> <span class="token number">388392</span> 5ed28 ranlib
+<span class="token number">294880</span> <span class="token number">81920</span> <span class="token number">11888</span> <span class="token number">388688</span> 5ee50 size
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>The <strong>Berkeley style</strong> output counts 只读数据（read only data）in the text column, not in the data column，<code>dec</code>和<code>hex</code>列都分别以十进制和十六进制显示<code>text</code>、<code>data</code>和<code>bss</code>列的总和</p> <p>GNU格式统计数据列中的只读数据，而不是文本列，并且只在总计列中显示一次文本、数据和bss列的总和。基数选项可用于更改所有列的基数。下面是用GNU约定显示的相同数据:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ size <span class="token parameter variable">--format</span><span class="token operator">=</span>GNU ranlib size
+text data bss total filename
+<span class="token number">279880</span> <span class="token number">96920</span> <span class="token number">11592</span> <span class="token number">388392</span> ranlib
+<span class="token number">279880</span> <span class="token number">96920</span> <span class="token number">11888</span> <span class="token number">388688</span> size
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>这是相同的数据，但显示更接近<strong>System V</strong>的惯例:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ size <span class="token parameter variable">--format</span><span class="token operator">=</span>SysV ranlib size
+ranlib <span class="token builtin class-name">:</span>
+section size addr
+.text <span class="token number">294880</span> <span class="token number">8192</span>
+.data <span class="token number">81920</span> <span class="token number">303104</span>
+.bss <span class="token number">11592</span> <span class="token number">385024</span>
+Total <span class="token number">388392</span>
+size <span class="token builtin class-name">:</span>
+section size addr
+.text <span class="token number">294880</span> <span class="token number">8192</span>
+.data <span class="token number">81920</span> <span class="token number">303104</span>
+.bss <span class="token number">11888</span> <span class="token number">385024</span>
+Total <span class="token number">388688</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><code>--help</code></p> <ul><li>Show a summary of acceptable arguments and options.</li></ul> <p><code>-d</code></p> <p><code>-o</code></p> <p><code>-x</code></p> <p><code>--radix=number</code></p> <p>使用这些选项之一，您可以控制每个部分的大小是否以十进制(-d，或- radix=10)给出；八进制(-o，或-基数= 8)；或十六进制(-x，或- radix=16)。In - radix=number，仅支持三个值(8、10、16)。总尺寸总是以两个根给出；十进制和十六进制表示-d或-x输出，或者八进制和十六进制表示-o。</p> <p><code>--common</code></p> <p>打印每个文件中常用符号的总大小。当使用伯克利或GNU格式时，这些都包含在bss大小中。</p> <p><code>-t</code></p> <p><code>--totals</code></p> <ul><li>显示列出的所有对象（objects）的总数(仅限Berkeley或GNU 格式模式)</li></ul> <p><code>--target=bfdname</code></p> <p>指定objfile的目标代码格式为bfdname。此选项可能不是必需的；大小可以自动识别许多格式。参见第18.1节
+[目标选择]，第86页，了解更多信息。</p> <p><code>-V</code> 或者<code>--version</code></p> <p>Display the version number of size.</p> <h2 id="_08-strings"><a href="#_08-strings" class="header-anchor">#</a> 08.<code>strings</code></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>strings [-afovV] [-min-len]
+    [-n min-len] [--bytes=min-len]
+    [-t radix] [--radix=radix]
+    [-e encoding] [--encoding=encoding]
+    [-] [--all] [--print-file-name]
+    [-T bfdname] [--target=bfdname]
+    [-w] [--include-all-whitespace]
+    [-s] [--output-separatorsep_string]
+    [--help] [--version] file...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_09-strip"><a href="#_09-strip" class="header-anchor">#</a> 09.<code>strip</code></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>strip [-F bfdname |--target=bfdname]
+        [-I bfdname |--input-target=bfdname]
+        [-O bfdname |--output-target=bfdname]
+        [-s|--strip-all]
+        [-S|-g|-d|--strip-debug]
+        [--strip-dwo]
+        [-K symbolname|--keep-symbol=symbolname]
+        [-M|--merge-notes][--no-merge-notes]
+        [-N symbolname |--strip-symbol=symbolname]
+        [-w|--wildcard]
+        [-x|--discard-all] [-X |--discard-locals]
+        [-R sectionname |--remove-section=sectionname]
+        [--keep-section=sectionpattern]
+        [--remove-relocations=sectionpattern]
+        [-o file] [-p|--preserve-dates]
+        [-D|--enable-deterministic-archives]
+        [-U|--disable-deterministic-archives]
+        [--keep-section-symbols]
+        [--keep-file-symbols]
+        [--only-keep-debug]
+        [-v |--verbose] [-V|--version]
+        [--help] [--info]
+        objfile...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="_10-c-filt"><a href="#_10-c-filt" class="header-anchor">#</a> 10.<code>c++filt</code></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>c++filt [-_|--strip-underscore]
+    [-n|--no-strip-underscore]
+    [-p|--no-params]
+    [-t|--types]
+    [-i|--no-verbose]
+    [-r|--no-recurse-limit]
+    [-R|--recurse-limit]
+    [-s format|--format=format]
+    [--help] [--version] [symbol...]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_11-addr2line"><a href="#_11-addr2line" class="header-anchor">#</a> 11.<code>addr2line</code></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>addr2line [-a|--addresses]
+    [-b bfdname|--target=bfdname]
+    [-C|--demangle[=style]]
+    [-r|--no-recurse-limit]
+    [-R|--recurse-limit]
+    [-e filename|--exe=filename]
+    [-f|--functions] [-s|--basename]
+    [-i|--inlines]
+    [-p|--pretty-print]
+    [-j|--section=name]
+    [-H|--help] [-V|--version]
+    [addr addr ...]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_12-windmc「windows」"><a href="#_12-windmc「windows」" class="header-anchor">#</a> 12.<code>windmc</code>「Windows」</h2> <p>windmc可能用于生成Windows消息资源。</p> <h2 id="_13-windres「windows」"><a href="#_13-windres「windows」" class="header-anchor">#</a> 13.<code>windres</code>「Windows」</h2> <p>windres可能被用来操纵Windows资源</p> <h2 id="_14-dlltool"><a href="#_14-dlltool" class="header-anchor">#</a> 14.<code>dlltool</code></h2> <p>dlltool用于在理解PE格式图像文件的系统(如Windows)上创建创建动态链接库(dll)所需的文件。DLL包含一个导出表，该表包含运行时加载程序解析引用时所需的信息 参考程序。</p> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>dlltool [-d|--input-def def-file-name]
+    [-b|--base-file base-file-name]
+    [-e|--output-exp exports-file-name]
+    [-z|--output-def def-file-name]
+    [-l|--output-lib library-file-name]
+    [-y|--output-delaylib library-file-name]
+    [--export-all-symbols] [--no-export-all-symbols]
+    [--exclude-symbols list]
+    [--no-default-excludes]
+    [-S|--as path-to-assembler] [-f|--as-flags options]
+    [-D|--dllname name] [-m|--machine machine]
+    [-a|--add-indirect]
+    [-U|--add-underscore] [--add-stdcall-underscore]
+    [-k|--kill-at] [-A|--add-stdcall-alias]
+    [-p|--ext-prefix-alias prefix]
+    [-x|--no-idata4] [-c|--no-idata5]
+    [--use-nul-prefixed-import-tables]
+    [-I|--identify library-file-name] [--identify-strict]
+    [-i|--interwork]
+    [-n|--nodelete] [-t|--temp-prefix prefix]
+    [-v|--verbose]
+    [-h|--help] [-V|--version]
+    [--no-leading-underscore] [--leading-underscore]
+    [object-file ...]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="_14-1-the-format-of-the-dlltool-def-file"><a href="#_14-1-the-format-of-the-dlltool-def-file" class="header-anchor">#</a> 14.1.The format of the <code>dlltool .def</code> file</h3> <h2 id="_15-readelf-⭐️"><a href="#_15-readelf-⭐️" class="header-anchor">#</a> 15.<code>readelf</code> ⭐️</h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>readelf [-a|--all]
+    [-h|--file-header]
+    [-l|--program-headers|--segments]
+    [-S|--section-headers|--sections]
+    [-g|--section-groups]
+    [-t|--section-details]
+    [-e|--headers]
+    [-s|--syms|--symbols]
+    [--dyn-syms|--lto-syms]
+    [--sym-base=[0|8|10|16]]
+    [--demangle=style|--no-demangle]
+    [--quiet]
+    [--recurse-limit|--no-recurse-limit]
+    [-n|--notes]
+    [-r|--relocs]
+    [-u|--unwind]
+    [-d|--dynamic]
+    [-V|--version-info]
+    [-A|--arch-specific]
+    [-D|--use-dynamic]
+    [-L|--lint|--enable-checks]
+    [-x &lt;number or name&gt;|--hex-dump=&lt;number or name&gt;]
+    [-p &lt;number or name&gt;|--string-dump=&lt;number or name&gt;]
+    [-R &lt;number or name&gt;|--relocated-dump=&lt;number or name&gt;]
+    [-z|--decompress]
+    [-c|--archive-index]
+    [-w[lLiaprmfFsoORtUuTgAck]|
+    --debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,=framesinterp,=str,=str-offsets,=loc,=Ranges,=pubtypes,=trace_info,=trace_abbrev,=trace_aranges,=gdb_index,=addr,=cu_index,=links]]
+    [-wK|--debug-dump=follow-links]
+    [-wN|--debug-dump=no-follow-links]
+    [-P|--process-links]
+    [--dwarf-depth=n]
+    [--dwarf-start=n]
+    [--ctf=section]
+    [--ctf-parent=section]
+    [--ctf-symbols=section]
+    [--ctf-strings=section]
+    [-I|--histogram]
+    [-v|--version]
+    [-W|--wide]
+    [-T|--silent-truncation]
+    [-H|--help]
+    elffile...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><ul><li><strong>readelf</strong> 显示有关一个或多个 ELF 格式目标文件的信息。 选项控制要显示的特定信息。</li> <li><code>elffile...</code>是要检查的目标文件。 支持 32 位和 64 位 ELF 文件，以及包含 ELF 文件的档案（archives）</li> <li>该程序执行与 <strong>objdump</strong> ==类似的功能==，但它更详细，并且它独立于 BFD库而存在，因此如果 BFD 中存在错误，则 readelf 不会受到影响。</li> <li>此处显示为备选方案的长选项和短选项是等效的。 除了“-v”或“-H”之外，必须至少给出一个选项。</li></ul> <p>-a或者--all</p> <ul><li>等同于指定 <code>--file-header</code>、<code>--program-headers</code>、<code>--sections</code>、<code>--symbols</code>、--relocs、--dynamic、--notes、--version-info、--archspecific、--unwind、- -section-groups 和--histogram。</li> <li>注意：此选项不会启用 <code>--use-dynamic</code> 本身，因此如果命令行上不存在该选项，则不会显示动态符号（dynamic symbols）动态重新定位（ dynamic relocs）</li></ul> <p>-h或者--file-header</p> <ul><li>显示文件开头的 ELF 头中包含的信息</li></ul> <p>-l或者--program-headers或者--segments</p> <ul><li>显示包含在文件段头中的信息（如果有的话）</li></ul> <p>--quiet</p> <ul><li>抑制“无符号（no symbols）”诊断。</li></ul> <p>-S或者--sections或者--section-headers</p> <ul><li>显示文件的部分标题中包含的信息（如果有）</li></ul> <p>-g或者--section-groups</p> <ul><li>显示文件的节组（file’s section groups）中包含的信息（如果有）</li></ul> <p>-t</p> <p>--section-details</p> <ul><li>显示详细的部分信息。 意味着-S。</li></ul> <p>-s</p> <p>--symbols</p> <p>--syms</p> <ul><li>显示文件的符号表部分中的条目（如果有的话）。 如果符号具有与其关联的版本信息，则也会显示该信息。 版本字符串显示为符号名称的后缀，前面是@character。例如‘foo@VER_1’。 如果版本是解析对符号的未版本化引用时要使用的默认版本，则它显示为后缀，后缀为两个 @ 字符。 例如‘foo@@VER_2’。</li></ul> <p>--dyn-syms</p> <p>显示文件的动态符号表部分中的条目（如果有的话）。
+输出格式与 <code>--syms</code> 选项使用的格式相同。</p> <h2 id="_16-elfedit-✔️"><a href="#_16-elfedit-✔️" class="header-anchor">#</a> 16.<code>elfedit</code> ✔️</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>elfedit <span class="token punctuation">[</span>--input-mach<span class="token operator">=</span>machine<span class="token punctuation">]</span>
+        <span class="token punctuation">[</span>--input-type<span class="token operator">=</span>type<span class="token punctuation">]</span>
+        <span class="token punctuation">[</span>--input-osabi<span class="token operator">=</span>osabi<span class="token punctuation">]</span>
+        --output-mach<span class="token operator">=</span>machine
+        --output-type<span class="token operator">=</span>type
+        --output-osabi<span class="token operator">=</span>osabi
+        --enable-x86-feature<span class="token operator">=</span>feature
+        --disable-x86-feature<span class="token operator">=</span>feature
+        <span class="token punctuation">[</span>-v<span class="token operator">|</span>--version<span class="token punctuation">]</span>
+        <span class="token punctuation">[</span>-h<span class="token operator">|</span>--help<span class="token punctuation">]</span>
+        elffile<span class="token punctuation">..</span>.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ul><li><p><code>elfedit</code> 更新具有匹配 <strong>ELF 机器</strong>和<strong>文件类型</strong>的 ELF 文件的 ELF头（ELF header）和<strong>程序属性</strong>。 这些选项控制应如何更新 ELF头和程序属性中的哪些字段以及应更新哪些字段。</p></li> <li><p><code>elffile...</code> 支持 32 位和 64 位 ELF的文件，以及包含 ELF 文件的存档（archives）</p></li> <li><p>此处显示为备选方案的长选项和短选项是<strong>等效</strong>的。 必须至少提供 <code>--output-mach</code>、<code>--output-type</code>、<code>--output-osabi</code>、<code>--enable-x86-feature</code> 和 <code>--disable-x86-feature</code> 选项之一</p></li></ul> <p><code>--input-mach=machine</code></p> <ul><li>将匹配的输入 ELF 机器类型设置为 machine。 如果未指定 <code>--input-mach</code> ，它将匹配任何 ELF 机器类型。</li> <li>支持的 ELF 机器类型为 <code>i386</code>、<code>IAMCU</code>、<code>L1OM</code>、<code>K1OM</code>和 <code>x86-64</code>。</li></ul> <p><code>--output-mach=machine</code></p> <ul><li>将 ELF头中的 ELF 机器类型更改为 machine。 支持的 ELF 机器类型与 <code>--input-mach</code> 相同。</li></ul> <p><code>--input-type=type</code></p> <ul><li>将匹配的输入ELF文件类型设置为 type。 如果未指定 <code>--input-type</code>，它将匹配任何 ELF 文件类型。</li> <li>支持的 ELF 文件类型有 <code>rel</code>、<code>exec</code> 和 <code>dyn</code></li></ul> <p><code>--output-type=type</code></p> <ul><li>将 ELF 头中的 ELF 文件类型更改为 type。 支持的 ELF 类型与 <code>--input-type</code> 相同</li></ul> <p><code>--input-osabi=osabi</code></p> <ul><li>将匹配的输入 ELF 文件 <strong>OSABI</strong> 设置为 osabi。 如果未指定 <code>--input-osabi</code>，它将匹配任何 <strong>ELF OSABIs</strong></li> <li>支持的 <strong>ELF OSABIs</strong> 包括：none、<strong>HPUX</strong>、<strong>NetBSD</strong>、<strong>GNU</strong>、Linux（GNU 的别名）、<strong>Solaris</strong>、AIX、Irix、FreeBSD、TRU64、Modesto、OpenBSD、OpenVMS、NSK、AROS 和 FenixOS</li></ul> <p><code>--output-osabi=osabi</code></p> <ul><li>将 ELF 标头中的 ELF OSABI 更改为 osabi。 支持的 ELF OSABI 与 <code>--input-osabi</code> 相同</li></ul> <p><code>--enable-x86-feature=feature</code></p> <ul><li>在机器类型为 <code>i386</code> 或 <code>x86-64</code> 的 <strong>exec</strong> 或 <strong>dyn ELF</strong> 文件的程序属性中设置功能位。 支持的功能有 ibt、shstk、lam_u48 和 lam_u57。</li></ul> <p><code>--disable-x86-feature=feature</code></p> <ul><li>清除机器类型为 i386 或 x86-64 的 exec 或 dyn ELF 文件中程序属性中的功能位。 支持的功能与 <code>--enable-x86-feature</code> 相同。</li> <li>注意：<code>--enable-x86-feature</code> 和<code>--disable-x86-feature</code> 仅在支持‘<strong>mmap</strong>’的主机上可用。</li></ul> <p><code>-v</code> 或者 <code>--version</code></p> <ul><li>显示elfedit的版本号</li></ul> <p><code>-h</code>或者<code>--help</code></p> <ul><li>显示 elfedit 理解的命令行选项</li></ul> <h2 id="_17-公共选项common-options✔️"><a href="#_17-公共选项common-options✔️" class="header-anchor">#</a> 17.公共选项Common Options✔️</h2> <ul><li>公共选项、常用选项。common，一般的；常见的；公共的；</li></ul> <p>本手册中描述的所有程序都支持以下命令行（command-line）选项。</p> <ul><li><code>@file</code> <ul><li>从文件中读取命令行选项。读取选项被插入来代替原来的<code>@file</code>选项。如果文件不存在，或者无法读取，那么该选项将被视为字面上的，而不是删除。</li> <li>文件中的选项由空格分隔。一个空格字符可以包含在一个选项中，方法是用单引号或双引号将整个选项括起来 引语。任何字符(包括反斜杠)都可以通过在要包含的字符前加上反斜杠来包含。文件本身可能包含其他<code>@file</code>选项；任何这样的选项都将被递归处理</li></ul></li> <li><code>--help</code> <ul><li>显示程序支持的命令行选项。</li></ul></li> <li><code>--version</code> <ul><li>显示程序的版本号（version number）</li></ul></li></ul> <h2 id="_18-选择目标系统selecting-the-target-system✔️"><a href="#_18-选择目标系统selecting-the-target-system✔️" class="header-anchor">#</a> 18.选择目标系统Selecting the Target System✔️</h2> <p>您可以向GNU二进制文件实用程序指定目标系统的两个方面，每个方面都有几种方式:</p> <ul><li>the target</li> <li>the architecture</li></ul> <p>在以下摘要中，指定值的方法列表按优先级递减的顺序排列。首先列出的方法会覆盖后面列出的方法。</p> <p>列出有效值的命令仅列出您正在运行的程序所配置的值。如果它们被配置为<code>-enable-targets=all</code>，则命令会列出大部分可用值，但会遗漏一些值；并非所有目标都可以一次在中配置，因为其中一些目标只能配置为本机目标(在与目标系统类型相同的主机上)。</p> <h3 id="_18-1-目标选择target-selection"><a href="#_18-1-目标选择target-selection" class="header-anchor">#</a> 18.1.目标选择Target Selection</h3> <p>目标是一种目标文件格式。多个体系结构可能支持一个给定的目标(参见第87页第18.2节[体系结构选择])。对于不同的操作系统或体系结构，目标选择也可能有所不同。</p> <p>列出有效目标值的命令是“<code>objdump -i</code>”(输出的第一列包含相关信息)。</p> <p>一些示例值为:“a.out-hp300bsd”、“ecoff-littlemips”、“a.out-sunos-big”。</p> <p>您也可以使用配置三元组来指定目标。这与传递给配置以指定目标的名称相同。当您使用配置三元组作为参数时，它必须完全规范化。您可以通过运行源代码中包含的shell脚本config.sub来查看三元组的规范版本。</p> <p>一些示例配置三元组是:‘m68k-HP-BSD’、‘MIPS-dec-ultrix’、‘SPARC-sun-sunos’。</p> <h4 id="objdump-target"><a href="#objdump-target" class="header-anchor">#</a> objdump <strong>Target</strong></h4> <p>指定方式:</p> <ul><li>1.命令行选项:-b或- target</li> <li>2.环境变量GNUTARGET</li> <li>3.从输入文件推断</li></ul> <h4 id="objcopy-and-strip-input-target"><a href="#objcopy-and-strip-input-target" class="header-anchor">#</a> objcopy and strip Input Target</h4> <p>指定方式:</p> <ul><li>1.命令行选项:-I或-输入-目标，或-F或-目标</li> <li>2.环境变量GNUTARGET</li> <li>3.从输入文件推断</li></ul> <h4 id="objcopy-and-strip-output-target"><a href="#objcopy-and-strip-output-target" class="header-anchor">#</a> objcopy and strip Output Target</h4> <p>指定方式:</p> <ul><li>1.命令行选项:-O或-输出-目标，或-F或-目标</li> <li>2.输入目标(参见上面的“对象复制和剥离输入目标”)</li> <li>3.环境变量GNUTARGET</li> <li>4.从输入文件推断</li></ul> <h4 id="nm-size-and-strings-target"><a href="#nm-size-and-strings-target" class="header-anchor">#</a> nm, size, and strings Target</h4> <p>指定方式:</p> <ul><li>1.命令行选项:-目标</li> <li>2.环境变量GNUTARGET</li> <li>3.从输入文件推断</li></ul> <h3 id="_18-2-架构-体系结构-选择architecture-selection"><a href="#_18-2-架构-体系结构-选择architecture-selection" class="header-anchor">#</a> 18.2.架构（体系结构）选择Architecture Selection</h3> <p>体系结构是一种运行目标文件的==CPU==。</p> <p>它的名称可能包含一个冒号，将处理器家族的名称与特定cpu的名称分开。</p> <p>列出有效架构值的命令是“objdump -i”(第二列包含相关信息)。 示例值:“m68k:68020”、“mips:3000”、“sparc”</p> <h4 id="objdump-architecture"><a href="#objdump-architecture" class="header-anchor">#</a> objdump Architecture</h4> <p>指定方式:</p> <ul><li>1.命令行选项:-m或-架构</li> <li>2.从输入文件推断</li></ul> <h4 id="objcopy-nm-size-strings-architecture"><a href="#objcopy-nm-size-strings-architecture" class="header-anchor">#</a> objcopy, nm, size, strings Architecture</h4> <p>指定方式:</p> <ul><li>1.从输入文件推断</li></ul> <h2 id="_19-debuginfod「不是命令」"><a href="#_19-debuginfod「不是命令」" class="header-anchor">#</a> 19.debuginfod「不是命令」</h2> <p>debuginfod是一个web服务，它通过构建id索引ELF/DWARF调试资源，并通过HTTP为它们提供服务</p> <p>使用-with-debugginfod配置选项，可以使用debuginfod客户端库libdebuginfod构建Binutils。默认情况下，如果libdebuginfod 在配置时安装并找到。这允许objdump和readelf在找不到文件时，自动向debuginfod服务器查询单独的调试文件。从0.178版本开始，debuginfod与elfutils打包在一起。</p> <p>You can get the latest version from ‘https://sourceware.org/elfutils/’.</p> <h2 id="_20-报告错误"><a href="#_20-报告错误" class="header-anchor">#</a> 20.报告错误</h2> <ul><li>Reporting Bugs</li> <li>翻译略</li></ul> <h3 id="_20-1-have-you-found-a-bug"><a href="#_20-1-have-you-found-a-bug" class="header-anchor">#</a> 20.1.Have You Found a Bug?</h3> <h3 id="_20-2-how-to-report-bugs"><a href="#_20-2-how-to-report-bugs" class="header-anchor">#</a> 20.2.How to Report Bugs</h3> <h2 id="appendix「附录」-a-gnu-free-documentation-license"><a href="#appendix「附录」-a-gnu-free-documentation-license" class="header-anchor">#</a> Appendix「附录」 A GNU Free Documentation License</h2> <ul><li>翻译略</li></ul> <h2 id="binutils-index"><a href="#binutils-index" class="header-anchor">#</a> Binutils Index</h2> <ul><li>翻译略</li></ul> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li>GNU Binutils官方文档，网站：<a href="https://sourceware.org/binutils/" target="_blank" rel="noopener noreferrer">https://sourceware.org/binutils/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>GNU软件，官方网站：<a href="https://www.gnu.org/software/software.html" target="_blank" rel="noopener noreferrer">https://www.gnu.org/software/software.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fd1fb539.js" defer></script><script src="/assets/js/2.5ad7620d.js" defer></script><script src="/assets/js/130.ef70dbf3.js" defer></script>
+  </body>
+</html>
