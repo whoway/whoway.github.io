@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>设计模式 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.4e8504bc.js" as="script"><link rel="preload" href="/assets/js/2.e96ccaa8.js" as="script"><link rel="preload" href="/assets/js/126.d4a6358c.js" as="script"><link rel="prefetch" href="/assets/js/10.d1861f0c.js"><link rel="prefetch" href="/assets/js/100.0575457e.js"><link rel="prefetch" href="/assets/js/101.8c99eb23.js"><link rel="prefetch" href="/assets/js/102.a4f4d152.js"><link rel="prefetch" href="/assets/js/103.e77c9468.js"><link rel="prefetch" href="/assets/js/104.364a42ad.js"><link rel="prefetch" href="/assets/js/105.c5d628c1.js"><link rel="prefetch" href="/assets/js/106.22a62c30.js"><link rel="prefetch" href="/assets/js/107.406ca73b.js"><link rel="prefetch" href="/assets/js/108.b9523d44.js"><link rel="prefetch" href="/assets/js/109.905b7c90.js"><link rel="prefetch" href="/assets/js/11.11f50853.js"><link rel="prefetch" href="/assets/js/110.5c6a1fec.js"><link rel="prefetch" href="/assets/js/111.76bba02d.js"><link rel="prefetch" href="/assets/js/112.80f2c586.js"><link rel="prefetch" href="/assets/js/113.20797238.js"><link rel="prefetch" href="/assets/js/114.bef872ba.js"><link rel="prefetch" href="/assets/js/115.9baa49eb.js"><link rel="prefetch" href="/assets/js/116.84fd75de.js"><link rel="prefetch" href="/assets/js/117.cfdafa82.js"><link rel="prefetch" href="/assets/js/118.c8be15fc.js"><link rel="prefetch" href="/assets/js/119.f839c153.js"><link rel="prefetch" href="/assets/js/12.d05531b6.js"><link rel="prefetch" href="/assets/js/120.1aeb0e25.js"><link rel="prefetch" href="/assets/js/121.2c688707.js"><link rel="prefetch" href="/assets/js/122.50ee2490.js"><link rel="prefetch" href="/assets/js/123.149a52be.js"><link rel="prefetch" href="/assets/js/124.e7bc5939.js"><link rel="prefetch" href="/assets/js/125.26129339.js"><link rel="prefetch" href="/assets/js/127.71691e59.js"><link rel="prefetch" href="/assets/js/128.15ee1518.js"><link rel="prefetch" href="/assets/js/129.2b45b28c.js"><link rel="prefetch" href="/assets/js/13.bac79687.js"><link rel="prefetch" href="/assets/js/130.f35fe138.js"><link rel="prefetch" href="/assets/js/131.e54d364f.js"><link rel="prefetch" href="/assets/js/132.c5240932.js"><link rel="prefetch" href="/assets/js/133.4597c8f4.js"><link rel="prefetch" href="/assets/js/134.a569adba.js"><link rel="prefetch" href="/assets/js/135.59ff804c.js"><link rel="prefetch" href="/assets/js/136.f0e874d1.js"><link rel="prefetch" href="/assets/js/137.3834ade4.js"><link rel="prefetch" href="/assets/js/138.8b023aa6.js"><link rel="prefetch" href="/assets/js/139.8684c6c9.js"><link rel="prefetch" href="/assets/js/14.fb288120.js"><link rel="prefetch" href="/assets/js/140.3a463fce.js"><link rel="prefetch" href="/assets/js/141.f313ae4f.js"><link rel="prefetch" href="/assets/js/142.bbaff8b7.js"><link rel="prefetch" href="/assets/js/143.262af30b.js"><link rel="prefetch" href="/assets/js/144.160f1efa.js"><link rel="prefetch" href="/assets/js/145.fed6dcca.js"><link rel="prefetch" href="/assets/js/146.5a2b8145.js"><link rel="prefetch" href="/assets/js/147.6c021672.js"><link rel="prefetch" href="/assets/js/148.cbb78f47.js"><link rel="prefetch" href="/assets/js/149.e823da3a.js"><link rel="prefetch" href="/assets/js/15.9718f572.js"><link rel="prefetch" href="/assets/js/150.c8fdfc9e.js"><link rel="prefetch" href="/assets/js/151.5f83f8d3.js"><link rel="prefetch" href="/assets/js/152.3f062094.js"><link rel="prefetch" href="/assets/js/153.b6bd577c.js"><link rel="prefetch" href="/assets/js/154.f7430b2c.js"><link rel="prefetch" href="/assets/js/155.6ff86f83.js"><link rel="prefetch" href="/assets/js/156.7a3a5b95.js"><link rel="prefetch" href="/assets/js/157.9566003c.js"><link rel="prefetch" href="/assets/js/158.e42460a2.js"><link rel="prefetch" href="/assets/js/159.dba14f71.js"><link rel="prefetch" href="/assets/js/16.b8c3d228.js"><link rel="prefetch" href="/assets/js/160.aef4d876.js"><link rel="prefetch" href="/assets/js/161.546fab3c.js"><link rel="prefetch" href="/assets/js/162.b33a37a8.js"><link rel="prefetch" href="/assets/js/163.13ca61e5.js"><link rel="prefetch" href="/assets/js/164.a8461635.js"><link rel="prefetch" href="/assets/js/165.2497506d.js"><link rel="prefetch" href="/assets/js/166.971b5636.js"><link rel="prefetch" href="/assets/js/167.1091ebdd.js"><link rel="prefetch" href="/assets/js/168.a34ab2d2.js"><link rel="prefetch" href="/assets/js/169.544be3fe.js"><link rel="prefetch" href="/assets/js/17.e10530ad.js"><link rel="prefetch" href="/assets/js/170.5c68684a.js"><link rel="prefetch" href="/assets/js/171.ed3bade7.js"><link rel="prefetch" href="/assets/js/172.6b319d4a.js"><link rel="prefetch" href="/assets/js/173.4a8f681e.js"><link rel="prefetch" href="/assets/js/174.2ce7b1e4.js"><link rel="prefetch" href="/assets/js/175.10a33485.js"><link rel="prefetch" href="/assets/js/176.7f5e4efe.js"><link rel="prefetch" href="/assets/js/177.330eea5f.js"><link rel="prefetch" href="/assets/js/178.ed04a238.js"><link rel="prefetch" href="/assets/js/179.317e4c7a.js"><link rel="prefetch" href="/assets/js/18.6c6b01f3.js"><link rel="prefetch" href="/assets/js/180.52a80961.js"><link rel="prefetch" href="/assets/js/181.d18d11d2.js"><link rel="prefetch" href="/assets/js/182.40787325.js"><link rel="prefetch" href="/assets/js/183.ed6b600f.js"><link rel="prefetch" href="/assets/js/184.710c91b7.js"><link rel="prefetch" href="/assets/js/185.cf168d23.js"><link rel="prefetch" href="/assets/js/186.adb86380.js"><link rel="prefetch" href="/assets/js/187.9a7b2b15.js"><link rel="prefetch" href="/assets/js/188.8e7b8f14.js"><link rel="prefetch" href="/assets/js/189.4a7d6da5.js"><link rel="prefetch" href="/assets/js/19.cfaa6f29.js"><link rel="prefetch" href="/assets/js/190.ac08185e.js"><link rel="prefetch" href="/assets/js/191.8a4c0cca.js"><link rel="prefetch" href="/assets/js/192.70ea3919.js"><link rel="prefetch" href="/assets/js/193.538c7e82.js"><link rel="prefetch" href="/assets/js/194.4563ab55.js"><link rel="prefetch" href="/assets/js/195.e4f08ca4.js"><link rel="prefetch" href="/assets/js/196.30b9069a.js"><link rel="prefetch" href="/assets/js/197.c627d016.js"><link rel="prefetch" href="/assets/js/198.d77757a2.js"><link rel="prefetch" href="/assets/js/199.555e4dec.js"><link rel="prefetch" href="/assets/js/20.985050a9.js"><link rel="prefetch" href="/assets/js/200.95caa18a.js"><link rel="prefetch" href="/assets/js/201.2360c5c0.js"><link rel="prefetch" href="/assets/js/202.fc75e5e9.js"><link rel="prefetch" href="/assets/js/203.9616f24c.js"><link rel="prefetch" href="/assets/js/204.b8ad81d6.js"><link rel="prefetch" href="/assets/js/205.1fd350b0.js"><link rel="prefetch" href="/assets/js/206.e932c76b.js"><link rel="prefetch" href="/assets/js/207.58e6f047.js"><link rel="prefetch" href="/assets/js/208.a4fef981.js"><link rel="prefetch" href="/assets/js/209.81aaf9d9.js"><link rel="prefetch" href="/assets/js/21.983111a2.js"><link rel="prefetch" href="/assets/js/210.e960d3ea.js"><link rel="prefetch" href="/assets/js/211.d482dbcc.js"><link rel="prefetch" href="/assets/js/212.18f7371b.js"><link rel="prefetch" href="/assets/js/213.73b4c0b1.js"><link rel="prefetch" href="/assets/js/214.276b16be.js"><link rel="prefetch" href="/assets/js/215.de5bb504.js"><link rel="prefetch" href="/assets/js/22.38e1ece2.js"><link rel="prefetch" href="/assets/js/23.22338533.js"><link rel="prefetch" href="/assets/js/24.ab17d554.js"><link rel="prefetch" href="/assets/js/25.d25f62a8.js"><link rel="prefetch" href="/assets/js/26.f6465387.js"><link rel="prefetch" href="/assets/js/27.6986aad8.js"><link rel="prefetch" href="/assets/js/28.fb3a68af.js"><link rel="prefetch" href="/assets/js/29.614cacaa.js"><link rel="prefetch" href="/assets/js/3.71cf2de6.js"><link rel="prefetch" href="/assets/js/30.abf429d1.js"><link rel="prefetch" href="/assets/js/31.fb3bbd86.js"><link rel="prefetch" href="/assets/js/32.5e607d3e.js"><link rel="prefetch" href="/assets/js/33.00cc97d8.js"><link rel="prefetch" href="/assets/js/34.de079634.js"><link rel="prefetch" href="/assets/js/35.c1160378.js"><link rel="prefetch" href="/assets/js/36.bb03a18f.js"><link rel="prefetch" href="/assets/js/37.94ad71b0.js"><link rel="prefetch" href="/assets/js/38.aa30304e.js"><link rel="prefetch" href="/assets/js/39.1edd0325.js"><link rel="prefetch" href="/assets/js/4.a3c948eb.js"><link rel="prefetch" href="/assets/js/40.e575d119.js"><link rel="prefetch" href="/assets/js/41.e7757193.js"><link rel="prefetch" href="/assets/js/42.42efef3a.js"><link rel="prefetch" href="/assets/js/43.d2024176.js"><link rel="prefetch" href="/assets/js/44.3664f2f5.js"><link rel="prefetch" href="/assets/js/45.35b23294.js"><link rel="prefetch" href="/assets/js/46.d433a0bb.js"><link rel="prefetch" href="/assets/js/47.69303503.js"><link rel="prefetch" href="/assets/js/48.ccab8678.js"><link rel="prefetch" href="/assets/js/49.310b94fd.js"><link rel="prefetch" href="/assets/js/5.6260a1a4.js"><link rel="prefetch" href="/assets/js/50.fdd787dc.js"><link rel="prefetch" href="/assets/js/51.378c30f1.js"><link rel="prefetch" href="/assets/js/52.99b25085.js"><link rel="prefetch" href="/assets/js/53.3eedc5ee.js"><link rel="prefetch" href="/assets/js/54.cd48cc73.js"><link rel="prefetch" href="/assets/js/55.775dcbc9.js"><link rel="prefetch" href="/assets/js/56.65bc64c3.js"><link rel="prefetch" href="/assets/js/57.0d5f8f83.js"><link rel="prefetch" href="/assets/js/58.3fa727b0.js"><link rel="prefetch" href="/assets/js/59.4be88bf9.js"><link rel="prefetch" href="/assets/js/6.9f0491ef.js"><link rel="prefetch" href="/assets/js/60.cc0fa88d.js"><link rel="prefetch" href="/assets/js/61.33acc2f0.js"><link rel="prefetch" href="/assets/js/62.6e7bb7ac.js"><link rel="prefetch" href="/assets/js/63.7740fed4.js"><link rel="prefetch" href="/assets/js/64.94f2dc41.js"><link rel="prefetch" href="/assets/js/65.68a45fcc.js"><link rel="prefetch" href="/assets/js/66.7ee3b977.js"><link rel="prefetch" href="/assets/js/67.ec9a21bf.js"><link rel="prefetch" href="/assets/js/68.f857f48a.js"><link rel="prefetch" href="/assets/js/69.24862f3f.js"><link rel="prefetch" href="/assets/js/7.7878af64.js"><link rel="prefetch" href="/assets/js/70.ac682f3f.js"><link rel="prefetch" href="/assets/js/71.06d8e456.js"><link rel="prefetch" href="/assets/js/72.067b39c0.js"><link rel="prefetch" href="/assets/js/73.e9955da6.js"><link rel="prefetch" href="/assets/js/74.9f3853e7.js"><link rel="prefetch" href="/assets/js/75.3f84828d.js"><link rel="prefetch" href="/assets/js/76.2cb08c83.js"><link rel="prefetch" href="/assets/js/77.44bd6203.js"><link rel="prefetch" href="/assets/js/78.372242ea.js"><link rel="prefetch" href="/assets/js/79.15e95c1a.js"><link rel="prefetch" href="/assets/js/8.339d4eff.js"><link rel="prefetch" href="/assets/js/80.1ccc8d8a.js"><link rel="prefetch" href="/assets/js/81.0298b9ba.js"><link rel="prefetch" href="/assets/js/82.8a8a13eb.js"><link rel="prefetch" href="/assets/js/83.ca549b7f.js"><link rel="prefetch" href="/assets/js/84.595d6fe1.js"><link rel="prefetch" href="/assets/js/85.7394fe4f.js"><link rel="prefetch" href="/assets/js/86.bfac6064.js"><link rel="prefetch" href="/assets/js/87.aa9c9594.js"><link rel="prefetch" href="/assets/js/88.a5280591.js"><link rel="prefetch" href="/assets/js/89.6b9adaa5.js"><link rel="prefetch" href="/assets/js/9.37e757bd.js"><link rel="prefetch" href="/assets/js/90.9b379b68.js"><link rel="prefetch" href="/assets/js/91.1dee4d2a.js"><link rel="prefetch" href="/assets/js/92.6a3889fd.js"><link rel="prefetch" href="/assets/js/93.74ba75c4.js"><link rel="prefetch" href="/assets/js/94.22503356.js"><link rel="prefetch" href="/assets/js/95.772e7662.js"><link rel="prefetch" href="/assets/js/96.c42ec5e2.js"><link rel="prefetch" href="/assets/js/97.42fd937e.js"><link rel="prefetch" href="/assets/js/98.2d4b19be.js"><link rel="prefetch" href="/assets/js/99.d206c5a1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.Database/" class="nav-link">
+  🎨数据库
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/05.SE/" class="nav-link router-link-active">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.PerformanceOpt/" class="nav-link">
+  🔥性能调优
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🎓Coding" class="dropdown-title"><span class="title">🎓Coding</span> <span class="arrow down"></span></button> <button type="button" aria-label="🎓Coding" class="mobile-dropdown-title"><span class="title">🎓Coding</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/00.Coding/TheBeautyOfProgramming/" class="nav-link">
+  🔖编程之美题解
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/CodeWarehouse/" class="nav-link">
+  🔖代码意识流
+</a></li><li class="dropdown-item"><!----> <a href="/00.Coding/" class="nav-link">
+  🔖面试题题解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🚀语言" class="dropdown-title"><span class="title">🚀语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="🚀语言" class="mobile-dropdown-title"><span class="title">🚀语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/01.Language/Overview/" class="nav-link">
+  🔖概述
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/C/" class="nav-link">
+  ⭐️C
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Cpp/" class="nav-link">
+  🚀C++
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Java/" class="nav-link">
+  ☕️Java
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Python/" class="nav-link">
+  🧩Python3
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/Fortran/" class="nav-link">
+  🎲Fortran
+</a></li><li class="dropdown-item"><!----> <a href="/01.Language/JavaScript/" class="nav-link">
+  🎨JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/02.Hardware/" class="nav-link">
+  ✔️硬件基础
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐️软件基础" class="dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="⭐️软件基础" class="mobile-dropdown-title"><span class="title">⭐️软件基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03.Software/01.DataStructureAndAlgorithm/" class="nav-link">
+  🐾数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/02.OS/" class="nav-link">
+  💻操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/03.Net/" class="nav-link">
+  ☁️计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/04.Database/" class="nav-link">
+  🎨数据库
+</a></li><li class="dropdown-item"><!----> <a href="/03.Software/05.SE/" class="nav-link router-link-active">
+  ✅软件工程
+</a></li></ul></div></div><div class="nav-item"><a href="/04.PerformanceOpt/" class="nav-link">
+  🔥性能调优
+</a></div><div class="nav-item"><a href="/05.Engineer/" class="nav-link">
+  🔖学术/工程
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⚙️工具" class="dropdown-title"><span class="title">⚙️工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="⚙️工具" class="mobile-dropdown-title"><span class="title">⚙️工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/06.Tools/01.employment/" class="nav-link">
+  🔖求职
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/02.efficiency/" class="nav-link">
+  🚀效能
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/03.windows/" class="nav-link">
+  ⚙️Windows
+</a></li><li class="dropdown-item"><!----> <a href="/06.Tools/04.design/" class="nav-link">
+  🧩设计
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/whoway" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_01-单例模式-singelton" class="sidebar-link">01.单例模式（Singelton）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#一、背景需求" class="sidebar-link">一、背景需求</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#二、类图如下" class="sidebar-link">二、类图如下</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#三、实现代码" class="sidebar-link">三、实现代码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#单线程-懒汉式" class="sidebar-link">单线程——懒汉式</a></li><li class="sidebar-sub-header"><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#单线程-饿汉式" class="sidebar-link">单线程——饿汉式：</a></li></ul></li><li><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#四、多线程代码" class="sidebar-link">四、多线程代码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/03.Software/05.SE/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#参考资料" class="sidebar-link">参考资料</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="设计模式"><a href="#设计模式" class="header-anchor">#</a> 设计模式</h1> <h2 id="_01-单例模式-singelton"><a href="#_01-单例模式-singelton" class="header-anchor">#</a> 01.单例模式（Singelton）</h2> <p><font style="background:yellow;">还有代码和图片没有弄进来，暂停，先写出博客框架</font></p> <h2 id="一、背景需求"><a href="#一、背景需求" class="header-anchor">#</a> 一、背景需求</h2> <p>1）概念：
+单例模式（Singleton Pattern）：</p> <ul><li>保证一个类仅有一个实例（只生成唯一的实例对象）</li> <li>并且提供一个访问它的全局访问点。</li></ul> <p>2）项目实践中场景</p> <ul><li>比如多线程编程中，要是需要通过该使用socket资源，但是明显的多次初始化socket会浪费资源，所以我们的做法是只初始化一次</li> <li>在Java中，servlet环境中，我们需要共享同一个资源或者操作同一个对象</li></ul> <h2 id="二、类图如下"><a href="#二、类图如下" class="header-anchor">#</a> 二、类图如下</h2> <h2 id="三、实现代码"><a href="#三、实现代码" class="header-anchor">#</a> 三、实现代码</h2> <p>我们由单例模式的概念，可以抽象出我们在面向对象程序设计的时候需要这么做</p> <blockquote><ul><li>1）构造函数私有化</li> <li>2）提供一个全局访问点（用全局的静态方法实现）</li> <li>3）在列中定义</li></ul></blockquote> <ul><li>让<strong>构造函数为 private</strong>，这样该类就不会被实例化</li></ul> <p>根据什么时候new单例的情况，可以分为懒汉式和饿汉式</p> <h3 id="单线程-懒汉式"><a href="#单线程-懒汉式" class="header-anchor">#</a> 单线程——懒汉式</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singelton</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">private</span><span class="token operator">:</span>
+		<span class="token keyword">static</span> Singelton <span class="token operator">*</span> ptr<span class="token punctuation">;</span>
+		<span class="token keyword">static</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+	<span class="token comment">//构造函数注意是：private</span>
+		<span class="token function">Singelton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			ptr<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+			count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+			cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;调用构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	
+	<span class="token keyword">public</span><span class="token operator">:</span>
+		<span class="token comment">//获取单例的全局访问点，获取单例的接口 </span>
+		<span class="token keyword">static</span> Singelton <span class="token operator">*</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token operator">==</span>ptr<span class="token punctuation">)</span>
+			<span class="token punctuation">{</span>
+				ptr<span class="token operator">=</span><span class="token keyword">new</span> Singelton<span class="token punctuation">;</span>
+			<span class="token punctuation">}</span> 
+			<span class="token keyword">return</span> ptr<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+		<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Singelton_Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;cout=&quot;</span><span class="token operator">&lt;&lt;</span>count<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+		<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//懒汉式的地方：并不创建单例对象 </span>
+Singelton <span class="token operator">*</span> Singelton<span class="token double-colon punctuation">::</span>ptr<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> Singelton<span class="token double-colon punctuation">::</span>count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;单线程——懒汉式&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+	
+	<span class="token comment">//调用getInstance，当单例不存在则new，存在则不new</span>
+	<span class="token comment">//保证了一个单例 </span>
+	Singelton <span class="token operator">*</span> p1<span class="token operator">=</span><span class="token class-name">Singelton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Singelton <span class="token operator">*</span> p2<span class="token operator">=</span><span class="token class-name">Singelton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">if</span><span class="token punctuation">(</span>p1<span class="token operator">!=</span>p2<span class="token punctuation">)</span> 
+	<span class="token punctuation">{</span>
+		cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;不是同一个对象&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span>
+	<span class="token punctuation">{</span>
+		cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;是同一个对象&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	
+	p1<span class="token operator">-&gt;</span><span class="token function">Singelton_Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	p2<span class="token operator">-&gt;</span><span class="token function">Singelton_Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br></div></div><h3 id="单线程-饿汉式"><a href="#单线程-饿汉式" class="header-anchor">#</a> 单线程——饿汉式：</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singelton</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">private</span><span class="token operator">:</span>
+		<span class="token keyword">static</span> Singelton <span class="token operator">*</span> ptr<span class="token punctuation">;</span>
+		<span class="token keyword">static</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+		
+		<span class="token function">Singelton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			ptr<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+			count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+			cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;调用构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	
+	<span class="token keyword">public</span><span class="token operator">:</span>
+		<span class="token comment">//获取单例的全局访问点，获取单例的接口 </span>
+		<span class="token keyword">static</span> Singelton <span class="token operator">*</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			
+			<span class="token keyword">return</span> ptr<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+		<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Singelton_Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;cout=&quot;</span><span class="token operator">&lt;&lt;</span>count<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+		<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//饿汉式的地方：无论你会不会用到，先给你创建了单例对象 </span>
+Singelton <span class="token operator">*</span> Singelton<span class="token double-colon punctuation">::</span>ptr<span class="token operator">=</span><span class="token keyword">new</span> Singelton<span class="token punctuation">;</span>
+<span class="token keyword">int</span> Singelton<span class="token double-colon punctuation">::</span>count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;单线程——饿汉式&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+	
+	
+	Singelton <span class="token operator">*</span> p1<span class="token operator">=</span><span class="token class-name">Singelton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Singelton <span class="token operator">*</span> p2<span class="token operator">=</span><span class="token class-name">Singelton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">if</span><span class="token punctuation">(</span>p1<span class="token operator">!=</span>p2<span class="token punctuation">)</span> 
+	<span class="token punctuation">{</span>
+		cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;不是同一个对象&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span>
+	<span class="token punctuation">{</span>
+		cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;是同一个对象&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+	
+	p1<span class="token operator">-&gt;</span><span class="token function">Singelton_Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	p2<span class="token operator">-&gt;</span><span class="token function">Singelton_Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><h2 id="四、多线程代码"><a href="#四、多线程代码" class="header-anchor">#</a> 四、多线程代码</h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>### 1）Windows下多线程
+
+### 2）Linux下多线程
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li>国外，<a href="https://refactoringguru.cn/design-patterns" target="_blank" rel="noopener noreferrer">设计模式网站<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4e8504bc.js" defer></script><script src="/assets/js/2.e96ccaa8.js" defer></script><script src="/assets/js/126.d4a6358c.js" defer></script>
+  </body>
+</html>
