@@ -1,10 +1,10 @@
 {
-  "name": "HACV",
-  "short_name": "HACV",
+  "name": "whoway",
+  "short_name": "whoway",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#FFF000",  
-  "description": "HACV的个人主页",
+  "description": "whoway的个人主页",
   "theme_color": "blue",
   "icons": [
     {
