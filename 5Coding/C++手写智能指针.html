@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>C++手写智能指针 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.a88dafb3.css" as="style"><link rel="preload" href="/assets/js/app.fef1807c.js" as="script"><link rel="preload" href="/assets/js/2.5ea5554b.js" as="script"><link rel="preload" href="/assets/js/1.ee64f59e.js" as="script"><link rel="preload" href="/assets/js/108.fd373509.js" as="script"><link rel="prefetch" href="/assets/js/10.f7951ff5.js"><link rel="prefetch" href="/assets/js/100.a55e7195.js"><link rel="prefetch" href="/assets/js/101.36d34b11.js"><link rel="prefetch" href="/assets/js/102.c4299103.js"><link rel="prefetch" href="/assets/js/103.60c46710.js"><link rel="prefetch" href="/assets/js/104.10d75cc9.js"><link rel="prefetch" href="/assets/js/105.89233b20.js"><link rel="prefetch" href="/assets/js/106.c91516c6.js"><link rel="prefetch" href="/assets/js/107.feae1d0d.js"><link rel="prefetch" href="/assets/js/109.8112d988.js"><link rel="prefetch" href="/assets/js/11.3e761738.js"><link rel="prefetch" href="/assets/js/110.a775643d.js"><link rel="prefetch" href="/assets/js/111.0bc0fac5.js"><link rel="prefetch" href="/assets/js/112.1d9fca23.js"><link rel="prefetch" href="/assets/js/113.da451f3b.js"><link rel="prefetch" href="/assets/js/114.634bb227.js"><link rel="prefetch" href="/assets/js/115.50251dfe.js"><link rel="prefetch" href="/assets/js/116.ce1404b1.js"><link rel="prefetch" href="/assets/js/117.e231ee50.js"><link rel="prefetch" href="/assets/js/118.5f7fbaa7.js"><link rel="prefetch" href="/assets/js/119.8016c877.js"><link rel="prefetch" href="/assets/js/12.aa5bb9c2.js"><link rel="prefetch" href="/assets/js/120.a623032e.js"><link rel="prefetch" href="/assets/js/121.d6ff59dd.js"><link rel="prefetch" href="/assets/js/122.197f7dc7.js"><link rel="prefetch" href="/assets/js/123.2ec3dd89.js"><link rel="prefetch" href="/assets/js/124.0f66c220.js"><link rel="prefetch" href="/assets/js/125.b8315411.js"><link rel="prefetch" href="/assets/js/126.2afd6d9b.js"><link rel="prefetch" href="/assets/js/127.29dd0af3.js"><link rel="prefetch" href="/assets/js/128.b1016252.js"><link rel="prefetch" href="/assets/js/129.f8dc7e6b.js"><link rel="prefetch" href="/assets/js/13.19c05274.js"><link rel="prefetch" href="/assets/js/130.60dc2467.js"><link rel="prefetch" href="/assets/js/131.f7bbc164.js"><link rel="prefetch" href="/assets/js/132.90274133.js"><link rel="prefetch" href="/assets/js/133.1cb2c952.js"><link rel="prefetch" href="/assets/js/134.b7cd3f3c.js"><link rel="prefetch" href="/assets/js/135.6bb9b64f.js"><link rel="prefetch" href="/assets/js/136.29fdb44a.js"><link rel="prefetch" href="/assets/js/137.4f510999.js"><link rel="prefetch" href="/assets/js/138.52b03372.js"><link rel="prefetch" href="/assets/js/139.1c30e7f0.js"><link rel="prefetch" href="/assets/js/14.89265531.js"><link rel="prefetch" href="/assets/js/140.932b8fee.js"><link rel="prefetch" href="/assets/js/141.80ec518d.js"><link rel="prefetch" href="/assets/js/142.a5c03ec6.js"><link rel="prefetch" href="/assets/js/143.05b7aa2f.js"><link rel="prefetch" href="/assets/js/144.8b31bee8.js"><link rel="prefetch" href="/assets/js/145.2f090708.js"><link rel="prefetch" href="/assets/js/146.ef599f21.js"><link rel="prefetch" href="/assets/js/147.26289ff6.js"><link rel="prefetch" href="/assets/js/148.22ae78dc.js"><link rel="prefetch" href="/assets/js/149.ada2822a.js"><link rel="prefetch" href="/assets/js/15.33db6b39.js"><link rel="prefetch" href="/assets/js/150.d2109375.js"><link rel="prefetch" href="/assets/js/151.9dbd0047.js"><link rel="prefetch" href="/assets/js/152.167aa8b0.js"><link rel="prefetch" href="/assets/js/153.289360f4.js"><link rel="prefetch" href="/assets/js/154.640e093a.js"><link rel="prefetch" href="/assets/js/155.8a3c508a.js"><link rel="prefetch" href="/assets/js/156.3dfa457e.js"><link rel="prefetch" href="/assets/js/157.fa6b2343.js"><link rel="prefetch" href="/assets/js/158.69d9b0c6.js"><link rel="prefetch" href="/assets/js/159.9378e797.js"><link rel="prefetch" href="/assets/js/16.43d456ec.js"><link rel="prefetch" href="/assets/js/160.ef6649b3.js"><link rel="prefetch" href="/assets/js/161.47379597.js"><link rel="prefetch" href="/assets/js/162.172ce821.js"><link rel="prefetch" href="/assets/js/163.4d552f3f.js"><link rel="prefetch" href="/assets/js/164.a6bbacd2.js"><link rel="prefetch" href="/assets/js/165.1df8e846.js"><link rel="prefetch" href="/assets/js/166.f5d85b41.js"><link rel="prefetch" href="/assets/js/17.ef4d8cc7.js"><link rel="prefetch" href="/assets/js/18.27977fa4.js"><link rel="prefetch" href="/assets/js/19.d6620149.js"><link rel="prefetch" href="/assets/js/20.11adba06.js"><link rel="prefetch" href="/assets/js/21.3fc53ab6.js"><link rel="prefetch" href="/assets/js/22.9fe23fa7.js"><link rel="prefetch" href="/assets/js/23.42d6545a.js"><link rel="prefetch" href="/assets/js/24.e4bad178.js"><link rel="prefetch" href="/assets/js/25.581919bc.js"><link rel="prefetch" href="/assets/js/26.44d129de.js"><link rel="prefetch" href="/assets/js/27.160dd979.js"><link rel="prefetch" href="/assets/js/28.f6eb4b3d.js"><link rel="prefetch" href="/assets/js/29.b2452b78.js"><link rel="prefetch" href="/assets/js/3.80cc865c.js"><link rel="prefetch" href="/assets/js/30.34be63b5.js"><link rel="prefetch" href="/assets/js/31.6e192160.js"><link rel="prefetch" href="/assets/js/32.8422fffe.js"><link rel="prefetch" href="/assets/js/33.271201c8.js"><link rel="prefetch" href="/assets/js/34.f167581d.js"><link rel="prefetch" href="/assets/js/35.75c1f60b.js"><link rel="prefetch" href="/assets/js/36.3436fa08.js"><link rel="prefetch" href="/assets/js/37.1cbfdb4c.js"><link rel="prefetch" href="/assets/js/38.43a7623e.js"><link rel="prefetch" href="/assets/js/39.47b808b5.js"><link rel="prefetch" href="/assets/js/4.8fda9edc.js"><link rel="prefetch" href="/assets/js/40.480ee5e3.js"><link rel="prefetch" href="/assets/js/41.d71daf83.js"><link rel="prefetch" href="/assets/js/42.0aacdde5.js"><link rel="prefetch" href="/assets/js/43.75896d0e.js"><link rel="prefetch" href="/assets/js/44.0b08b221.js"><link rel="prefetch" href="/assets/js/45.3bcdccd5.js"><link rel="prefetch" href="/assets/js/46.c5d5db60.js"><link rel="prefetch" href="/assets/js/47.be8b4e7f.js"><link rel="prefetch" href="/assets/js/48.0861ee8f.js"><link rel="prefetch" href="/assets/js/49.8315e859.js"><link rel="prefetch" href="/assets/js/5.604145cb.js"><link rel="prefetch" href="/assets/js/50.e7de0e50.js"><link rel="prefetch" href="/assets/js/51.f048f354.js"><link rel="prefetch" href="/assets/js/52.83276855.js"><link rel="prefetch" href="/assets/js/53.232b5c54.js"><link rel="prefetch" href="/assets/js/54.a5afa168.js"><link rel="prefetch" href="/assets/js/55.a6f19001.js"><link rel="prefetch" href="/assets/js/56.5265ddff.js"><link rel="prefetch" href="/assets/js/57.207c7080.js"><link rel="prefetch" href="/assets/js/58.e6aa997d.js"><link rel="prefetch" href="/assets/js/59.d760a92a.js"><link rel="prefetch" href="/assets/js/6.e1d663ee.js"><link rel="prefetch" href="/assets/js/60.86867c42.js"><link rel="prefetch" href="/assets/js/61.a0701563.js"><link rel="prefetch" href="/assets/js/62.0b9aa035.js"><link rel="prefetch" href="/assets/js/63.06537bf7.js"><link rel="prefetch" href="/assets/js/64.1486ed7f.js"><link rel="prefetch" href="/assets/js/65.9653f79c.js"><link rel="prefetch" href="/assets/js/66.f4685d57.js"><link rel="prefetch" href="/assets/js/67.ef1c6e4d.js"><link rel="prefetch" href="/assets/js/68.6466179a.js"><link rel="prefetch" href="/assets/js/69.51dbcaa7.js"><link rel="prefetch" href="/assets/js/7.fd8c7dac.js"><link rel="prefetch" href="/assets/js/70.089a5911.js"><link rel="prefetch" href="/assets/js/71.a7ebe386.js"><link rel="prefetch" href="/assets/js/72.7de9dda5.js"><link rel="prefetch" href="/assets/js/73.be5a965c.js"><link rel="prefetch" href="/assets/js/74.9fcd6322.js"><link rel="prefetch" href="/assets/js/75.a5c00062.js"><link rel="prefetch" href="/assets/js/76.2e9c10fc.js"><link rel="prefetch" href="/assets/js/77.8c0308d9.js"><link rel="prefetch" href="/assets/js/78.37261452.js"><link rel="prefetch" href="/assets/js/79.279690be.js"><link rel="prefetch" href="/assets/js/80.b4976f98.js"><link rel="prefetch" href="/assets/js/81.4e941575.js"><link rel="prefetch" href="/assets/js/82.7d7d16ee.js"><link rel="prefetch" href="/assets/js/83.f4f0fdaa.js"><link rel="prefetch" href="/assets/js/84.9162b175.js"><link rel="prefetch" href="/assets/js/85.d8e4c194.js"><link rel="prefetch" href="/assets/js/86.e531524c.js"><link rel="prefetch" href="/assets/js/87.fd3198e4.js"><link rel="prefetch" href="/assets/js/88.4f753f29.js"><link rel="prefetch" href="/assets/js/89.74e79c5b.js"><link rel="prefetch" href="/assets/js/90.256c6574.js"><link rel="prefetch" href="/assets/js/91.65baa920.js"><link rel="prefetch" href="/assets/js/92.78d04995.js"><link rel="prefetch" href="/assets/js/93.98312002.js"><link rel="prefetch" href="/assets/js/94.91e68d45.js"><link rel="prefetch" href="/assets/js/95.6431fa9d.js"><link rel="prefetch" href="/assets/js/96.07c49eff.js"><link rel="prefetch" href="/assets/js/97.35cf58b5.js"><link rel="prefetch" href="/assets/js/98.42708032.js"><link rel="prefetch" href="/assets/js/99.c2ca4aab.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.af85784a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a88dafb3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/1Db/" class="nav-link">
+  数据库
+</a></div><div class="nav-item"><a href="/2Net/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/3Language/" class="nav-link">
+  语言
+</a></div><div class="nav-item"><a href="/4GNU-Linux/" class="nav-link">
+  GNU-OS
+</a></div><div class="nav-item"><a href="/5Coding/" class="nav-link router-link-active">
+  编码
+</a></div><div class="nav-item"><a href="/6MacOS/" class="nav-link">
+  MacOS
+</a></div><div class="nav-item"><a href="/7Windows/" class="nav-link">
+  Windows
+</a></div><div class="nav-item"><a href="/8software/" class="nav-link">
+  软件工具
+</a></div><div class="nav-item"><a href="/9Status/" class="nav-link">
+  网站动态
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/1Db/" class="nav-link">
+  数据库
+</a></div><div class="nav-item"><a href="/2Net/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/3Language/" class="nav-link">
+  语言
+</a></div><div class="nav-item"><a href="/4GNU-Linux/" class="nav-link">
+  GNU-OS
+</a></div><div class="nav-item"><a href="/5Coding/" class="nav-link router-link-active">
+  编码
+</a></div><div class="nav-item"><a href="/6MacOS/" class="nav-link">
+  MacOS
+</a></div><div class="nav-item"><a href="/7Windows/" class="nav-link">
+  Windows
+</a></div><div class="nav-item"><a href="/8software/" class="nav-link">
+  软件工具
+</a></div><div class="nav-item"><a href="/9Status/" class="nav-link">
+  网站动态
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>C++手写智能指针</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/5Coding/C++%E6%89%8B%E5%86%99%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html#如何实现一个-线程安全-的shared-ptr智能指针" class="sidebar-link">如何实现一个”线程安全“的shared_ptr智能指针？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/5Coding/C++%E6%89%8B%E5%86%99%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html#旷视-实现一个简单的智能指针" class="sidebar-link">旷视-实现一个简单的智能指针</a></li></ul></li><li><a href="/5Coding/C++%E6%89%8B%E5%86%99%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html#实现一个unique-ptr-并且讲一下其raii" class="sidebar-link">实现一个unique_ptr，并且讲一下其RAII</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/5Coding/C++%E6%89%8B%E5%86%99%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88.html#实现单例" class="sidebar-link">实现单例</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="c-手写智能指针"><a href="#c-手写智能指针" class="header-anchor">#</a> C++手写智能指针</h1> <h2 id="如何实现一个-线程安全-的shared-ptr智能指针"><a href="#如何实现一个-线程安全-的shared-ptr智能指针" class="header-anchor">#</a> 如何实现一个”线程安全“的shared_ptr智能指针？</h2> <p>这个题目拿到手后得搞清楚shared_ptr的原理
+1.在其内部，给每个资源都维护了着一份计数，用来记录该份资源被几个对象共享。
+2.在对象被销毁时，就说明自己不使用该资源了，对象的引用计数减一。
+3.如果引用计数是0，就说明自己是最后一个使用该资源的对象，必须释放该资源；
+4.如果不是0，就说明除了自己还有其他对象在使用该份资源，不能释放该资源，否则其他对象就成野指针了。</p> <p>而且题目既然要求线程安全，就得考虑下面两个问题：
+1.智能指针对象中的引用技术是多个对象所共享的，<strong>两个线程同时对智能指针</strong>进行++或–运算，这个计数原来是1，++了两次可能还是2，这样引用技术就错乱了。会导致资源未释放或者程序崩溃的问题。所以只能指针中引用计数++、–是需要加锁的，也就是说引用计数的操作是线程安全的。
+2.智能指针的对象存放在堆上，可能会导致线程安全问题。</p> <p>实现一个线程安全的shared_ptr智能指针需要满足以下要求：</p> <ol><li>任何时刻只能有一个线程能够修改计数器和指针。</li> <li>当一个线程正在修改计数器和指针时，其他线程不能够读取或修改计数器和指针。</li> <li>当一个线程在使用shared_ptr时，其他线程不能够销毁指向的对象。</li></ol> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;mutex&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">//引用计数器</span>
+<span class="token keyword">class</span> <span class="token class-name">mycounter</span><span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">mycounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">m_used</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token function">mycounter</span><span class="token punctuation">(</span> <span class="token keyword">const</span> mycounter<span class="token operator">&amp;</span> <span class="token punctuation">)</span><span class="token operator">=</span><span class="token keyword">delete</span><span class="token punctuation">;</span>
+    <span class="token operator">~</span><span class="token function">mycounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    mycounter<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> mycounter<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token keyword">delete</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        m_used<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> m_used<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token operator">++</span>m_used<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        m_used<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token operator">--</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token operator">--</span>m_used<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token operator">--</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        m_used<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">friend</span> ostream<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span> ostream<span class="token operator">&amp;</span> os <span class="token punctuation">,</span> <span class="token keyword">const</span> mycounter<span class="token operator">&amp;</span> temp<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        os<span class="token operator">&lt;&lt;</span> <span class="token string">&quot;counter value=&quot;</span> <span class="token operator">&lt;&lt;</span> temp<span class="token punctuation">.</span>m_used <span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> os<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> m_used<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">//核心智能指针</span>
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span> <span class="token operator">&gt;</span>
+<span class="token keyword">class</span> <span class="token class-name">myshared_ptr</span><span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">explicit</span> <span class="token function">myshared_ptr</span><span class="token punctuation">(</span> T <span class="token operator">*</span>ptr<span class="token operator">=</span><span class="token keyword">nullptr</span> <span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">m_ptr</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token function">m_pCounter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token function">mycounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">m_pMutex</span><span class="token punctuation">(</span><span class="token keyword">new</span> mutex<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">nullptr</span><span class="token operator">!=</span>ptr <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">add_ref_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//添加引用计数</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">myshared_ptr</span><span class="token punctuation">(</span> myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>sp <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">~</span> <span class="token function">myshared_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span> <span class="token keyword">const</span> myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>sp <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    T <span class="token operator">*</span> <span class="token keyword">operator</span><span class="token operator">-&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    T <span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    T <span class="token operator">*</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">usecount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    T <span class="token operator">*</span>m_ptr<span class="token punctuation">;</span>
+    mutex <span class="token operator">*</span> m_pMutex<span class="token punctuation">;</span> <span class="token comment">//互斥锁</span>
+    mycounter <span class="token operator">*</span>m_pCounter<span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token function">add_ref_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">realse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//实现细节</span>
+<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+<span class="token class-name">myshared_ptr</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token function">myshared_ptr</span><span class="token punctuation">(</span>myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>sp<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token comment">//?浅拷贝✅</span>
+    m_ptr<span class="token operator">=</span>sp<span class="token punctuation">.</span>m_ptr<span class="token punctuation">;</span>
+    m_pCounter<span class="token operator">=</span>sp<span class="token punctuation">.</span>m_pCounter<span class="token punctuation">;</span>
+    m_pMutex<span class="token operator">=</span>sp<span class="token punctuation">.</span>m_pMutex<span class="token punctuation">;</span>
+    <span class="token function">add_ref_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> 
+myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> sp<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//防止自己assign给自己✅</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>m_ptr <span class="token operator">!=</span> sp<span class="token punctuation">.</span>m_ptr<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">realse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//为什么呢？✅✅因为自身原来指向的内存引用要减1</span>
+
+        <span class="token comment">//?浅拷贝</span>
+        m_ptr<span class="token operator">=</span>sp<span class="token punctuation">.</span>m_ptr<span class="token punctuation">;</span>
+        m_pCounter<span class="token operator">=</span>sp<span class="token punctuation">.</span>m_pCounter<span class="token punctuation">;</span>
+        m_pMutex<span class="token operator">=</span>sp<span class="token punctuation">.</span>m_pMutex<span class="token punctuation">;</span>
+
+        <span class="token function">add_ref_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  	
+  	<span class="token comment">//如果是自己拷贝给自己</span>
+  	<span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+T <span class="token operator">*</span>
+myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">-&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> m_ptr<span class="token punctuation">;</span> <span class="token comment">//因为会自动去获得</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+T <span class="token operator">&amp;</span>
+myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">*</span>m_ptr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+T <span class="token operator">*</span>
+<span class="token class-name">myshared_ptr</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> m_ptr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span>
+<span class="token class-name">myshared_ptr</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token function">usecount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> m_pCounter<span class="token operator">-&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//使用class的</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+myshared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token operator">~</span><span class="token function">myshared_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">realse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+<span class="token keyword">void</span>
+<span class="token class-name">myshared_ptr</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token function">add_ref_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    m_pMutex<span class="token operator">-&gt;</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//加锁</span>
+    <span class="token operator">++</span><span class="token punctuation">(</span><span class="token operator">*</span>m_pCounter<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//增加引用</span>
+    m_pMutex<span class="token operator">-&gt;</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//解锁</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span> <span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+<span class="token keyword">void</span>
+<span class="token class-name">myshared_ptr</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token function">realse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  
+    <span class="token comment">//如果已经消亡了，那么不要realse了</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token operator">==</span>m_pCounter<span class="token operator">-&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  
+    <span class="token keyword">bool</span> deleteflag<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+    m_pMutex<span class="token operator">-&gt;</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">--</span><span class="token punctuation">(</span><span class="token operator">*</span>m_pCounter<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//先-1</span>
+    <span class="token comment">//如果引用计数为0，那么就消亡了</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token operator">==</span>m_pCounter<span class="token operator">-&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> m_pCounter<span class="token punctuation">;</span>
+        <span class="token keyword">delete</span> m_ptr<span class="token punctuation">;</span>
+        deleteflag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    m_pMutex<span class="token operator">-&gt;</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> deleteflag <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> m_pMutex<span class="token punctuation">;</span> <span class="token comment">//此时才需要把互斥锁消除</span>
+        <span class="token comment">//m_pMutex=nullptr;</span>
+    <span class="token punctuation">}</span>
+      
+<span class="token punctuation">}</span>
+
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br></div></div><ul><li>参考<a href="https://circletech.blog.csdn.net/article/details/121974538?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-121974538-blog-104886339.pc_relevant_multi_platform_whitelistv4&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-121974538-blog-104886339.pc_relevant_multi_platform_whitelistv4&amp;utm_relevant_index=5" target="_blank" rel="noopener noreferrer">资料<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="旷视-实现一个简单的智能指针"><a href="#旷视-实现一个简单的智能指针" class="header-anchor">#</a> 旷视-实现一个简单的智能指针</h3> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+<span class="token keyword">class</span> <span class="token class-name">SharedPointer</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+     T<span class="token operator">*</span> _ptr<span class="token punctuation">;</span>
+     size_t<span class="token operator">*</span> _count<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+     <span class="token function">SharedPointer</span><span class="token punctuation">(</span>T<span class="token operator">*</span> ptr <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">//补充代码</span>
+     <span class="token punctuation">}</span>
+
+    SharedPointer<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> SharedPointer<span class="token operator">&amp;</span> smptr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//补充代码</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token operator">~</span><span class="token function">SharedPointer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//补充代码</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
+<span class="token keyword">class</span> <span class="token class-name">SharedPointer</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+     T<span class="token operator">*</span> _ptr<span class="token punctuation">;</span>
+     size_t<span class="token operator">*</span> _count<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+     <span class="token function">SharedPointer</span><span class="token punctuation">(</span>T<span class="token operator">*</span> ptr <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token operator">*</span>_count<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        _ptr<span class="token operator">=</span>ptr<span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+    SharedPointer<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> SharedPointer<span class="token operator">&amp;</span> smptr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token operator">==</span>smptr <span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span> 
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span> _ptr<span class="token operator">==</span>smptr<span class="token punctuation">.</span>_ptr <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span><span class="token punctuation">{</span>
+            <span class="token punctuation">(</span><span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token double-colon punctuation">::</span><span class="token operator">~</span><span class="token function">SharedPointer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            _ptr<span class="token operator">=</span>smptr<span class="token punctuation">.</span>_ptr<span class="token punctuation">;</span>
+            smptr<span class="token punctuation">.</span><span class="token function">increace_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token operator">~</span><span class="token function">SharedPointer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token operator">--</span><span class="token punctuation">(</span><span class="token operator">*</span>_count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token operator">==</span><span class="token punctuation">(</span><span class="token operator">*</span>_count<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> _ptr<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h2 id="实现一个unique-ptr-并且讲一下其raii"><a href="#实现一个unique-ptr-并且讲一下其raii" class="header-anchor">#</a> 实现一个unique_ptr，并且讲一下其RAII</h2> <p>先说结论，智能指针都是非线程安全的。</p> <ul><li><p>学这个，一定要会move语句，<code>std::move</code></p></li> <li><p>一旦拥有着被销毁或编程 empty，或开始拥有另一个对象，先前拥有的那个对象就会被销毁，其任何相应资源亦会被释放。</p></li> <li><p>参考资料：https://www.jianshu.com/p/77c2988be336</p></li></ul> <h2 id="实现单例"><a href="#实现单例" class="header-anchor">#</a> 实现单例</h2> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">class</span> <span class="token class-name">Singleton</span><span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span> <span class="token comment">//私有的</span>
+    <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token keyword">const</span> Singleton<span class="token operator">&amp;</span> other<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">static</span> Singleton<span class="token operator">*</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> Singleton<span class="token operator">*</span> m_instance<span class="token punctuation">;</span>
+    <span class="token keyword">static</span> pthread_mutex_t m_lock<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+Singleton<span class="token operator">*</span> Singleton<span class="token double-colon punctuation">::</span>m_instance<span class="token operator">=</span><span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//懒汉式</span>
+<span class="token comment">//线程非安全版本</span>
+Singleton<span class="token operator">*</span> <span class="token class-name">Singleton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m_instance <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        m_instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> m_instance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//懒汉式子</span>
+<span class="token comment">//线程安全版本，但锁的代价过高</span>
+Singleton<span class="token operator">*</span> <span class="token class-name">Singleton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Lock lock<span class="token punctuation">;</span> <span class="token comment">//加上锁</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m_instance <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        m_instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  
+  	<span class="token comment">//至此加锁结束</span>
+    <span class="token keyword">return</span> m_instance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//懒汉式子</span>
+<span class="token comment">//线程安全版本，但锁的代价过高</span>
+Singleton<span class="token operator">*</span> <span class="token class-name">Singleton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token function">pthread_mutex_lock</span><span class="token punctuation">(</span> <span class="token operator">&amp;</span>m_lock <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m_instance <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        m_instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  	<span class="token function">pthread_mutex_unlock</span><span class="token punctuation">(</span> <span class="token operator">&amp;</span>m_lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  	<span class="token comment">//至此加锁结束</span>
+    <span class="token keyword">return</span> m_instance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//双检查锁，但由于内存读写reorder不安全</span>
+Singleton<span class="token operator">*</span> <span class="token class-name">Singleton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">if</span><span class="token punctuation">(</span>m_instance<span class="token operator">==</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//如果空，才加锁，如果不空，不用加锁的！</span>
+        Lock lock<span class="token punctuation">;</span> <span class="token comment">//？？？</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>m_instance <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            m_instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token comment">//锁结束</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> m_instance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>看起来很完美，但是其实还是有问题：</p> <p>相当一段时间，迷惑了很多人，包括很多专家。最后一个java领域的专家知道了漏洞：</p> <p>由于内存读写reorder不安全</p> <p>什么叫reorder？会导致双检查锁的失效！</p> <p>常见假设：</p> <p>先构造内存，然后new，然后把地址给</p> <p>CPU层面，指令级别！reorder意思是重新排序：</p> <p>（编译器优化会导致：）先分配内存，把地址给</p> <p>reorder优化是，编译器干的！</p> <p>第一时间，解决方法，java和<code>C#</code>加了个关键字，叫volatile</p> <p>需要对<code>static Singleton* m_instance;</code>加上一个volatile，这样，编译器在编译器的时候，过程不能reorder的。是要按照常规</p> <p>那C++呢？</p> <p>VC++2005版本自家加上了volatile关键词，不是跨平台的。但是C++追求跨平台的，直到C++11后，才能有机制来实现跨平台的实现，如下：</p> <h4 id="c-11的"><a href="#c-11的" class="header-anchor">#</a> C++11的</h4> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//C++ 11版本之后的跨平台实现 (volatile)</span>
+std<span class="token double-colon punctuation">::</span>atomic<span class="token operator">&lt;</span>Singleton<span class="token operator">*</span><span class="token operator">&gt;</span> Singleton<span class="token double-colon punctuation">::</span>m_instance<span class="token punctuation">;</span> <span class="token comment">//声明一个原子对象</span>
+std<span class="token double-colon punctuation">::</span>mutex Singleton<span class="token double-colon punctuation">::</span>m_mutex<span class="token punctuation">;</span>
+
+Singleton<span class="token operator">*</span> <span class="token class-name">Singleton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Singleton<span class="token operator">*</span> tmp <span class="token operator">=</span> m_instance<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>memory_order_relaxed<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这个可以帮助我们屏蔽编译器的reorder</span>
+    std<span class="token double-colon punctuation">::</span><span class="token function">atomic_thread_fence</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>memory_order_acquire<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//获取内存fence</span>
+  
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      
+        std<span class="token double-colon punctuation">::</span>lock_guard<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>mutex<span class="token operator">&gt;</span> <span class="token function">lock</span><span class="token punctuation">(</span>m_mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tmp <span class="token operator">=</span> m_instance<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>memory_order_relaxed<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//取变量的时候，以这种方式来取</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tmp <span class="token operator">=</span> <span class="token keyword">new</span> Singleton<span class="token punctuation">;</span>
+            std<span class="token double-colon punctuation">::</span><span class="token function">atomic_thread_fence</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>memory_order_release<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//释放内存fence</span>
+            m_instance<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>memory_order_relaxed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token comment">//C++ 11版本之后的跨平台实现 (volatile)</span>
+atomic<span class="token operator">&lt;</span>Singleton<span class="token operator">*</span><span class="token operator">&gt;</span> Singleton<span class="token double-colon punctuation">::</span>m_instance<span class="token punctuation">;</span> <span class="token comment">//声明一个原子对象</span>
+mutex Singleton<span class="token double-colon punctuation">::</span>m_mutex<span class="token punctuation">;</span>
+
+Singleton<span class="token operator">*</span> <span class="token class-name">Singleton</span><span class="token double-colon punctuation">::</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  
+    Singleton<span class="token operator">*</span> tmp <span class="token operator">=</span> m_instance<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>memory_order_relaxed<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这个可以帮助我们屏蔽编译器的reorder</span>
+    <span class="token function">atomic_thread_fence</span><span class="token punctuation">(</span>memory_order_acquire<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//获取内存fence</span>
+  
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      
+        std<span class="token double-colon punctuation">::</span>lock_guard<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>mutex<span class="token operator">&gt;</span> <span class="token function">lock</span><span class="token punctuation">(</span>m_mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tmp <span class="token operator">=</span> m_instance<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>memory_order_relaxed<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//取变量的时候，以这种方式来取</span>
+      
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tmp <span class="token operator">=</span> <span class="token keyword">new</span> Singleton<span class="token punctuation">;</span>
+          
+            std<span class="token double-colon punctuation">::</span><span class="token function">atomic_thread_fence</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>memory_order_release<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//释放内存fence</span>
+            m_instance<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> memory_order_relaxed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fef1807c.js" defer></script><script src="/assets/js/2.5ea5554b.js" defer></script><script src="/assets/js/1.ee64f59e.js" defer></script><script src="/assets/js/108.fd373509.js" defer></script>
+  </body>
+</html>
