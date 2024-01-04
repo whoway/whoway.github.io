@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SVN常用命令 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.a88dafb3.css" as="style"><link rel="preload" href="/assets/js/app.67b213db.js" as="script"><link rel="preload" href="/assets/js/2.5ea5554b.js" as="script"><link rel="preload" href="/assets/js/1.ee64f59e.js" as="script"><link rel="preload" href="/assets/js/156.d0f71536.js" as="script"><link rel="prefetch" href="/assets/js/10.f7951ff5.js"><link rel="prefetch" href="/assets/js/100.c1386955.js"><link rel="prefetch" href="/assets/js/101.36293fe4.js"><link rel="prefetch" href="/assets/js/102.78e20d64.js"><link rel="prefetch" href="/assets/js/103.1533fcfd.js"><link rel="prefetch" href="/assets/js/104.56634bce.js"><link rel="prefetch" href="/assets/js/105.a5b089a3.js"><link rel="prefetch" href="/assets/js/106.76fa3d2c.js"><link rel="prefetch" href="/assets/js/107.4dff1cbd.js"><link rel="prefetch" href="/assets/js/108.8d9697fe.js"><link rel="prefetch" href="/assets/js/109.f9cca42a.js"><link rel="prefetch" href="/assets/js/11.3e761738.js"><link rel="prefetch" href="/assets/js/110.82de7589.js"><link rel="prefetch" href="/assets/js/111.ce5a9a98.js"><link rel="prefetch" href="/assets/js/112.ab5256e2.js"><link rel="prefetch" href="/assets/js/113.653875c4.js"><link rel="prefetch" href="/assets/js/114.ce11b077.js"><link rel="prefetch" href="/assets/js/115.5f9f5f50.js"><link rel="prefetch" href="/assets/js/116.3dc8a28a.js"><link rel="prefetch" href="/assets/js/117.fcfaebd7.js"><link rel="prefetch" href="/assets/js/118.41c96f56.js"><link rel="prefetch" href="/assets/js/119.55266229.js"><link rel="prefetch" href="/assets/js/12.aa5bb9c2.js"><link rel="prefetch" href="/assets/js/120.c1dcdca0.js"><link rel="prefetch" href="/assets/js/121.4e593596.js"><link rel="prefetch" href="/assets/js/122.d0302617.js"><link rel="prefetch" href="/assets/js/123.b58fe1a5.js"><link rel="prefetch" href="/assets/js/124.8028a633.js"><link rel="prefetch" href="/assets/js/125.13ed7e31.js"><link rel="prefetch" href="/assets/js/126.3ddff849.js"><link rel="prefetch" href="/assets/js/127.9a578a63.js"><link rel="prefetch" href="/assets/js/128.f8578db4.js"><link rel="prefetch" href="/assets/js/129.4617d14a.js"><link rel="prefetch" href="/assets/js/13.19c05274.js"><link rel="prefetch" href="/assets/js/130.42f477d1.js"><link rel="prefetch" href="/assets/js/131.dd1a6e73.js"><link rel="prefetch" href="/assets/js/132.ab837a89.js"><link rel="prefetch" href="/assets/js/133.a902e2d6.js"><link rel="prefetch" href="/assets/js/134.0deccfb1.js"><link rel="prefetch" href="/assets/js/135.62bb84ad.js"><link rel="prefetch" href="/assets/js/136.6ee5a797.js"><link rel="prefetch" href="/assets/js/137.f92a9c02.js"><link rel="prefetch" href="/assets/js/138.d29e8d59.js"><link rel="prefetch" href="/assets/js/139.33b1e319.js"><link rel="prefetch" href="/assets/js/14.89265531.js"><link rel="prefetch" href="/assets/js/140.4513d7b1.js"><link rel="prefetch" href="/assets/js/141.7b78d938.js"><link rel="prefetch" href="/assets/js/142.76c82821.js"><link rel="prefetch" href="/assets/js/143.efa5fea6.js"><link rel="prefetch" href="/assets/js/144.4603a19e.js"><link rel="prefetch" href="/assets/js/145.c198a08e.js"><link rel="prefetch" href="/assets/js/146.f040b1ce.js"><link rel="prefetch" href="/assets/js/147.e9bb3ce4.js"><link rel="prefetch" href="/assets/js/148.02d69da4.js"><link rel="prefetch" href="/assets/js/149.ea125c96.js"><link rel="prefetch" href="/assets/js/15.33db6b39.js"><link rel="prefetch" href="/assets/js/150.a1ff2530.js"><link rel="prefetch" href="/assets/js/151.c78c27cb.js"><link rel="prefetch" href="/assets/js/152.418faa88.js"><link rel="prefetch" href="/assets/js/153.6a1284a1.js"><link rel="prefetch" href="/assets/js/154.9d06b955.js"><link rel="prefetch" href="/assets/js/155.c314064a.js"><link rel="prefetch" href="/assets/js/157.c13e041e.js"><link rel="prefetch" href="/assets/js/158.699b1b62.js"><link rel="prefetch" href="/assets/js/159.b7e41ace.js"><link rel="prefetch" href="/assets/js/16.43d456ec.js"><link rel="prefetch" href="/assets/js/160.b88b0390.js"><link rel="prefetch" href="/assets/js/161.f287502f.js"><link rel="prefetch" href="/assets/js/162.3ec3b508.js"><link rel="prefetch" href="/assets/js/163.84c131a6.js"><link rel="prefetch" href="/assets/js/164.2d2298b7.js"><link rel="prefetch" href="/assets/js/165.463bc8d5.js"><link rel="prefetch" href="/assets/js/166.4fcc4c22.js"><link rel="prefetch" href="/assets/js/167.c9f819e3.js"><link rel="prefetch" href="/assets/js/168.3b1bc9e5.js"><link rel="prefetch" href="/assets/js/17.ef4d8cc7.js"><link rel="prefetch" href="/assets/js/18.96206c2b.js"><link rel="prefetch" href="/assets/js/19.d6620149.js"><link rel="prefetch" href="/assets/js/20.859beb80.js"><link rel="prefetch" href="/assets/js/21.3fc53ab6.js"><link rel="prefetch" href="/assets/js/22.9fe23fa7.js"><link rel="prefetch" href="/assets/js/23.42d6545a.js"><link rel="prefetch" href="/assets/js/24.f82c4a0a.js"><link rel="prefetch" href="/assets/js/25.d9ec94bc.js"><link rel="prefetch" href="/assets/js/26.785f9d60.js"><link rel="prefetch" href="/assets/js/27.daedb21f.js"><link rel="prefetch" href="/assets/js/28.09844c56.js"><link rel="prefetch" href="/assets/js/29.59f931a3.js"><link rel="prefetch" href="/assets/js/3.80cc865c.js"><link rel="prefetch" href="/assets/js/30.b70eaead.js"><link rel="prefetch" href="/assets/js/31.6e192160.js"><link rel="prefetch" href="/assets/js/32.8422fffe.js"><link rel="prefetch" href="/assets/js/33.271201c8.js"><link rel="prefetch" href="/assets/js/34.e467f532.js"><link rel="prefetch" href="/assets/js/35.35f8ff08.js"><link rel="prefetch" href="/assets/js/36.69e9d037.js"><link rel="prefetch" href="/assets/js/37.3e7822af.js"><link rel="prefetch" href="/assets/js/38.95243690.js"><link rel="prefetch" href="/assets/js/39.90ae07c3.js"><link rel="prefetch" href="/assets/js/4.8fda9edc.js"><link rel="prefetch" href="/assets/js/40.58ae83bb.js"><link rel="prefetch" href="/assets/js/41.c3a8b9d9.js"><link rel="prefetch" href="/assets/js/42.d9c230ce.js"><link rel="prefetch" href="/assets/js/43.da3aeea9.js"><link rel="prefetch" href="/assets/js/44.7328f7f8.js"><link rel="prefetch" href="/assets/js/45.d96b5293.js"><link rel="prefetch" href="/assets/js/46.021f540d.js"><link rel="prefetch" href="/assets/js/47.3f2a536b.js"><link rel="prefetch" href="/assets/js/48.141c4d9c.js"><link rel="prefetch" href="/assets/js/49.920771d2.js"><link rel="prefetch" href="/assets/js/5.604145cb.js"><link rel="prefetch" href="/assets/js/50.ab2fad14.js"><link rel="prefetch" href="/assets/js/51.ef0185eb.js"><link rel="prefetch" href="/assets/js/52.1775acf1.js"><link rel="prefetch" href="/assets/js/53.450205e3.js"><link rel="prefetch" href="/assets/js/54.9bf2c74b.js"><link rel="prefetch" href="/assets/js/55.4b26e334.js"><link rel="prefetch" href="/assets/js/56.176080b4.js"><link rel="prefetch" href="/assets/js/57.239dbc3b.js"><link rel="prefetch" href="/assets/js/58.8a6bbdfb.js"><link rel="prefetch" href="/assets/js/59.6f643ef4.js"><link rel="prefetch" href="/assets/js/6.e1d663ee.js"><link rel="prefetch" href="/assets/js/60.1a887197.js"><link rel="prefetch" href="/assets/js/61.a8d3e309.js"><link rel="prefetch" href="/assets/js/62.1c7bacbd.js"><link rel="prefetch" href="/assets/js/63.ecc2dd9e.js"><link rel="prefetch" href="/assets/js/64.b957e06b.js"><link rel="prefetch" href="/assets/js/65.6f4611a1.js"><link rel="prefetch" href="/assets/js/66.8a1dfff8.js"><link rel="prefetch" href="/assets/js/67.8cbf26e2.js"><link rel="prefetch" href="/assets/js/68.49a68aca.js"><link rel="prefetch" href="/assets/js/69.4508e290.js"><link rel="prefetch" href="/assets/js/7.fd8c7dac.js"><link rel="prefetch" href="/assets/js/70.62651183.js"><link rel="prefetch" href="/assets/js/71.90f1b7ab.js"><link rel="prefetch" href="/assets/js/72.9a3b6492.js"><link rel="prefetch" href="/assets/js/73.fd4c8a34.js"><link rel="prefetch" href="/assets/js/74.77f849a7.js"><link rel="prefetch" href="/assets/js/75.8d62372c.js"><link rel="prefetch" href="/assets/js/76.6055d399.js"><link rel="prefetch" href="/assets/js/77.59a37f26.js"><link rel="prefetch" href="/assets/js/78.81533383.js"><link rel="prefetch" href="/assets/js/79.021e8b5a.js"><link rel="prefetch" href="/assets/js/80.881a670f.js"><link rel="prefetch" href="/assets/js/81.de1ae640.js"><link rel="prefetch" href="/assets/js/82.1c30c89a.js"><link rel="prefetch" href="/assets/js/83.ca685cf1.js"><link rel="prefetch" href="/assets/js/84.cedbe4d8.js"><link rel="prefetch" href="/assets/js/85.c6016a41.js"><link rel="prefetch" href="/assets/js/86.42bc58c5.js"><link rel="prefetch" href="/assets/js/87.16671ed6.js"><link rel="prefetch" href="/assets/js/88.44c504a2.js"><link rel="prefetch" href="/assets/js/89.6e9096c6.js"><link rel="prefetch" href="/assets/js/90.18f0aa2f.js"><link rel="prefetch" href="/assets/js/91.33424337.js"><link rel="prefetch" href="/assets/js/92.ac624e91.js"><link rel="prefetch" href="/assets/js/93.4e1b5a76.js"><link rel="prefetch" href="/assets/js/94.1dab1230.js"><link rel="prefetch" href="/assets/js/95.9ccd267f.js"><link rel="prefetch" href="/assets/js/96.ee9454d4.js"><link rel="prefetch" href="/assets/js/97.28fb9594.js"><link rel="prefetch" href="/assets/js/98.fce55cfc.js"><link rel="prefetch" href="/assets/js/99.3a7da97a.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.af85784a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a88dafb3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/1存储/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/2网络/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/3语言/" class="nav-link">
+  语言
+</a></div><div class="nav-item"><a href="/4GNU-Linux/" class="nav-link">
+  GNU-OS
+</a></div><div class="nav-item"><a href="/5Coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/6MacOS/" class="nav-link">
+  MacOS
+</a></div><div class="nav-item"><a href="/7Windows/" class="nav-link">
+  Windows
+</a></div><div class="nav-item"><a href="/8工具/" class="nav-link">
+  软件工具
+</a></div><div class="nav-item"><a href="/9动态/" class="nav-link">
+  网站动态
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/1存储/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/2网络/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/3语言/" class="nav-link">
+  语言
+</a></div><div class="nav-item"><a href="/4GNU-Linux/" class="nav-link">
+  GNU-OS
+</a></div><div class="nav-item"><a href="/5Coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/6MacOS/" class="nav-link">
+  MacOS
+</a></div><div class="nav-item"><a href="/7Windows/" class="nav-link">
+  Windows
+</a></div><div class="nav-item"><a href="/8工具/" class="nav-link">
+  软件工具
+</a></div><div class="nav-item"><a href="/9动态/" class="nav-link">
+  网站动态
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>SVN常用命令</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#_1-环境搭建" class="sidebar-link">1.环境搭建</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#_2-svn的常用命令" class="sidebar-link">2.svn的常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#_2-1-下载" class="sidebar-link">2.1.下载</a></li><li class="sidebar-sub-header"><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#_2-2-添加-提交" class="sidebar-link">2.2.添加+提交</a></li><li class="sidebar-sub-header"><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#_2-3-获取远程更新" class="sidebar-link">2.3.获取远程更新</a></li><li class="sidebar-sub-header"><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#分支管理" class="sidebar-link">分支管理</a></li></ul></li><li><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#_3-常用的场景" class="sidebar-link">3.常用的场景</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#gcc代码下载" class="sidebar-link">gcc代码下载</a></li></ul></li><li><a href="/8%E5%B7%A5%E5%85%B7/4.linuxsoftware/1.2.SVN%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#参考资料" class="sidebar-link">参考资料</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="svn常用命令"><a href="#svn常用命令" class="header-anchor">#</a> SVN常用命令</h1> <img src="https://www.w3cschool.cn/attachments/image/20170803/1501746576743481.jpg"> <ul><li>Apache <strong>S</strong>ub<strong>v</strong>ersio<strong>n</strong> 通常被缩写成 SVN
+<ul><li><p>Subversion，n.破坏；颠覆；覆灭；颠覆（活动）</p></li> <li><p>Subversion 在 2000 年由 CollabNet Inc 开发</p></li></ul></li></ul> <h2 id="_1-环境搭建"><a href="#_1-环境搭建" class="header-anchor">#</a> 1.环境搭建</h2> <p>Subversion 是一个受欢迎的开源的版本控制工具。他在互联网免费提供并且开源。</p> <p>大多数 <code>GNU/Linux</code> 发行版系统自带，所以它很有可能已经安装在你的系统上了。可以使用下面命令检查是否安装了。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>svn <span class="token parameter variable">--version</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_2-svn的常用命令"><a href="#_2-svn的常用命令" class="header-anchor">#</a> 2.svn的常用命令</h2> <h3 id="_2-1-下载"><a href="#_2-1-下载" class="header-anchor">#</a> 2.1.下载</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 代码检出，checkout也可以简写为co，这个命令会把服务器上的代码同步到我们电脑上</span>
+将文件checkout到本地目录
+svn co svn://svnbucket.com/xxx/xxx
+svn checkout path（path是服务器上的目录）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>简写：<code>svn co</code></p> <h3 id="_2-2-添加-提交"><a href="#_2-2-添加-提交" class="header-anchor">#</a> 2.2.添加+提交</h3> <div class="language-nginx line-numbers-mode"><pre class="language-nginx"><code><span class="token comment"># 添加新文件到版本库</span>
+svn add filename
+
+<span class="token comment"># 添加当前目录下所有php文件</span>
+svn add *.php
+
+<span class="token comment"># 递归添加当前目录下的所有新文件</span>
+svn add . --no-ignore --force
+
+
+<span class="token comment"># 提交代码</span>
+svn commit -m &quot;提交描述&quot;
+
+
+<span class="token comment"># 查看指定文件的所有log</span>
+svn log test.php
+
+<span class="token comment"># 查看指定版本号的log</span>
+svn log -r 100
+
+<span class="token comment"># 撤销本地文件的修改（还没提交的）</span>
+svn revert test.php
+svn revert -r 目录名
+
+<span class="token comment"># 撤销目录下所有本地修改</span>
+svn revert --recursive 目录名
+
+<span class="token comment"># 查看当前工作区的所有改动</span>
+svn diff
+
+<span class="token comment"># 查看当前工作区test.php文件与最新版本的差异</span>
+svn diff test.php  
+
+<span class="token comment"># 指定版本号比较差异</span>
+svn diff -r 200:201 test.php
+
+<span class="token comment"># 查看当前工作区和版本301中bin目录的差异</span>
+svn diff -r 301 bin
+
+<span class="token comment"># 查看当前工作区的状态</span>
+svn status
+
+
+<span class="token comment"># 查看svn信息</span>
+svn info
+
+<span class="token comment"># 查看文件列表，可以指定-r查看，查看指定版本号的文件列表</span>
+svn ls 
+svn ls -r 100
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><h3 id="_2-3-获取远程更新"><a href="#_2-3-获取远程更新" class="header-anchor">#</a> 2.3.获取远程更新</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 更新代码# 更新代码，执行此命令后会把其他人提交的代码全部更新到我们自己电脑上，update也可以简写为up</span>
+svn up
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="分支管理"><a href="#分支管理" class="header-anchor">#</a> 分支管理</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 创建分支，从主干创建一个分支保存到branches/online1.0</span>
+svn <span class="token function">cp</span> <span class="token parameter variable">-m</span> <span class="token string">&quot;描述内容&quot;</span> http://svnbucket.com/repos/trunk http://svnbucket.com/repos/branches/online1.0
+
+<span class="token comment"># 合并主干上的最新代码到分支上</span>
+<span class="token builtin class-name">cd</span> branches/online1.0
+svn merge http://svnbucket.com/repos/trunk 
+
+<span class="token comment"># 分支合并到主干</span>
+svn merge <span class="token parameter variable">--reintegrate</span> http://svnbucket.com/repos/branches/online1.0
+
+<span class="token comment"># 删除分支</span>
+svn <span class="token function">rm</span> http://svnbucket.com/repos/branches/online1.0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_3-常用的场景"><a href="#_3-常用的场景" class="header-anchor">#</a> 3.常用的场景</h2> <h3 id="gcc代码下载"><a href="#gcc代码下载" class="header-anchor">#</a> gcc代码下载</h3> <ul><li><code>svn co http://路径(目录或文件的全路径)　[本地目录全路径]</code></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>svn co svn://gcc.gnu.org/svn/gcc/branches/cfo-branch gcc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li><a href="http://gnu.ist.utl.pt/software/gcc/svn.html" target="_blank" rel="noopener noreferrer">GCC: Anonymous read-only SVN access<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>svn co svn://gcc.gnu.org/svn/gcc/branches/cfo-branch gcc
+----省略------
+A    gcc/ABOUT-NLS
+A    gcc/README
+A    gcc/INSTALL
+A    gcc/INSTALL/README
+A    gcc/mkdep
+ U   gcc
+Checked out revision 280157.
+[root@CentosLinux ~]# ll
+total 24
+-rwxr-xr-x  1 root root 9040 Oct  7 11:22 a.out
+drwxr-xr-x 25 root root 4096 Oct  7 20:29 gcc
+-rw-r--r--  1 root root  436 Oct  7 11:22 main.cc
+drwxr-xr-x  7 root root 4096 Oct  3 09:27 webserver
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li>SVN，<a href="https://www.runoob.com/svn/svn-tutorial.html" target="_blank" rel="noopener noreferrer">菜鸟教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>SVN，<a href="https://www.w3cschool.cn/svn/" target="_blank" rel="noopener noreferrer">w3cschool<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>SVN 官网：<a href="https://subversion.apache.org/" target="_blank" rel="noopener noreferrer">https://subversion.apache.org/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>Github SVN 源码：<a href="https://github.com/apache/subversion" target="_blank" rel="noopener noreferrer">https://github.com/apache/subversion<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>SVNBucket官网：<a href="https://svnbucket.com/" target="_blank" rel="noopener noreferrer">https://svnbucket.com/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>SVNBucket源代码：<a href="https://github.com/gzyunke/svnbucket" target="_blank" rel="noopener noreferrer">https://github.com/gzyunke/svnbucket<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.67b213db.js" defer></script><script src="/assets/js/2.5ea5554b.js" defer></script><script src="/assets/js/1.ee64f59e.js" defer></script><script src="/assets/js/156.d0f71536.js" defer></script>
+  </body>
+</html>
