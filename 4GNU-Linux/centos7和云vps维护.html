@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>centos7和云vps维护 | whoway</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/photo.jpg">
+    <link rel="manifest" href="/images/photo.jpg">
+    <link rel="apple-touch-icon" href="/images/photo.jpg">
+    <meta name="description" content="Personal Blog Website">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.a88dafb3.css" as="style"><link rel="preload" href="/assets/js/app.898cd8b1.js" as="script"><link rel="preload" href="/assets/js/2.cdbbc3f7.js" as="script"><link rel="preload" href="/assets/js/1.7582fb06.js" as="script"><link rel="preload" href="/assets/js/103.5be16242.js" as="script"><link rel="prefetch" href="/assets/js/10.d43991e9.js"><link rel="prefetch" href="/assets/js/100.7263cdc3.js"><link rel="prefetch" href="/assets/js/101.a21ca586.js"><link rel="prefetch" href="/assets/js/102.2bd1533b.js"><link rel="prefetch" href="/assets/js/104.c3ea131d.js"><link rel="prefetch" href="/assets/js/105.46a17f13.js"><link rel="prefetch" href="/assets/js/106.205a275c.js"><link rel="prefetch" href="/assets/js/107.404b72f3.js"><link rel="prefetch" href="/assets/js/108.001f992e.js"><link rel="prefetch" href="/assets/js/109.8a6c9e39.js"><link rel="prefetch" href="/assets/js/11.0fd86637.js"><link rel="prefetch" href="/assets/js/110.d2c81237.js"><link rel="prefetch" href="/assets/js/111.ab23eea3.js"><link rel="prefetch" href="/assets/js/112.f0b6e385.js"><link rel="prefetch" href="/assets/js/113.c75faef0.js"><link rel="prefetch" href="/assets/js/114.15071520.js"><link rel="prefetch" href="/assets/js/115.70505986.js"><link rel="prefetch" href="/assets/js/116.59e0e1bc.js"><link rel="prefetch" href="/assets/js/117.3736d293.js"><link rel="prefetch" href="/assets/js/118.467253e9.js"><link rel="prefetch" href="/assets/js/119.8db60eca.js"><link rel="prefetch" href="/assets/js/12.c5476202.js"><link rel="prefetch" href="/assets/js/120.14aad2d7.js"><link rel="prefetch" href="/assets/js/121.aa97cc9e.js"><link rel="prefetch" href="/assets/js/122.f603eb65.js"><link rel="prefetch" href="/assets/js/123.85842e5b.js"><link rel="prefetch" href="/assets/js/124.dbf6a64c.js"><link rel="prefetch" href="/assets/js/125.2d8afcd2.js"><link rel="prefetch" href="/assets/js/126.ed7341ec.js"><link rel="prefetch" href="/assets/js/127.bf8f4a85.js"><link rel="prefetch" href="/assets/js/128.9334d51e.js"><link rel="prefetch" href="/assets/js/129.d4d7982f.js"><link rel="prefetch" href="/assets/js/13.7b6aa68d.js"><link rel="prefetch" href="/assets/js/130.32fdba73.js"><link rel="prefetch" href="/assets/js/131.603a71b9.js"><link rel="prefetch" href="/assets/js/132.a512aa7b.js"><link rel="prefetch" href="/assets/js/133.490c2d6b.js"><link rel="prefetch" href="/assets/js/134.765adda8.js"><link rel="prefetch" href="/assets/js/135.c480bb8a.js"><link rel="prefetch" href="/assets/js/136.fbad1926.js"><link rel="prefetch" href="/assets/js/137.7207c2fb.js"><link rel="prefetch" href="/assets/js/138.bf47e71d.js"><link rel="prefetch" href="/assets/js/139.46e2c9aa.js"><link rel="prefetch" href="/assets/js/14.2d377bb1.js"><link rel="prefetch" href="/assets/js/140.b8a22e8c.js"><link rel="prefetch" href="/assets/js/141.0b2ee2ba.js"><link rel="prefetch" href="/assets/js/142.0ec1d3d0.js"><link rel="prefetch" href="/assets/js/143.76b8f7fc.js"><link rel="prefetch" href="/assets/js/144.2f4d561b.js"><link rel="prefetch" href="/assets/js/145.5200b704.js"><link rel="prefetch" href="/assets/js/146.e78b2964.js"><link rel="prefetch" href="/assets/js/147.73bbcca2.js"><link rel="prefetch" href="/assets/js/148.f166efba.js"><link rel="prefetch" href="/assets/js/149.dc30d00b.js"><link rel="prefetch" href="/assets/js/15.466803aa.js"><link rel="prefetch" href="/assets/js/150.6c1b0ea7.js"><link rel="prefetch" href="/assets/js/151.ddcdae35.js"><link rel="prefetch" href="/assets/js/152.8dd1a576.js"><link rel="prefetch" href="/assets/js/153.7f31f36d.js"><link rel="prefetch" href="/assets/js/154.f46d0b9e.js"><link rel="prefetch" href="/assets/js/155.fde8da5d.js"><link rel="prefetch" href="/assets/js/156.519c1e45.js"><link rel="prefetch" href="/assets/js/157.b5eca803.js"><link rel="prefetch" href="/assets/js/158.f5c741e1.js"><link rel="prefetch" href="/assets/js/159.158b81f6.js"><link rel="prefetch" href="/assets/js/16.05df67bc.js"><link rel="prefetch" href="/assets/js/160.54704abd.js"><link rel="prefetch" href="/assets/js/161.cca4af84.js"><link rel="prefetch" href="/assets/js/162.d0886e33.js"><link rel="prefetch" href="/assets/js/163.12982682.js"><link rel="prefetch" href="/assets/js/164.ea9fc9af.js"><link rel="prefetch" href="/assets/js/165.5a6b6a70.js"><link rel="prefetch" href="/assets/js/166.06e00bd0.js"><link rel="prefetch" href="/assets/js/167.f3bf144c.js"><link rel="prefetch" href="/assets/js/168.beb055ac.js"><link rel="prefetch" href="/assets/js/169.4914d21e.js"><link rel="prefetch" href="/assets/js/17.5ffce978.js"><link rel="prefetch" href="/assets/js/170.5cd16da6.js"><link rel="prefetch" href="/assets/js/18.3a7b65ca.js"><link rel="prefetch" href="/assets/js/19.67e71589.js"><link rel="prefetch" href="/assets/js/20.2e13a948.js"><link rel="prefetch" href="/assets/js/21.6a37c996.js"><link rel="prefetch" href="/assets/js/22.8c2d9642.js"><link rel="prefetch" href="/assets/js/23.fbc6759d.js"><link rel="prefetch" href="/assets/js/24.d406ae00.js"><link rel="prefetch" href="/assets/js/25.4a9a0b3d.js"><link rel="prefetch" href="/assets/js/26.81487521.js"><link rel="prefetch" href="/assets/js/27.dbc612ad.js"><link rel="prefetch" href="/assets/js/28.9734ba49.js"><link rel="prefetch" href="/assets/js/29.182fde21.js"><link rel="prefetch" href="/assets/js/3.fc60f2a6.js"><link rel="prefetch" href="/assets/js/30.c33bd229.js"><link rel="prefetch" href="/assets/js/31.f1a4aeed.js"><link rel="prefetch" href="/assets/js/32.c8640cad.js"><link rel="prefetch" href="/assets/js/33.0a7463a0.js"><link rel="prefetch" href="/assets/js/34.ff23b0e8.js"><link rel="prefetch" href="/assets/js/35.39093b46.js"><link rel="prefetch" href="/assets/js/36.b37e92f5.js"><link rel="prefetch" href="/assets/js/37.04204116.js"><link rel="prefetch" href="/assets/js/38.16a08fb3.js"><link rel="prefetch" href="/assets/js/39.852d8b41.js"><link rel="prefetch" href="/assets/js/4.f2f3c1b5.js"><link rel="prefetch" href="/assets/js/40.571ed50d.js"><link rel="prefetch" href="/assets/js/41.8597325d.js"><link rel="prefetch" href="/assets/js/42.76639ed9.js"><link rel="prefetch" href="/assets/js/43.cfdf6239.js"><link rel="prefetch" href="/assets/js/44.0c87640d.js"><link rel="prefetch" href="/assets/js/45.f77fac9a.js"><link rel="prefetch" href="/assets/js/46.a7242172.js"><link rel="prefetch" href="/assets/js/47.1caa379c.js"><link rel="prefetch" href="/assets/js/48.882a0c83.js"><link rel="prefetch" href="/assets/js/49.4746c64c.js"><link rel="prefetch" href="/assets/js/5.0b6e4a3c.js"><link rel="prefetch" href="/assets/js/50.27215e82.js"><link rel="prefetch" href="/assets/js/51.3ab58984.js"><link rel="prefetch" href="/assets/js/52.e79a651f.js"><link rel="prefetch" href="/assets/js/53.13181af1.js"><link rel="prefetch" href="/assets/js/54.6963da9f.js"><link rel="prefetch" href="/assets/js/55.9f237038.js"><link rel="prefetch" href="/assets/js/56.28c59482.js"><link rel="prefetch" href="/assets/js/57.3963bbf2.js"><link rel="prefetch" href="/assets/js/58.326b4502.js"><link rel="prefetch" href="/assets/js/59.4c5aa399.js"><link rel="prefetch" href="/assets/js/6.69967ea6.js"><link rel="prefetch" href="/assets/js/60.aa29264a.js"><link rel="prefetch" href="/assets/js/61.15962d89.js"><link rel="prefetch" href="/assets/js/62.9855df7c.js"><link rel="prefetch" href="/assets/js/63.0a8e0b3e.js"><link rel="prefetch" href="/assets/js/64.68f48d67.js"><link rel="prefetch" href="/assets/js/65.ffe09223.js"><link rel="prefetch" href="/assets/js/66.efce5dbb.js"><link rel="prefetch" href="/assets/js/67.7e3f34c6.js"><link rel="prefetch" href="/assets/js/68.6a2505f0.js"><link rel="prefetch" href="/assets/js/69.1384c151.js"><link rel="prefetch" href="/assets/js/7.b51e7de9.js"><link rel="prefetch" href="/assets/js/70.9ea27d06.js"><link rel="prefetch" href="/assets/js/71.4f246d5f.js"><link rel="prefetch" href="/assets/js/72.b6dd72a7.js"><link rel="prefetch" href="/assets/js/73.8f53011b.js"><link rel="prefetch" href="/assets/js/74.04cd2b39.js"><link rel="prefetch" href="/assets/js/75.22917ec2.js"><link rel="prefetch" href="/assets/js/76.464838b8.js"><link rel="prefetch" href="/assets/js/77.9edc5aca.js"><link rel="prefetch" href="/assets/js/78.0fc76fa4.js"><link rel="prefetch" href="/assets/js/79.410f91a9.js"><link rel="prefetch" href="/assets/js/80.10f59442.js"><link rel="prefetch" href="/assets/js/81.181b89d1.js"><link rel="prefetch" href="/assets/js/82.6ee2f649.js"><link rel="prefetch" href="/assets/js/83.e82ac453.js"><link rel="prefetch" href="/assets/js/84.6a78140d.js"><link rel="prefetch" href="/assets/js/85.efd3233d.js"><link rel="prefetch" href="/assets/js/86.01195c7b.js"><link rel="prefetch" href="/assets/js/87.7984c864.js"><link rel="prefetch" href="/assets/js/88.fbfbd14b.js"><link rel="prefetch" href="/assets/js/89.15033c38.js"><link rel="prefetch" href="/assets/js/90.ddbf4bbc.js"><link rel="prefetch" href="/assets/js/91.7aad7d7f.js"><link rel="prefetch" href="/assets/js/92.7f2fdc11.js"><link rel="prefetch" href="/assets/js/93.87221795.js"><link rel="prefetch" href="/assets/js/94.9941255b.js"><link rel="prefetch" href="/assets/js/95.7643dae9.js"><link rel="prefetch" href="/assets/js/96.42b127fb.js"><link rel="prefetch" href="/assets/js/97.8c922399.js"><link rel="prefetch" href="/assets/js/98.91a50d5c.js"><link rel="prefetch" href="/assets/js/99.e1600ca1.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7026204d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a88dafb3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">whoway</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/1存储/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/2网络/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/3语言/" class="nav-link">
+  语言
+</a></div><div class="nav-item"><a href="/4GNU-Linux/" class="nav-link router-link-active">
+  GNU-OS
+</a></div><div class="nav-item"><a href="/5Coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/6MacOS/" class="nav-link">
+  MacOS
+</a></div><div class="nav-item"><a href="/7Windows/" class="nav-link">
+  Windows
+</a></div><div class="nav-item"><a href="/8工具/" class="nav-link">
+  软件工具
+</a></div><div class="nav-item"><a href="/9状态/" class="nav-link">
+  网站动态
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/1存储/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/2网络/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/3语言/" class="nav-link">
+  语言
+</a></div><div class="nav-item"><a href="/4GNU-Linux/" class="nav-link router-link-active">
+  GNU-OS
+</a></div><div class="nav-item"><a href="/5Coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/6MacOS/" class="nav-link">
+  MacOS
+</a></div><div class="nav-item"><a href="/7Windows/" class="nav-link">
+  Windows
+</a></div><div class="nav-item"><a href="/8工具/" class="nav-link">
+  软件工具
+</a></div><div class="nav-item"><a href="/9状态/" class="nav-link">
+  网站动态
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>centos7和云vps维护</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#_1-前置准备" class="sidebar-link">1.前置准备</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#新增用户" class="sidebar-link">新增用户</a></li><li class="sidebar-sub-header"><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#使用root安装共享的软件" class="sidebar-link">使用root安装共享的软件</a></li><li class="sidebar-sub-header"><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#使用root安装大批量的常用开发工具-遇到的坑" class="sidebar-link">使用root安装大批量的常用开发工具-遇到的坑</a></li><li class="sidebar-sub-header"><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#插曲-验证普通用户可以用" class="sidebar-link">插曲-验证普通用户可以用：</a></li></ul></li><li><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#_3-各自用户安装环境" class="sidebar-link">3.各自用户安装环境</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/4GNU-Linux/centos7%E5%92%8C%E4%BA%91vps%E7%BB%B4%E6%8A%A4.html#whoway用户" class="sidebar-link">whoway用户</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="centos7和云vps维护"><a href="#centos7和云vps维护" class="header-anchor">#</a> centos7和云vps维护</h1> <p>最小安装centos【注意，安装的时候，要把wifi开了，不然没有网络，还要弄好多配置】</p> <p>最小安装的centos没vim，有vi
+有python2.7.5</p> <h2 id="_1-前置准备"><a href="#_1-前置准备" class="header-anchor">#</a> 1.前置准备</h2> <h3 id="新增用户"><a href="#新增用户" class="header-anchor">#</a> 新增用户</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">useradd</span> <span class="token parameter variable">-d</span> /home/whoway <span class="token parameter variable">-m</span> whoway
+<span class="token function">useradd</span> <span class="token parameter variable">-d</span> /home/hadoop <span class="token parameter variable">-m</span> hadoop
+<span class="token function">useradd</span> <span class="token parameter variable">-d</span> /home/elastic <span class="token parameter variable">-m</span> elastic
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="使用root安装共享的软件"><a href="#使用root安装共享的软件" class="header-anchor">#</a> 使用root安装共享的软件</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>yum <span class="token function">install</span> lrzsz <span class="token parameter variable">-y</span>
+yum <span class="token function">install</span> <span class="token function">git</span> <span class="token parameter variable">-y</span>
+yum <span class="token function">install</span> <span class="token function">wget</span> <span class="token parameter variable">-y</span>
+yum <span class="token function">install</span> tree <span class="token parameter variable">-y</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="使用root安装大批量的常用开发工具-遇到的坑"><a href="#使用root安装大批量的常用开发工具-遇到的坑" class="header-anchor">#</a> 使用root安装大批量的常用开发工具-遇到的坑</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment">#  yum grouplist | grep Development</span>
+没有安装组信息文件
+Maybe run: yum <span class="token function">groups</span> mark convert <span class="token punctuation">(</span>see <span class="token function">man</span> yum<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># yum groups mark convert</span>
+已加载插件：fastestmirror
+没有安装组信息文件
+Maybe run: yum <span class="token function">groups</span> mark convert <span class="token punctuation">(</span>see <span class="token function">man</span> yum<span class="token punctuation">)</span>
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.aliyun.com
+Converted old style <span class="token function">groups</span> to objects.
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment">#  yum grouplist | grep Development</span>
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># yum grouplist | grep Development</span>
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># yum grouplist | grep development</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>中文导致的问题</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># yum grouplist</span>
+已加载插件：fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.aliyun.com
+可用的环境分组：
+   最小安装
+   基础设施服务器
+   计算节点
+   文件及打印服务器
+   基本网页服务器
+   虚拟化主机
+   带 GUI 的服务器
+   GNOME 桌面
+   KDE Plasma Workspaces
+   开发及生成工作站
+已安装的组：
+   系统管理工具
+可用组：
+   传统 UNIX 兼容性
+   兼容性程序库
+   图形管理工具
+   安全性工具
+   开发工具
+   控制台互联网工具
+   智能卡支持
+   科学记数法支持
+   系统管理
+完成
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><ul><li>修改为英文。。</li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># locale</span>
+<span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span>zh_CN.UTF-8
+<span class="token assign-left variable">LC_CTYPE</span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_NUMERIC</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_TIME</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable">LC_COLLATE</span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_MONETARY</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable">LC_MESSAGES</span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_PAPER</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_NAME</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_ADDRESS</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_TELEPHONE</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_MEASUREMENT</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_IDENTIFICATION</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LC_ALL</span></span><span class="token operator">=</span>
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># locale -a | grep en_US</span>
+en_US
+en_US.iso88591
+en_US.iso885915
+en_US.utf8
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/locale.conf</span>
+<span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8&quot;</span>
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># vi /etc/locale.conf</span>
+<span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/locale.conf</span>
+<span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span><span class="token string">&quot;en_US.UTF-8&quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>立马就生效了</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># yum grouplist</span>
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.aliyun.com
+Available Environment Groups:
+   Minimal Install
+   Compute Node
+   Infrastructure Server
+   File and Print Server
+   Basic Web Server
+   Virtualization Host
+   Server with GUI
+   GNOME Desktop
+   KDE Plasma Workspaces
+   Development and Creative Workstation
+Installed Groups:
+   System Administration Tools
+Available Groups:
+   Compatibility Libraries
+   Console Internet Tools
+   Development Tools
+   Graphical Administration Tools
+   Legacy UNIX Compatibility
+   Scientific Support
+   Security Tools
+   Smart Card Support
+   System Management
+Done
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><ul><li>然后就可以了</li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@waywho ~<span class="token punctuation">]</span><span class="token comment"># yum grouplist | grep Development</span>
+   Development and Creative Workstation
+   Development Tools
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code>yum groupinstall <span class="token string">'Development Tools'</span> <span class="token parameter variable">-y</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>这个命令会安装几十个工具，如git,gcc,perl,zip，svn，rsync等等，太方便了。</li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>Installed:
+  autoconf.noarch <span class="token number">0</span>:2.69-11.el7                             automake.noarch <span class="token number">0</span>:1.13.4-3.el7
+  bison.x86_64 <span class="token number">0</span>:3.0.4-2.el7                                byacc.x86_64 <span class="token number">0</span>:1.9.20130304-3.el7
+  cscope.x86_64 <span class="token number">0</span>:15.8-10.el7                               ctags.x86_64 <span class="token number">0</span>:5.8-13.el7
+  diffstat.x86_64 <span class="token number">0</span>:1.57-4.el7                              doxygen.x86_64 <span class="token number">1</span>:1.8.5-4.el7
+  elfutils.x86_64 <span class="token number">0</span>:0.176-5.el7                             flex.x86_64 <span class="token number">0</span>:2.5.37-6.el7
+  gcc.x86_64 <span class="token number">0</span>:4.8.5-44.el7                                 gcc-c++.x86_64 <span class="token number">0</span>:4.8.5-44.el7
+  gcc-gfortran.x86_64 <span class="token number">0</span>:4.8.5-44.el7                        git.x86_64 <span class="token number">0</span>:1.8.3.1-25.el7_9
+  indent.x86_64 <span class="token number">0</span>:2.2.11-13.el7                             intltool.noarch <span class="token number">0</span>:0.50.2-7.el7
+  libtool.x86_64 <span class="token number">0</span>:2.4.2-22.el7_3                           patch.x86_64 <span class="token number">0</span>:2.7.1-12.el7_7
+  patchutils.x86_64 <span class="token number">0</span>:0.3.3-5.el7_9                         rcs.x86_64 <span class="token number">0</span>:5.9.0-7.el7
+  redhat-rpm-config.noarch <span class="token number">0</span>:9.1.0-88.el7.centos            rpm-build.x86_64 <span class="token number">0</span>:4.11.3-48.el7_9
+  rpm-sign.x86_64 <span class="token number">0</span>:4.11.3-48.el7_9                         subversion.x86_64 <span class="token number">0</span>:1.7.14-16.el7
+  swig.x86_64 <span class="token number">0</span>:2.0.10-5.el7                                systemtap.x86_64 <span class="token number">0</span>:4.0-13.el7
+
+Dependency Installed:
+  apr.x86_64 <span class="token number">0</span>:1.4.8-7.el7                              apr-util.x86_64 <span class="token number">0</span>:1.5.2-6.el7_9.1
+  avahi-libs.x86_64 <span class="token number">0</span>:0.6.31-20.el7                     boost-date-time.x86_64 <span class="token number">0</span>:1.53.0-28.el7
+  boost-system.x86_64 <span class="token number">0</span>:1.53.0-28.el7                   boost-thread.x86_64 <span class="token number">0</span>:1.53.0-28.el7
+  bzip2.x86_64 <span class="token number">0</span>:1.0.6-13.el7                           cpp.x86_64 <span class="token number">0</span>:4.8.5-44.el7
+  dwz.x86_64 <span class="token number">0</span>:0.11-3.el7                               dyninst.x86_64 <span class="token number">0</span>:9.3.1-3.el7
+  efivar-libs.x86_64 <span class="token number">0</span>:36-12.el7                        emacs-filesystem.noarch <span class="token number">1</span>:24.3-23.el7_9.1
+  gdb.x86_64 <span class="token number">0</span>:7.6.1-120.el7                            gettext-common-devel.noarch <span class="token number">0</span>:0.19.8.1-3.el7
+  gettext-devel.x86_64 <span class="token number">0</span>:0.19.8.1-3.el7                 glibc-devel.x86_64 <span class="token number">0</span>:2.17-326.el7_9.3
+  glibc-headers.x86_64 <span class="token number">0</span>:2.17-326.el7_9.3               gnutls.x86_64 <span class="token number">0</span>:3.3.29-9.el7_6
+  kernel-debug-devel.x86_64 <span class="token number">0</span>:3.10.0-1160.119.1.el7     kernel-headers.x86_64 <span class="token number">0</span>:3.10.0-1160.119.1.el7
+  libdwarf.x86_64 <span class="token number">0</span>:20130207-4.el7                      libgfortran.x86_64 <span class="token number">0</span>:4.8.5-44.el7
+  libmodman.x86_64 <span class="token number">0</span>:2.0.1-8.el7                        libmpc.x86_64 <span class="token number">0</span>:1.0.1-3.el7
+  libproxy.x86_64 <span class="token number">0</span>:0.4.11-11.el7                       libquadmath.x86_64 <span class="token number">0</span>:4.8.5-44.el7
+  libquadmath-devel.x86_64 <span class="token number">0</span>:4.8.5-44.el7               libstdc++-devel.x86_64 <span class="token number">0</span>:4.8.5-44.el7
+  m4.x86_64 <span class="token number">0</span>:1.4.16-10.el7                             mokutil.x86_64 <span class="token number">0</span>:15-8.el7
+  mpfr.x86_64 <span class="token number">0</span>:3.1.1-4.el7                             neon.x86_64 <span class="token number">0</span>:0.30.0-4.el7
+  nettle.x86_64 <span class="token number">0</span>:2.7.1-9.el7_9                         pakchois.x86_64 <span class="token number">0</span>:0.4-10.el7
+  perl.x86_64 <span class="token number">4</span>:5.16.3-299.el7_9                        perl-Carp.noarch <span class="token number">0</span>:1.26-244.el7
+  perl-Data-Dumper.x86_64 <span class="token number">0</span>:2.145-3.el7                 perl-Encode.x86_64 <span class="token number">0</span>:2.51-7.el7
+  perl-Error.noarch <span class="token number">1</span>:0.17020-2.el7                     perl-Exporter.noarch <span class="token number">0</span>:5.68-3.el7
+  perl-File-Path.noarch <span class="token number">0</span>:2.09-2.el7                    perl-File-Temp.noarch <span class="token number">0</span>:0.23.01-3.el7
+  perl-Filter.x86_64 <span class="token number">0</span>:1.49-3.el7                       perl-Getopt-Long.noarch <span class="token number">0</span>:2.40-3.el7
+  perl-Git.noarch <span class="token number">0</span>:1.8.3.1-25.el7_9                    perl-HTTP-Tiny.noarch <span class="token number">0</span>:0.033-3.el7
+  perl-PathTools.x86_64 <span class="token number">0</span>:3.40-5.el7                    perl-Pod-Escapes.noarch <span class="token number">1</span>:1.04-299.el7_9
+  perl-Pod-Perldoc.noarch <span class="token number">0</span>:3.20-4.el7                  perl-Pod-Simple.noarch <span class="token number">1</span>:3.28-4.el7
+  perl-Pod-Usage.noarch <span class="token number">0</span>:1.63-3.el7                    perl-Scalar-List-Utils.x86_64 <span class="token number">0</span>:1.27-248.el7
+  perl-Socket.x86_64 <span class="token number">0</span>:2.010-5.el7                      perl-Storable.x86_64 <span class="token number">0</span>:2.45-3.el7
+  perl-TermReadKey.x86_64 <span class="token number">0</span>:2.30-20.el7                 perl-Test-Harness.noarch <span class="token number">0</span>:3.28-3.el7
+  perl-Text-ParseWords.noarch <span class="token number">0</span>:3.29-4.el7              perl-Thread-Queue.noarch <span class="token number">0</span>:3.02-2.el7
+  perl-Time-HiRes.x86_64 <span class="token number">4</span>:1.9725-3.el7                 perl-Time-Local.noarch <span class="token number">0</span>:1.2300-2.el7
+  perl-XML-Parser.x86_64 <span class="token number">0</span>:2.41-10.el7                  perl-constant.noarch <span class="token number">0</span>:1.27-2.el7
+  perl-libs.x86_64 <span class="token number">4</span>:5.16.3-299.el7_9                   perl-macros.x86_64 <span class="token number">4</span>:5.16.3-299.el7_9
+  perl-parent.noarch <span class="token number">1</span>:0.225-244.el7                    perl-podlators.noarch <span class="token number">0</span>:2.5.1-3.el7
+  perl-srpm-macros.noarch <span class="token number">0</span>:1-8.el7                     perl-threads.x86_64 <span class="token number">0</span>:1.87-4.el7
+  perl-threads-shared.x86_64 <span class="token number">0</span>:1.43-6.el7               python-srpm-macros.noarch <span class="token number">0</span>:3-34.el7
+  rsync.x86_64 <span class="token number">0</span>:3.1.2-12.el7_9                         subversion-libs.x86_64 <span class="token number">0</span>:1.7.14-16.el7
+  systemtap-client.x86_64 <span class="token number">0</span>:4.0-13.el7                  systemtap-devel.x86_64 <span class="token number">0</span>:4.0-13.el7
+  systemtap-runtime.x86_64 <span class="token number">0</span>:4.0-13.el7                 trousers.x86_64 <span class="token number">0</span>:0.3.14-2.el7
+  unzip.x86_64 <span class="token number">0</span>:6.0-24.el7_9                           zip.x86_64 <span class="token number">0</span>:3.0-11.el7
+
+Complete<span class="token operator">!</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><h3 id="插曲-验证普通用户可以用"><a href="#插曲-验证普通用户可以用" class="header-anchor">#</a> 插曲-验证普通用户可以用：</h3> <p>我们的whoway也是可以用！</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">which</span> sz
+/usr/bin/sz
+
+<span class="token function">which</span> <span class="token function">git</span>
+/usr/bin/git
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_3-各自用户安装环境"><a href="#_3-各自用户安装环境" class="header-anchor">#</a> 3.各自用户安装环境</h2> <h3 id="whoway用户"><a href="#whoway用户" class="header-anchor">#</a> whoway用户</h3> <h4 id="go语言环境"><a href="#go语言环境" class="header-anchor">#</a> go语言环境</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">wget</span> https://github.com/fsgo/smart-go-dl/releases/download/v0.1.12/smart-go-dl_darwin_amd64
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>上面就可以下载smart-go-dl_darwin_amd64的可执行文件，然后借助它，
+安装go ，然后才能webdav</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>whoway@waywho ~<span class="token punctuation">]</span>$ go <span class="token function">env</span> <span class="token operator">|</span> <span class="token function">grep</span> GOPROXY
+<span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span><span class="token string">'https://proxy.golang.org,direct'</span>
+<span class="token punctuation">[</span>whoway@waywho ~<span class="token punctuation">]</span>$ go <span class="token function">env</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span>https://goproxy.cn,direct
+<span class="token punctuation">[</span>whoway@waywho ~<span class="token punctuation">]</span>$ go <span class="token function">env</span> <span class="token operator">|</span> <span class="token function">grep</span> GOPROXY
+<span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span><span class="token string">'https://goproxy.cn,direct'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code>go <span class="token function">install</span> github.com/fsgo/go_fmt/cmd/gorgeous@latest
+go <span class="token function">install</span> honnef.co/go/tools/cmd/staticcheck@2022.1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="安装多版本java环境【jdk8和jdk11】"><a href="#安装多版本java环境【jdk8和jdk11】" class="header-anchor">#</a> 安装多版本java环境【JDK8和JDK11】</h4> <p>gu
+故意叫多版本jdk</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>whoway@waywho multi_jdk<span class="token punctuation">]</span>$ <span class="token function">ls</span>
+jdk-8u321-linux-x64.tar.gz  oracle_jdk8
+<span class="token punctuation">[</span>whoway@waywho multi_jdk<span class="token punctuation">]</span>$ <span class="token builtin class-name">pwd</span>
+/home/whoway/.software/multi_jdk
+
+
+<span class="token function">vi</span> /etc/profile
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/home/whoway/.software/multi_jdk/oracle_jdk8
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JRE_HOME</span><span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/jre
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token punctuation">{</span>JAVA_HOME<span class="token punctuation">}</span>/lib:<span class="token variable">${JRE_HOME}</span>/lib:<span class="token variable">${CLASSPATH}</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_PATH</span><span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">${JRE_HOME}</span>/bin
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${<span class="token environment constant">PATH</span>}</span><span class="token builtin class-name">:</span><span class="token variable">${JAVA_HOME}</span>/bin
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ul><li>JDK11不一样</li> <li>https://blog.csdn.net/weixin_44604118/article/details/122726962</li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/local/java/jdk-11
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/lib
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="安装elasticsearch"><a href="#安装elasticsearch" class="header-anchor">#</a> 安装elasticsearch</h4> <ul><li>失策了，因为elastic需要JDK环境【所以还是在whoway用户下安装】</li></ul> <h1 id="集群名称-名字随便写-如果是集群模式需要所有的服务集群名称需要一致"><a href="#集群名称-名字随便写-如果是集群模式需要所有的服务集群名称需要一致" class="header-anchor">#</a> 集群名称，名字随便写，如果是集群模式需要所有的服务集群名称需要一致</h1> <p>cluster.name: test_cluster</p> <h1 id="节点名称"><a href="#节点名称" class="header-anchor">#</a> 节点名称</h1> <p>node.name: node-1</p> <h1 id="是否竞争主节点"><a href="#是否竞争主节点" class="header-anchor">#</a> 是否竞争主节点</h1> <p>node.master: true</p> <h1 id="是否存储数据"><a href="#是否存储数据" class="header-anchor">#</a> 是否存储数据</h1> <p>node.data: true
+#最大集群节点数
+node.max_local_storage_nodes: 1</p> <h1 id="数据的默认存放路径"><a href="#数据的默认存放路径" class="header-anchor">#</a> 数据的默认存放路径</h1> <p>path.data: /usr/local/elasticsearch/data</p> <h1 id="日志的默认存放路径"><a href="#日志的默认存放路径" class="header-anchor">#</a> 日志的默认存放路径</h1> <p>path.logs: /usr/local/elasticsearch/logs</p> <h1 id="当前节点的ip地址-如果所有的服务器可以通过内网访问-则写内网即可-否则使用外网"><a href="#当前节点的ip地址-如果所有的服务器可以通过内网访问-则写内网即可-否则使用外网" class="header-anchor">#</a> 当前节点的IP地址，如果所有的服务器可以通过内网访问，则写内网即可，否则使用外网</h1> <p>network.host: 192.168.10.100</p> <h1 id="对外提供服务的端口-9300为集群服务的端口"><a href="#对外提供服务的端口-9300为集群服务的端口" class="header-anchor">#</a> 对外提供服务的端口，9300为集群服务的端口</h1> <p>http.port: 9200<br>
+transport.tcp.port: 9300</p> <h1 id="写入候选主节点的设备地址-在开启服务后可以被选为主节点"><a href="#写入候选主节点的设备地址-在开启服务后可以被选为主节点" class="header-anchor">#</a> 写入候选主节点的设备地址，在开启服务后可以被选为主节点</h1> <p>discovery.seed_hosts: [&quot;192.168.10.100:9300&quot;]</p> <h1 id="初始化一个新的集群时需要此配置来选举master"><a href="#初始化一个新的集群时需要此配置来选举master" class="header-anchor">#</a> 初始化一个新的集群时需要此配置来选举master</h1> <p>cluster.initial_master_nodes: [&quot;node-1&quot;]</p> <h1 id="避免出现跨域问题"><a href="#避免出现跨域问题" class="header-anchor">#</a> 避免出现跨域问题</h1> <p>http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+http.cors.allow-headers: &quot;Authorization&quot;
+http.cors.allow-credentials: true</p> <p>#注意：配置文件上方需要更改两个参数，在Memory下更改：
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.898cd8b1.js" defer></script><script src="/assets/js/2.cdbbc3f7.js" defer></script><script src="/assets/js/1.7582fb06.js" defer></script><script src="/assets/js/103.5be16242.js" defer></script>
+  </body>
+</html>
